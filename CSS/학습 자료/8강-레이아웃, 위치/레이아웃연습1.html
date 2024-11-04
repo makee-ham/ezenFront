@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>레이아웃 연습1</title>
+		<style>
+			#wrap { position:relative; width:1000px; margin:0 auto;}
+			#header { position:relative; width:100%; margin-bottom:10px; background-color:red; height:100px;}
+			#content { width:100%; position:relative; height:400px;}
+			.content_1 { width:300px; float:left; height:400px; }
+			.content_inner1 { width:100%; background-color:#c3f7bc; height:195px;  margin-bottom:10px;}
+			.content_inner2 { width:100%; background-color:#4ab93b; height:195px;}
+			.content_2 { width:690px; float:left; background-color:#89c481; height:400px; margin-left:10px;}
+			#footer { width:100%; position:relative; height:100px; background-color:blue; clear:both; margin-top:10px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+			</div>
+			<div id="content">
+				<div class="content_1">
+					<div class="content_inner1"></div>
+					<div class="content_inner2"></div>
+				</div>
+				
+				<div class="content_2"></div>
+				
+			</div>
+			<div id="footer"></div>
+		</div>
+	</body>
+</html>

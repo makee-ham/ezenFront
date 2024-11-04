@@ -1,0 +1,14 @@
+﻿body {
+	font-family:굴림;
+	color: black;
+	background-color:yellow;
+}
+h1 {
+	border-bottom: 1px solid gray;
+	color : red;
+}
+em {
+	color:red;
+}
+p.first { color:green;}
+p.second { color:blue;}

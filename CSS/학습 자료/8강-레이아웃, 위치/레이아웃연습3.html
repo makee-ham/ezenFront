@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>레이아웃 연습3</title>
+		<style>
+			#wrap { position:relative; width:1000px; margin:0 auto;}
+			#header { position:relative; width:100%; margin-bottom:10px; height:100px;}
+			.header_inner1 { float:left; background-color:red; width:190px; height:100px; margin-right:10px;}
+			.header_inner2 { float:left; background-color:pink; width:800px;  height:100px;}
+			#header:after {clear:both;}
+			#nav { height:50px; background-color:skyblue; margin-bottom:10px;}
+			#content { width:100%; position:relative; height:400px;}
+			.content_1 { width:690px; float:left; height:400px; background-color:#4ab93b; margin-right:10px;}
+			.content_2 { width:300px; float:left; height:400px; background-color:#4ab93b; }
+			#content:after {clear:both;}
+			#footer { width:100%; position:relative; height:100px; margin-top:10px;}
+			.footer_1 { width:140px; float:left; margin-right:10px; height:100px; background-color:blue;}
+			.footer_2 { width:850px; float:left; height:100px; background-color:blue;}
+			#footer:after { clear:both;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<div class="header_inner1"></div>
+				<div class="header_inner2"></div>
+			</div>
+			<div id="nav"></div>
+			<div id="content">
+				<div class="content_1"></div>
+				<div class="content_2"></div>	
+			</div>
+			<div id="footer">
+				<div class="footer_1"></div>
+				<div class="footer_2"></div>	
+			</div>
+		</div>
+	</body>
+</html>

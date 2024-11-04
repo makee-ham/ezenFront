@@ -1,0 +1,15 @@
+@media screen and (max-width:480px){
+	#warp { width:100%;}
+	#header>h1 { text-align:center;}
+	
+	#header>h1 { padding:2%;}
+	#nav>ul { text-align:center; padding:10% 0;line-height:1.5em; border-bottom:1px solid red; border-top:1px solid red;}
+	#nav>ul>li { 
+	display:inline-block;
+	
+	padding:0 0;
+	letter-spacing:10px;
+	text-transform:uppercase; 
+	
+}
+}

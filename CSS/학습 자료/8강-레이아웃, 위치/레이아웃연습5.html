@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>레이아웃 연습5 가로 1200px</title>
+		<style>
+			#wrap { position:relative; width:1200px; margin:0 auto;}
+			#header { position:relative;}
+				.header_inner1 { float:left; width:190px; margin-right:10px; background-color:yellow; height:100px;}
+				.header_inner2 { float:left; width:1000px; background-color:yellowgreen; height:100px;}
+			.clear { clear:both;}
+			#nav { position:relative; height:80px; background-color:lightgreen;  margin-top:10px;}
+			#content { position:relative; margin-top:10px;}
+			.content_1 { float:left; width:700px; margin-right:10px;}
+			.content_1>div { background-color:lime; height:200px; width:345px; float:left; margin-right:10px; margin-bottom:10px;}
+			.content_1>div:last-child { width:100%; }
+			.content_1>div:nth-child(2n) { margin-right:0;}
+			
+			.content_2 { float:left; width:490px; }
+			.content_2>div { height:305px; background-color:pink; margin-bottom:10px;}
+			#footer { position:relative;}
+			.footer_1 { float:left; width:190px; margin-right:10px;  height:100px; background-color:purple;}
+			.footer_2 { float:left; width:1000px; }
+			.footer_2>div { height:45px; background-color:#ae38f9;}
+			.footer_2>div:first-child { margin-bottom:10px;}
+			</style>
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+				<div class="header_inner1"></div>
+				<div class="header_inner2"></div>
+			</div>
+			<div class="clear"></div>
+			<div id="nav"></div>
+			<div id="content">
+				<div class="content_1">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<div class="content_2">
+					<div></div>
+					<div></div>
+					
+				</div>	
+			</div>
+			<div class="clear"></div>
+			<div id="footer">
+				<div class="footer_1"></div>
+				<div class="footer_2">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+	</body>
+</html>

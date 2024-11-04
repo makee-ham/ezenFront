@@ -1,0 +1,22 @@
+* { margin:0; padding:0;}
+
+div { width:200px; height:400px; float:left; border:1px solid red; padding:5px; box-sizing:border-box;}
+
+div:first-child { border-right:none;}
+
+div>h1 { width:100px;  margin:0 auto; padding:20px 0;}
+
+div>p { font-size:15px; line-height:23px;}
+
+.span1 { color:red;}
+.span2 { color:blue;}
+
+.pbutton { text-align:center;}
+
+
+
+
+
+
+
+

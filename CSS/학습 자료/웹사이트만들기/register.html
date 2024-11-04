@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>homepage</title>
+		<link href="css/indexstyle.css" rel="stylesheet">
+		<style>
+			body { height:100%;}
+			
+			#contents { width:100%; }
+			#contents>div { width:400px; margin:50px auto 0; line-height:2em; }
+			
+			#contents label {
+            display: inline-block;
+            width: 120px;
+        }
+
+			#contents input {
+            display: inline-block;
+            width: 160px;
+			height:25px;
+			
+        }
+		
+			#contents input[type="radio"] { height:15px; width:160px;}
+			
+			button { width: 80px;
+			height:25px; line-height:25px;}
+	
+		</style>
+	</head>
+	<body>
+	<div id="warp">
+		<div id="header">
+			<h1>
+				<img src="images/shop.png" width="50px"  height="50px" alt="logo"><a href="index.html">Web Shop </a>
+			</h1>
+		</div>
+		<div id="nav">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="#">About Us</a></li>
+				<li><a href="#">News</a></li>
+				<li><a href="#">My Account</a></li>
+				<li><a href="#">Contacts</a></li>
+			</ul>
+			
+		</div>
+		<div id="contents">
+			<div>
+			<form method="post" action="process.jsp">
+            <fieldset>
+                <legend>회원정보입력</legend>
+                <label for="name">아이디</label>
+                <input type="text" name="name" id="text1" />
+                <button>중복검사</button><br>
+                <label for="password1">패스워드</label>
+                <input type="password" name="password1" /><br>
+                <label for="password2">패스워드 확인</label>
+                <input type="password" name="password2" /><br>
+                <label for="name">이름</label>
+                <input type="text" name="name" /><br>
+                <label for="tel">휴대폰 번호</label>
+                <input type="tel" name="tel" />
+                <br />
+                <label for="email">이메일</label>
+                <input type="email" name="email" />
+                <br />
+                <label for="dob">생일</label>
+                <input type="date" name="dob" />
+                <br />
+                <label for="url">홈페이지</label>
+                <input type="url" name="url" />
+                <br />
+                <input type="radio" name="gender" id="Male" value="Male">
+                <label for="Male">남성</label><br>
+                <input type="radio" name="gender" id="Female" value="Female">
+                <label for="Female">여성</label><br>
+            </fieldset>
+            <input type="submit" name="submit" value="제출" />
+            <input type="reset" name="reset" value="초기화" />
+        </form>
+		</div>
+		</div>
+		<div id="footer">
+		<p>Copyright(c) 2016 Web Shop</p>
+		</div>
+	</div>
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	</body>
+</html>

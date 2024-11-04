@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>레이아웃 연습2</title>
+		<style>
+			#wrap { position:relative; width:1000px; margin:0 auto;}
+			#header { position:relative; width:100%; margin-bottom:10px; height:100px;}
+			.header_inner1 { float:left; background-color:red; width:190px; height:100px; margin-right:10px;}
+			.header_inner2 { float:left; background-color:pink; width:800px;  height:100px;}
+			#header:after {clear:both;}
+			
+			#content { width:100%; position:relative; height:400px;}
+			.content_1 { width:300px; float:left; height:400px; background-color:#4ab93b; }
+			.content_2 { width:380px; float:left; height:400px; margin:0 10px; }
+			.content_inner2_1 { width:100%; background-color:#c3f7bc; height:195px;  margin-bottom:10px;}
+			.content_inner2_2 { width:100%; background-color:#4ab93b; height:195px;}
+			.content_3 { width:300px; float:left; background-color:#89c481; height:400px;}
+			#footer { width:100%; position:relative; height:100px; background-color:blue; clear:both; margin-top:10px;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="header">
+					<div class="header_inner1"></div>
+					<div class="header_inner2"></div>
+			</div>
+			<div id="content">
+				<div class="content_1"></div>
+				<div class="content_2">
+					<div class="content_inner2_1"></div>
+					<div class="content_inner2_2"></div>
+				</div>
+				
+				<div class="content_3"></div>
+				
+			</div>
+			<div id="footer"></div>
+		</div>
+	</body>
+</html>

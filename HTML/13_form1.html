@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>입력 요소</title>
+</head>
+<body>
+	<form method="post" action="#">
+		<fieldset>
+			<legend>개인정보</legend>
+			아이디 : <input type="text" size="10" name="id" required><br>
+			비밀번호 : <input type="password" name="pwd"><br>
+			성명 : <input type="text" name="name"><br>
+			생년월일 : <input type="text" name="birth" placeholder="예) 951012"><br>
+			성별 : 남 <input type="radio" name="gender">
+				여 <input type="radio" name="gender" checked><br>
+		</fieldset>
+		좋아하는 과일은? 사과 <input type="checkbox" name="fruit" checked>
+					포도 <input type="checkbox" name="fruit" checked>
+					오렌지 <input type="checkbox" name="fruit"><br>
+		고객의견<br>
+		<textarea rows="7" cols="60">고객님의 의견을 가차없이 써 주세요...</textarea><br>
+		선호하는 차종은?<br>
+		<select>
+			<option>BMW</option>
+			<option>BENZ</option>
+			<option>VOLVO</option>
+			<option>VOLKSWAGEN</option>
+		</select><br>
+		<input type="file"><br>
+		몸무게 : <input type="number" min="30" max="150" step="5"><br>
+		학습수준 : <input type="range" min="10" max="100" step="10"><br>
+		입사일 : <input type="date"><br>
+		좋아하는 색상은 : <input type="color"><br>
+		<input type="submit" value="전송">
+		<input type="reset" value="다시쓰기">
+		<input type="button" value="확인" onclick="alert('어? 버튼을 누르셨네요? ^^')">
+		<button>확인2</button>
+		<input type="image" src="images/button.png" alt="제출버튼">
+	</form>
+</body>
+</html>
