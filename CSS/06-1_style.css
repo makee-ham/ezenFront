@@ -1,0 +1,21 @@
+.type1 {
+	text-align : center;
+	color : red;
+}
+body em { color : yellow; }
+h2 em { color : red; }
+a:link {
+	color : gray;
+	text-decoration : none;
+}
+a:visited {
+	color : skyblue;
+}
+a:hover {
+	color : green;
+	background-color : yellow;
+	font-size : 17px;
+}
+a:active {
+	color : navy;
+}
