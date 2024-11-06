@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>마진과 패딩</title>
+	<style>
+		p {
+			width : 200px;
+			height : 100px;
+			background-color : yellow;
+			text-align : center;
+			line-height : 100px;  /* 줄간격, 줄높이. 글자를 중간으로 위아래 넓이 */
+		}
+		div {
+			width : 200px;
+			height : 100px;
+			background-color : green;
+			border : 5px solid red;
+			padding : 20px;  /* 테두리도 패딩도 그냥 주면 박스 크기가 달라짐 */
+			box-sizing : border-box;  /* 이러면 사이즈 안 바뀜.. 그래서 제일 위에 * {여기다가 써둠} */
+		}
+	</style>
+</head>
+<body>
+	<p>이것은 p 요소입니다.</p>
+	<div>이것은 DIV 요소입니다.</div>
+</body>
+</html>
