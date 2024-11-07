@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>배경관련 속성, 링크 스타일</title>
+	<style>
+		body {
+			background : url(images/back.gif) no-repeat center 300px;
+			background-attachment : fixed;
+			background-size : 10%;
+		}
+		div {
+			width : 100%;
+			height : 3000px;
+			border : 1px dashed red;
+		}
+		a:link { color : red; }
+		a:visited { color : blue; }
+		a:hover { background-color : lightgreen; }
+		a:active { color : blue; }
+	</style>
+</head>
+<body>
+	<div>
+		<p>마우스를 올리면 변화가 됩니다.</p>
+		<a href="http://www.nate.com">링크입니다.</a>
+		<p>다른 글자</p>
+	</div>
+</body>
+</html>

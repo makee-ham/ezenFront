@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>내비게이션</title>
+	<style>
+		a:link, a:visited {
+			color : #333;
+			text-decoration : none;
+			font-size : 20px;
+			font-weight : bold;
+		}
+		a:hover, a:active {
+			color : #f00;
+			text-decoration : none;
+		}
+		ul {
+			list-style : none;
+			text-align : center;  /* 자식요소인 li에도 적용됨 */
+			border-top : 1px solid #ccc;
+			border-bottom : 1px solid #ccc;
+			padding : 10px 0; /* ul 기본 리스트 스타일로 정중앙에 안 오므로 */	
+		}
+		ul li {
+			display : inline;  /* 블럭 요소를 인라인 요소로 바꿈 */
+			padding : 0 40px;  /* 개체가 서로 공간을 같이 차지하지 않기 때문에 마진처럼 먹히지 아니함 */
+			letter-spacing : 2px;  /* 자간 넓이, 간격 */
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">진료안내</a></li>
+		<li><a href="#">이용안내</a></li>
+		<li><a href="#">건강정보</a></li>
+		<li><a href="#">고객참여</a></li>
+		<li><a href="#">병원소개</a></li>
+	</ul>
+</body>
+</html>
