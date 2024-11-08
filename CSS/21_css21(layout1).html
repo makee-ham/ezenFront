@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>레이아웃1</title>
+	<style>
+		ul {
+			list-style : none;  /* dot는 li의 밖, ul에 속함 */
+			border : 1px solid blue;
+			text-align : center;  /* 인라인 요소가 된 li를 쏵 가운데로. text-align은 부모 블록요소 안의 인라인 요소를 정렬해준다 */
+		}
+		li {
+			border : 1px solid red;
+			display : inline-block;
+			width : 120px;
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li><a href="#">회사소개</a></li>
+		<li><a href="#">제품안내</a></li>
+		<li><a href="#">커뮤니티</a></li>
+		<li><a href="#">묻고답하기</a></li>
+	</ul>
+</body>
+</html>
