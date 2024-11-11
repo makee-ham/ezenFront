@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>layout2</title>
+	<title>layout3</title>
 	<style>
 		* { margin : 0; padding : 0 }
 		#wrapper {
@@ -14,43 +14,55 @@
 			background-color : pink;
 		}
 		#content {
-			height : 500px;  /* !!높이는 자식에게 상속되지 않는다!! */
+			height : 500px;
 			margin : 20px 0;
 		}
 		#left {
-			width : 690px;
+			width : 380px;
 			height : 500px;
 			float : left;
+		}
+		#top {
+			height : 240px;
+			background-color : pink;
+			margin-bottom : 20px;
+		}
+		#bottom {
+			height : 240px;
 			background-color : pink;
 		}
 		#right {
-			width : 690px;
+			width : 1000px;
 			height : 500px;
-			float : right;
 			background-color : pink;
+			float : right;
 		}
 		#footer {
 			height : 80px;
 			background-color : pink;
-			/* content의 높이가 설정되어 있어서 footer는 clear 안 해줘도 됨 */
 		}
 	</style>
 </head>
 <body>
 	<div id="wrapper">
 		<div id="header">
-			header
+			header 영역입니다
 		</div>
 		<div id="content">
 			<div id="left">
-				left
+				<div id="top">
+					위쪽 영역입니다
+				</div>
+				<div id="bottom">
+					아래쪽 영역입니다
+				</div>
 			</div>
 			<div id="right">
-				right
+				right 영역입니다
 			</div>
 		</div>
 		<div id="footer">
-			footer
+			footer 영역입니다
 		</div>
 	</div>
 </body>
