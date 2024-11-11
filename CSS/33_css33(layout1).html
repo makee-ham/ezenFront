@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>layout1</title>
+	<style>
+		* { margin : 0; padding : 0 }
+		#wrapper {
+			width : 1400px;  /* 이러면 자식들 기본 가로 1400px 됨 */
+			margin : 0 auto;
+		}
+		#header {
+			height : 100px;
+			background-color : lightgreen;
+		}
+		#content {
+			height : 500px;
+			background-color : lightgreen;
+			margin : 10px 0;
+		}
+		#footer {
+			height :80px;
+			background-color : lightgreen;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			header
+		</div>
+		<div id="content">
+			content
+		</div>
+		<div id="footer">
+			footer
+		</div>
+	</div>
+</body>
+</html>

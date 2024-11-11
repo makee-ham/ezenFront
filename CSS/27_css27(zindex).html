@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>z-index</title>
+	<style>
+		div { width:100px; height:100px; }
+		#box1 { background-color : blue; position : absolute; top : 0px; left : 0px; z-index : 30; }
+		#box2 { background-color : yellow; position : absolute; top : 30px; left : 30px; z-index : 20; }
+		#box3 { background-color : green; position : absolute; top : 60px; left : 60px; z-index : 10;}
+		/* 맨 마지막에 absolute 잡은 애가 제일 위로 올라옴, 이거 순서 조정하는 게 z-index */
+	</style>
+</head>
+<body>
+	<div id="box1">박스 #1</div>
+	<div id="box2">박스 #2</div>
+	<div id="box3">박스 #3</div>
+</body>
+</html>
