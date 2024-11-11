@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+	<meta charset="UTF-8">
+	<title>layout6</title>
+	<style>
+		* { margin : 0; padding : 0; }
+		#wrapper {
+			width : 1400px;
+			margin : 0 auto;
+		}
+		#header {
+			height : 100px;
+		}
+		#hleft {
+			width : 400px;
+			height : 100px;
+			background-color: pink;
+			float : left;
+		}
+		#hright {
+			width : 700px;
+			height : 100px;
+			background-color: pink;
+			float : right;
+		}
+		#content {
+			clear : both;
+			height : 500px;
+			margin : 20px 0;
+		}
+		#cleft {
+			width : 350px;
+			height : 500px;
+			background-color: pink;
+			float : left;
+		}
+		#center {
+			width : 660px;
+			height : 500px;
+			margin : 0 20px;
+			float : left;
+			/* static */
+		}
+		#top {
+			height : 200px;
+			margin-bottom : 20px;
+			background-color : pink;
+		}
+		#bottom {
+			height : 280px;
+			background-color : pink;
+		}
+		#cright {
+			width : 350px;
+			height : 500px;
+			background-color: pink;
+			float : right;
+		}
+		#footer {
+			height : 80px;
+			background-color : pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="hleft"></div>
+			<div id="hright"></div>
+		</div>
+		<div id="content">
+			<div id="cleft"></div>
+			<div id="center">
+				<div id="top"></div>
+				<div id="bottom"></div>
+			</div>
+			<div id="cright"></div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</body>
+</html>
