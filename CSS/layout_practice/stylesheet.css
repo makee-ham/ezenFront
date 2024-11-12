@@ -68,36 +68,63 @@ wrapper {
 	width : 240px;
 	height : 370px;
 	float : right;
-	background-color : blue;
+	background-color : skyblue;
 }
 /* 섹션 2 */
 #section2 {
 	height : 130px;
 	margin : 20px 0;
 }
+#button1 {
+	width : 240px;
+	height : 130px;
+	float : left;
+	background-color : red;
+}
+#button2 {
+	width : 240px;
+	height : 130px;
+	float : left;
+	background-color : orange;
+}
+#button3 {
+	width : 240px;
+	height : 130px;
+	float : left;
+	background-color : yellow;
+}
+#button4 {
+	width : 240px;
+	height : 130px;
+	float : left;
+	background-color : green;
+}
+#button5 {
+	width : 240px;
+	height : 130px;
+	float : right;
+	background-color : blue;
+}
 /* 섹션 3 */
 #section3 {
 	height : 300px;
 	margin-bottom : 50px;
-	background-color : black;
 }
 #noti {
-	width : 428px;
+	width : 430px;
 	height : 300px;
-	background-color : white;
+	background-color : cyan;
 	float : left;
-	border : 1px solid red;
 }
 #board {
-	width : 458px;
+	width : 450px;
 	height : 300px;
-	background-color : white;
+	background-color : blue;
 	margin : 0 20px;
 	float : left;
-	border : 1px solid red;
 }
 #contact {
-	width : 268px;
+	width : 280px;
 	height : 300px;
 	background-color : navy;
 	float : right;
@@ -105,4 +132,24 @@ wrapper {
 /* 푸터 영역 */
 #footer {
 	height : 260px;
+}
+#subMenu {
+	height : 50px;
+	background-color : black;	
+}
+#subWrap {
+	width : 1200px;
+	height : 50px;
+	margin : 0 auto;
+	background-color : lightgreen;
+}
+#bio {
+	height : 210px;
+	background-color : gray;
+}
+#bioWrap {
+	width : 1200px;
+	height : 210px;
+	margin : 0 auto;
+	background-color : cyan;
 }
