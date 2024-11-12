@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+	<meta charset="UTF-8">
+	<title>layout6</title>
+	<style>
+		* { margin : 0; padding : 0; }
+		#wrapper {
+			width : 1400px;
+			margin : 0 auto;
+		}
+		#header {
+			height : 100px;
+			position : relative;
+		}
+		#hleft {
+			width : 500px;
+			height : 100px;
+			background-color : pink;
+			position : absolute;
+			left : 0;
+		}
+		#hright {
+			width : 800px;
+			height : 100px;
+			background-color : pink;
+			position : absolute;
+			right : 0;
+		}
+		#content {
+			height : 500px;
+			margin : 20px 0;
+			position : relative;
+		}
+		#cleft {
+			width : 400px;
+			height : 500px;
+			position : absolute;
+			left : 0;
+			background-color : pink;
+		}
+		#center {
+			width : 560px;
+			height : 500px;
+			position : absolute;
+			left : 420px;
+		}
+		#top {
+			width : 560px;
+			height : 200px;
+			background-color : pink;
+			margin-bottom : 20px;
+		}
+		#bottom {
+			width : 560px;
+			height : 280px;
+			background-color : pink;
+		}
+		#cright {
+			width : 400px;
+			height : 500px;
+			position : absolute;
+			right : 0;
+			background-color : pink;
+		}
+		#footer {
+			height : 80px;
+			background-color : pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="hleft"></div>
+			<div id="hright"></div>
+		</div>
+		<div id="content">
+			<div id="cleft"></div>
+			<div id="center">
+				<div id="top"></div>
+				<div id="bottom"></div>
+			</div>
+			<div id="cright"></div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</body>
+</html>

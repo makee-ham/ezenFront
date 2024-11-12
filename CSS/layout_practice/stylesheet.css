@@ -1,0 +1,108 @@
+* { margin : 0; padding : 0; }
+wrapper {
+	width : 100%;
+	margin : 0 auto;
+}
+/* 헤더 부분 */
+#header {
+	height : 125px;
+}
+#siteMenu {
+	height : 33px;
+	background-color : gray;	
+}
+#menuWrap {
+	width : 1200px;
+	height : 33px;
+	margin : 0 auto;
+	background-color : cyan;
+}
+#nav {
+	height : 92px;
+	background-color : black;
+}
+#navWrap {
+	width : 1200px;
+	height : 92px;
+	margin : 0 auto;
+	background-color : lightgreen;
+}
+/* 콘텐츠 부분 */
+#content {
+	width : 1200px;
+	margin : 0 auto;
+	padding-top : 20px;
+}
+/* 섹션 1 */
+#section1 {
+	height : 370px;
+}
+#slide {
+	width : 680px;
+	height : 370px;
+	float : left;
+	background-color : pink;
+}
+#buttonArea {
+	width : 500px;
+	height : 370px;
+	float : right;
+}
+#buttonLeft {
+	width : 240px;
+	height : 370px;
+	float : left;
+}
+#redButton {
+	width : 240px;
+	height : 175px;
+	background-color : red;
+	margin-bottom : 20px;
+}
+#grayButton {
+	width : 240px;
+	height : 175px;
+	background-color : gray;
+}
+#buttonRight {
+	width : 240px;
+	height : 370px;
+	float : right;
+	background-color : blue;
+}
+/* 섹션 2 */
+#section2 {
+	height : 130px;
+	margin : 20px 0;
+}
+/* 섹션 3 */
+#section3 {
+	height : 300px;
+	margin-bottom : 50px;
+	background-color : black;
+}
+#noti {
+	width : 428px;
+	height : 300px;
+	background-color : white;
+	float : left;
+	border : 1px solid red;
+}
+#board {
+	width : 458px;
+	height : 300px;
+	background-color : white;
+	margin : 0 20px;
+	float : left;
+	border : 1px solid red;
+}
+#contact {
+	width : 268px;
+	height : 300px;
+	background-color : navy;
+	float : right;
+}
+/* 푸터 영역 */
+#footer {
+	height : 260px;
+}

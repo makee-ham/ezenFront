@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+	<meta charset="UTF-8">
+	<title>layout9</title>
+	<style>
+		* { margin : 0; padding : 0; }
+		#wrapper {
+			width : 1400px;
+			margin : 0 auto;
+		}
+		#header {
+			height : 100px;
+		}
+		#hleft {
+			width : 500px;
+			height : 100px;
+			background-color : pink;
+			float : left;
+		}
+		#hright {
+			width : 880px;
+			height : 100px;
+			background-color : pink;
+			float : right;
+		}
+		#section1 {
+			clear : both;
+			height : 100px;
+			margin : 20px 0;
+			background-color : pink;
+		}
+		#section2 {
+			height : 300px;
+			margin : 20px 0;
+		}
+		#s2left {
+			width : 690px;
+			height : 300px;
+			float : left;
+		}
+		#s2left_left {
+			width : 335px;
+			height : 300px;
+			float : left;
+		}
+		#s2left_right {
+			width : 335px;
+			height : 300px;
+			float : right;
+		}
+		.s2boxtop {
+			width : 335px;
+			height : 140px;
+			margin-bottom : 20px;
+			background-color : pink;
+		}
+		.s2boxbottom {
+			width : 335px;
+			height : 140px;
+			background-color : pink;
+		}
+		#s2right {
+			width : 690px;
+			height : 300px;
+			background-color : pink;
+			float : right;
+		}
+		#section3 {
+			height : 150px;
+		}
+		#s3left {
+			width : 690px;
+			height : 150px;
+			background-color : pink;
+			float : left;
+		}
+		#s3right {
+			width : 690px;
+			height : 150px;
+			float : right;
+		}
+		#s3box1 {
+			width : 335px;
+			height : 150px;
+			float : left;
+			background-color : pink;
+		}
+		#s3box2 {
+			width : 335px;
+			height : 150px;
+			float : right;
+			background-color : pink;
+		}
+		#footer {
+			clear : both;
+			height : 100px;
+			background-color : pink;
+			margin-top : 20px;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="hleft"></div>
+			<div id="hright"></div>
+		</div>
+		<div id="section1"></div>
+		<div id="section2">
+			<div id="s2left">
+				<div id="s2left_left">
+					<div class="s2boxtop"></div>
+					<div class="s2boxbottom"></div>
+				</div>
+				<div id="s2left_right">
+					<div class="s2boxtop"></div>
+					<div class="s2boxbottom"></div>
+				</div>
+			</div>
+			<div id="s2right"></div>
+		</div>
+		<div id="section3">
+			<div id="s3left"></div>
+			<div id="s3right">
+				<div id="s3box1"></div>
+				<div id="s3box2"></div>
+			</div>
+		</div>
+		<div id="footer"></div>
+	</div>
+</body>
+</html>

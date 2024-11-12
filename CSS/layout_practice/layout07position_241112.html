@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+	<meta charset="UTF-8">
+	<title>layout7</title>
+	<style>
+		* { margin : 0; padding : 0; }
+		#wrapper {
+			width : 1400px;
+			margin : 0 auto;
+		}
+		#header {
+			height : 100px;
+			position : relative;
+		}
+		#hleft {
+			width : 300px;
+			height : 100px;
+			background-color : pink;
+			position : absolute;
+			left : 0;
+		}
+		#hright {
+			width : 500px;
+			height : 100px;
+			background-color : pink;
+			position : absolute;
+			right : 0;
+		}
+		#content {
+			height : 500px;
+			margin : 20px 0;
+			position : relative;
+		}
+		#cleft {
+			width : 600px;
+			height : 500px;
+			background-color : pink;
+			position : absolute;
+			left : 0;
+		}
+		#cright {
+			width : 780px;
+			height : 500px;
+			background-color : pink;
+			position : absolute;
+			right : 0;
+		}
+		#footer {
+			clear : both;
+			height : 100px;
+			position : relative;
+		}
+		#fleft {
+			width : 300px;
+			height : 100px;
+			background-color : pink;
+			position : absolute;
+			left : 0;
+		}
+		#fright {
+			width : 1080px;
+			height : 100px;
+			position : absolute;
+			right : 0;
+		}
+		#top {
+			height : 40px;
+			margin-bottom : 20px;
+			background-color : pink;
+		}
+		#bottom {
+			height : 40px;
+			background-color : pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="hleft"></div>
+			<div id="hright"></div>
+		</div>
+		<div id="content">
+			<div id="cleft"></div>
+			<div id="cright"></div>
+		</div>
+		<div id="footer">
+			<div id="fleft"></div>
+			<div id="fright">
+				<div id="top"></div>
+				<div id="bottom"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
