@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+	<meta charset="UTF-8">
+	<title>layout6</title>
+	<style>
+		* { margin : 0; padding : 0; }
+		#wrapper {
+			width : 1400px;
+			margin : 0 auto;
+		}
+		#header {
+			width : 690px;
+			height : 150px;
+			margin : 0 auto;
+			background-color : pink;
+		}
+		#section1 {
+			height : 150px;
+			margin : 20px auto;
+			background-color : pink;
+		}
+		#section2 {
+			width : 690px;
+			height : 300px;
+			margin : 20px auto;
+		}
+		#sleft {
+			width : 335px;
+			height : 300px;
+			margin-right : 20px;
+			float : left;
+		}
+		#ltop {
+			height : 200px;
+			margin-bottom : 20px;
+			background-color : pink;
+		}
+		#lbottom {
+			height : 80px;
+			background-color : pink;
+		}
+		#sright {
+			width : 335px;
+			height : 300px;
+			float : right;
+		}
+		#rtop {
+			height : 80px;
+			margin-bottom : 20px;
+			background-color : pink;
+		}
+		#rbottom {
+			height : 200px;
+			background-color : pink;
+		}
+		#footer {
+			clear : both;
+			height : 100px;
+		}
+		#fleft {
+			width : 690px;
+			height : 100px;
+			float : left;
+			background-color : pink;
+		}
+		#fright {
+			width : 690px;
+			height : 100px;
+			float : right;
+			background-color : pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header"></div>
+		<div id="section1"></div>
+		<div id="section2">
+			<div id="sleft">
+				<div id="ltop"></div>
+				<div id="lbottom"></div>
+			</div>
+			<div id="sright">
+				<div id="rtop"></div>
+				<div id="rbottom"></div>
+			</div>
+		</div>
+		<div id="footer">
+			<div id="fleft"></div>
+			<div id="fright"></div>
+		</div>
+	</div>
+</body>
+</html>

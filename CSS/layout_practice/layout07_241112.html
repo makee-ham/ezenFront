@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+	<meta charset="UTF-8">
+	<title>layout6</title>
+	<style>
+		* { margin : 0; padding : 0; }
+		#wrapper {
+			width : 1400px;
+			margin : 0 auto;
+		}
+		#header {
+			height : 100px;
+		}
+		#hleft {
+			width : 300px;
+			height : 100px;
+			background-color : pink;
+			float : left;
+		}
+		#hright {
+			width : 500px;
+			height : 100px;
+			background-color : pink;
+			float : right;
+		}
+		#content {
+			clear : both;
+			height : 500px;
+			margin : 20px 0;
+		}
+		#cleft {
+			width : 600px;
+			height : 500px;
+			background-color : pink;
+			float : left;
+			margin-right : 20px;
+		}
+		#cright {
+			width : 780px;
+			height : 500px;
+			background-color : pink;
+			float : right;
+		}
+		#footer {
+			clear : both;
+			height : 100px;
+		}
+		#fleft {
+			width : 300px;
+			height : 100px;
+			background-color : pink;
+			float : left;
+		}
+		#fright {
+			width : 1080px;
+			height : 100px;
+			float : right;
+		}
+		#top {
+			height : 40px;
+			margin-bottom : 20px;
+			background-color : pink;
+		}
+		#bottom {
+			height : 40px;
+			background-color : pink;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="header">
+			<div id="hleft"></div>
+			<div id="hright"></div>
+		</div>
+		<div id="content">
+			<div id="cleft"></div>
+			<div id="cright"></div>
+		</div>
+		<div id="footer">
+			<div id="fleft"></div>
+			<div id="fright">
+				<div id="top"></div>
+				<div id="bottom"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
