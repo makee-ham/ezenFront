@@ -1,0 +1,447 @@
+* { margin : 0; padding : 0; }
+#wrapper {
+	width : 100%;
+	margin : 0 auto;
+}
+/* 헤더 */
+#header {
+	height : 153px;
+}
+#sitemenuBar {
+	height : 36px;
+	background-color : #333;
+}
+#smBarWrap {
+	width : 1248px;
+	height : 36px;
+	margin : 0 auto;
+	background-color : cyan;
+}
+#select {
+	height : 40px;
+	background-color : #666;
+}
+#selectWrap {
+	width : 1248px;
+	height : 40px;
+	margin : 0 auto;
+	background-color : lightgreen;
+}
+#nav {
+	height : 76px;
+	background-color : #999
+}
+#navWrap {
+	width : 1248px;
+	height : 76px;
+	margin : 0 auto;
+	background-color : pink;
+}
+/* 퀵메뉴 */
+#quickMenu {
+	width : 52px;
+	height : 100%;
+	position : fixed;
+	top : 0;
+	right : 0;
+	background-color : orange;
+	border-left : 1px solid black;
+}
+/* 섹션1 */
+#section1 {
+	height : 301px;
+	background-color : #fff;
+	border : 1px solid black;
+}
+#s1boxWrapper {
+	width : 1248px;
+	height : 301px;
+	margin : 0 auto;
+	position : relative;
+	background-color : #f5daba;
+}
+#s1box1 {
+	width : 682px;
+	height : 250px;
+	position : absolute;
+	background-color : #eee;
+	bottom : 0;
+	left : 0;
+}
+#s1box2 {
+	width : 506px;
+	height : 250px;
+	position : absolute;
+	background-color : #eee;
+	bottom : 0;
+	right : 0;
+}
+/* 섹션2 */
+#section2 {
+	height : 150px;
+	margin-top : 50px;
+	padding : 40px 0;
+	background-color : #aaa;
+}
+#s2boxWrapper {
+	width : 1248px;
+	height : 150px;
+	margin : 0 auto;
+	background-color : #f5daba;
+}
+#s2box1 {
+	width : 174px;
+	height : 150px;
+	float : left;
+	background-color : #eee;
+}
+#s2box2 {
+	width : 957px;
+	height : 150px;
+	float : right;
+	background-color : #eee;
+}
+/* 섹션3 */
+#section3 {
+	height : 540px;
+	padding : 80px 0;
+	background-color : #fff;
+	border : 1px solid black;
+}
+#s3boxWrapper {
+	width : 1248px;
+	height : 540px;
+	margin : 0 auto;
+	background-color : #f5daba;
+}
+#s3box1 {
+	height : 130px;
+	background-color : #eee;
+}
+#s3box2 {
+	height : 410px;
+}
+#s3card1 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+#s3card2 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+#s3card3 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+#s3card4 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+#s3card5 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+#s3card6 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+#s3card7 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+#s3card8 {
+	width : 280px;
+	height : 168px;
+	margin-top : 24px;
+	margin-left : 24px;
+	float : left;
+	background-color : #eee;
+}
+/* 섹션4 */
+#section4 {
+	height : 605px;
+	padding : 80px 0;
+	background-color : #aaa;
+}
+#s4boxWrapper {
+	width : 1248px;
+	height : 605px;
+	margin : 0 auto;
+	background-color : #f5daba;
+}
+#s4box1 {
+	height : 76px;
+	background-color : #eee;
+}
+#s4box2 {
+	height : 480px;
+	background-color : #eee;
+	margin-top : 20px;
+}
+#s4card1 {
+	width : 270px;
+	height : 438px;
+	margin : 21px 20px;
+	background-color : cyan;
+	float : left;
+}
+#s4card2 {
+	width : 270px;
+	height : 438px;
+	margin : 21px 20px;
+	background-color : cyan;
+	float : left;
+}
+#s4card3 {
+	width : 270px;
+	height : 438px;
+	margin : 21px 20px;
+	background-color : cyan;
+	float : left;
+}
+#s4card4 {
+	width : 270px;
+	height : 438px;
+	margin : 21px 20px;
+	background-color : cyan;
+	float : left;
+}
+/* 섹션5 */
+#section5 {
+	height : 276px;
+	padding : 80px 64px;
+	background-color : #333;
+}
+#s5boxWrapper {
+	width : 1248px;
+	height : 276px;
+	margin : 0 auto;
+	background-color : #f5daba;
+}
+#carousel {
+	width : 1120px;
+	height : 276px;
+	margin : 0 auto;
+	background-color : #eee;
+}
+/* 섹션6 */
+#section6 {
+	height : 328px;
+	padding-bottom : 25px;
+	background-color : #fff;
+	border : 1px solid black;
+}
+#s6boxWrapper {
+	width : 1248px;
+	height : 328px;
+	margin : 0 auto;
+	position : relative;
+	background-color : #f5daba;
+}
+#s6box1 {
+	height : 48px;
+	background-color : #eee;
+}
+#s6box2 {
+	height : 264px;
+	background-color : #eee;
+	margin-top : 16px;
+}
+#s6card1 {
+	width : 400px;
+	height : 108px;
+	margin-right : 25px;
+	background-color : lightgreen;
+	float : left;
+}
+#s6card2 {
+	width : 400px;
+	height : 108px;
+	margin-right : 22px;
+	background-color : lightgreen;
+	float : left;
+}
+#s6card3 {
+	width : 400px;
+	height : 108px;
+	background-color : lightgreen;
+	float : right;
+}
+#s6card4 {
+	width : 400px;
+	height : 108px;
+	margin-right : 25px;
+	margin-top : 25px;
+	background-color : lightgreen;
+	float : left;
+}
+#s6card5 {
+	width : 400px;
+	height : 108px;
+	margin-right : 22px;
+	margin-top : 25px;
+	background-color : lightgreen;
+	float : left;
+}
+#s6card6 {
+	width : 400px;
+	height : 108px;
+	margin-top : 25px;
+	background-color : lightgreen;
+	float : right;
+}
+/* 섹션7 */
+#section7 {
+	height : 700px;
+	padding-bottom : 25px;
+	background-color : #fff;
+	border-left : 1px solid black;
+	border-right : 1px solid black;
+	border-bottom : 1px solid black;
+	padding-bottom : 80px;
+}
+#s7boxWrapper {
+	width : 1248px;
+	height : 700px;
+	margin : 0 auto;
+	background-color : #f5daba;
+}
+#s7box1 {
+	height : 48px;
+	background-color : #eee;
+}
+#s7box2 {
+	height : 661px;
+	margin : 10px 0 80px;
+	background-color : #eee;
+	position : relative;
+}
+#s7cardbox {
+	width : 1248px;
+	height : 556px;
+	position : absolute;
+	top : 60px;
+	background-color : pink;
+}
+#s7cardsection1 {
+	height : 508px;
+	float : left;
+}
+#s7s1card1 {
+	width : 294px;
+	height : 324px;
+	margin-bottom : 24px;
+	margin-right : 20px;
+	background-color : skyblue;
+}
+#s7s1card2 {
+	width : 294px;
+	height : 180px;
+	margin-bottom : 24px;
+	margin-right : 20px;
+	background-color : skyblue;
+}
+#s7cardsection2 {
+	height : 508px;
+	float : left;
+}
+#s7s2card1 {
+	width : 294px;
+	height : 180px;
+	margin-bottom : 24px;
+	margin-right : 20px;
+	background-color : skyblue;
+}
+#s7s2card2 {
+	width : 294px;
+	height : 324px;
+	margin-bottom : 24px;
+	margin-right : 20px;
+	background-color : skyblue;
+}
+#s7cardsection3 {
+	height : 508px;
+	float : left;
+}
+#s7s3card1 {
+	width : 294px;
+	height : 324px;
+	margin-bottom : 24px;
+	margin-right : 20px;
+	background-color : skyblue;
+}
+#s7s3card2 {
+	width : 294px;
+	height : 180px;
+	margin-bottom : 24px;
+	margin-right : 20px;
+	background-color : skyblue;
+}
+#s7cardsection4 {
+	height : 508px;
+	float : right;
+}
+#s7s4card1 {
+	width : 294px;
+	height : 324px;
+	margin-bottom : 24px;
+	background-color : skyblue;
+}
+#s7s4card2 {
+	width : 294px;
+	height : 180px;
+	margin-bottom : 24px;
+	background-color : skyblue;
+}
+/* 푸터 */
+#footer {
+	height : 467px;
+}
+#subMenu {
+	height : 56px;
+	background-color : #666;
+}
+#subMenuWrap {
+	width : 1248px;
+	height : 56px;
+	margin : 0 auto;
+	background-color : lightgreen;
+}
+#bio {
+	height : 411px;
+	background-color : #333;
+}
+#bioWrap {
+	width : 1248px;
+	height : 411px;
+	margin : 0 auto;
+	background-color : cyan;
+}

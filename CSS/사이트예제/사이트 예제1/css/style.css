@@ -1,0 +1,38 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+ul {
+	list-style : none;
+}
+a:link, a:visited {
+	color : #333;
+	text-decoration : none;
+}
+a:hover {
+	color : #f00;
+	text-decoration : none;
+}
+#wrapper {
+	width : 1400px;
+	margin : 0 auto;
+}
+#header {
+	height : 120px;
+	border : 1px dashed red;
+	position : relative;
+}
+#header h1 {
+	width : 200px;
+	height : 100px;
+	margin : 0 auto;
+}
+.infoLink {
+	position : absolute;
+	top : 5px;
+	right : 5px;
+}
+.infoLink li {
+	display : inline-block;
+	padding : 0 10px;
+}
