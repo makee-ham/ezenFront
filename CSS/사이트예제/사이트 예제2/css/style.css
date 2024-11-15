@@ -21,13 +21,11 @@ a:hover, a:active {
 #header {
 	height : 100px;
 	position : relative;
-	border : 1px dashed blue;
 }
 #header h1 {
 	width : 100px;
 }
 #header p {
-	border : 1px dashed blue;
 	font-size : 45px;
 	font-family : HY견명조;
 	font-weight : bold;
@@ -41,7 +39,6 @@ a:hover, a:active {
 	margin-left : -300px;
 }
 .infoLink {
-	border : 1px dashed red;
 	position : absolute;
 	top : 5px;
 	right : 0;
@@ -71,7 +68,6 @@ a:hover, a:active {
 /* 콘텐츠 영역 */
 #content {
 	height : 530px;
-	border : 1px dashed red;
 	text-align : center;
 	padding-top : 15px;
 	box-sizing : border-box;
@@ -83,6 +79,11 @@ a:hover, a:active {
 	border-radius : 20px;
 	display : inline-block;
 	margin-right : 50px;
+	line-height : 500px;
+	font-size : 20px;
+	color : red;
+	font-weight : bold;
+	box-shadow : 5px 5px 5px #999;
 }
 .box:first-child {
 	background-image : url(../images/html.jpg); /* '..'이 한 칸 빠져나가는 거임! */
@@ -93,6 +94,30 @@ a:hover, a:active {
 .box:nth-child(3) {
 	background-image : url(../images/javascript.jpg);
 }
-.box:last-child(2) {
+.box:last-child {
 	background-image : url(../images/jquery.jpg);
+	margin-right : 0;
+}
+/* 푸터 영역 */
+#footer {
+	height : 100px;
+	position : relative;
+}
+.copy {
+	width : 600px;
+	height : 100px;
+	position : absolute;
+	top : 0;
+	left : 50%;
+	margin-left : -300px;
+	text-align : center;
+	line-height : 100px;
+}
+#footer ul {
+	position : absolute;
+	top : 10px;
+	right : 0;
+}
+#footer ul li {
+	display : inline-block;
 }
