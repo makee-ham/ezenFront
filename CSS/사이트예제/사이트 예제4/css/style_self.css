@@ -1,0 +1,158 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+ul {
+	list-style : none;
+}
+a:link, a:visited {
+	text-decoration : none;
+	color : #333;
+}
+a:hover, a:active {
+	text-decoration : none;
+	color : #f00;
+}
+#wrapper {
+	width : 1400px;
+	margin : 0 auto;
+}
+/* 헤더 영역 */
+#header {
+	height : 190px;
+	position : relative;
+}
+#header h1 {
+	position : absolute;
+	left : 5px;
+	top : 5px;
+}
+.infoLink {
+	position : absolute;
+	right : 5px;
+	top : 5px;
+}
+.infoLink li {
+	display : inline-block;
+	padding-right : 15px;
+}
+.infoLink li:after {
+	content : ":";
+	padding-left : 15px;
+}
+.infoLink li:last-child {
+	padding-right : 0;
+}
+.infoLink li:last-child:after {
+	content : "";
+}
+#nav {
+	width : 1385px;
+	height : 40px;
+	position : absolute;
+	border : 1px solid black;
+	background-color : pink;
+	border-radius : 20px;
+	text-align : center;
+	line-height : 40px;
+	bottom : 5px;
+	left : 5px;
+	box-sizing : border-box;
+}
+#nav li {
+	display : inline-block;
+	padding : 0 25px;
+	font : bold 18px HY견고딕;
+}
+/* 배너 영역 */
+#banner {
+	height : 250px;
+	margin : 20px 0;
+}
+/* 콘텐츠 영역 */
+#content1 {
+	height : 120px;
+	margin : 20px 0;
+}
+#content1 p {
+	display : inline-block;
+	margin-left : 16px;
+}
+#content1 p:first-child {
+	margin-left : 3px;
+}
+#content2 {
+	height : 120px;
+	margin : 20px 0;
+}
+#content2 p {
+	display : inline-block;
+	margin-left : 40px;
+}
+#content2 p:first-child {
+	margin-left : 14px;
+}
+#notice {
+	height : 150px;
+	margin : 20px 0;
+}
+#notice div {
+	display : inline-block;
+	width : 660px;
+	text-align : center;
+	line-height : 150px;
+	margin-left : 40px;
+	border : 1px solid #333;
+}
+#notice div:first-child {
+	margin-left : 14px;
+}
+/* 푸터 영역 */
+#footer {
+	height : 150px;
+	position : relative;
+}
+#footer h1 {
+	position : absolute;
+	left : 5px;
+	top : 40px;
+}
+.copy {
+	width : 800px;
+	position : absolute;
+	left : 50%;
+	margin-left : -400px;
+}
+.footerlink {
+	width : 600px;
+	height : 45px;
+	border-radius : 20px;
+	background-color : #999;
+	text-align : center;
+	line-height : 45px;
+	margin-bottom : 20px;
+	margin-left : 100px;
+}
+.footerlink li {
+	display : inline-block;
+	padding-right : 10px;
+}
+.footerlink li:after {
+	content : "|";
+	padding-left : 10px;
+}
+.footerlink li:last-child {
+	padding-right : 0;
+}
+.footerlink li:last-child:after {
+	content : "";
+	padding-left : 0px;
+}
+.imgLink {
+	position : absolute;
+	right : 5px;
+	top : 35px;
+}
+.imgLink li {
+	display : inline-block;
+}
