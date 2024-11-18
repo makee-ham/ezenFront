@@ -1,0 +1,169 @@
+/* 공통부분 */
+* {
+	margin : 0;
+	padding : 0;
+}
+ul {
+	list-style : none;
+}
+body {
+	font-family : 나눔고딕, sans-serif;
+	font-size : 14px;
+	color : #000;
+}
+a:link, a:visited {
+	color : #333;
+	text-decoration : none;
+}
+a:hover, a:active {
+	color : #f00;
+	text-decoration : none;
+}
+#wrapper {
+	width : 1400px;
+	margin : 0 auto;
+}
+/* 헤더 영역 시작 */
+#header {
+	height : 150px;
+	position : relative;
+}
+#header h1 {
+	width : 60px;
+	height : 80px;
+	position : absolute;
+	top : 10px;
+	left : 7px;
+}
+#header .infoLink {
+	position : absolute;
+	top : 10px;
+	right : 0px;
+}
+.infoLink li {
+	display : inline-block;
+	padding : 0 8px;
+}
+.infoLink li:before {
+	content : ":";
+	margin-right : 14px;
+}
+.infoLink li:first-child:before {
+	content : "";
+}
+#nav {
+	width : 1400px;
+	height : 40px;
+	background-color : #f90;
+	position : absolute;
+	left : 0;
+	bottom : 5px;
+	border-radius : 5px;
+	text-align : center;
+}
+#nav li {
+	display : inline-block;
+	padding : 11px 20px;
+}
+#nav li a {  /* font에 관련된 것은 li 말고 바로 감싸고 있는 것에 주는 게 좋음 */
+	font-size : 18px;
+	font-family : HY견고딕, sans-serif;
+}
+/* 콘텐츠 1 영역 */
+#content1 {
+	height : 120px;
+	margin : 10px 0;
+}
+#content1 p {
+	width : 350px;
+	height : 120px;
+	float : left;
+	margin-right : 24px;
+}
+#content1 p:nth-child(2) {
+	width : 650px;
+}
+#content1 p:last-child {
+	margin-right : 0;
+	float : right;
+}
+/* 콘텐츠 2 영역 */
+#content2 {
+	height : 120px;
+}
+#content2 p{
+	width : 660px;
+	height : 120px;
+	float : left;
+}
+#content2 p:last-child {
+	float : right;
+}
+/* 공지사항 및 새소식 */
+#notice {
+	height : 150px;
+	margin : 10px 0;
+}
+#notice div {
+	width : 660px;
+	height : 150px;
+	border : 1px solid black;
+	float : left;
+	text-align : center;
+	line-height : 150px
+}
+#notice div:last-child {
+	float : right;
+}
+/* 푸터 영역 */
+#footer {
+	height : 150px;
+	position : relative;
+}
+#footer h1 {
+	width : 60px;
+	height : 60px;
+	position : absolute;
+	top : 45px;
+	left : 10px;
+}
+#footer .copy {
+	width : 800px;
+	height : 120px;
+	position : absolute;
+	left : 300px;
+	top : 10px;
+}
+.footerLink {
+	text-align : center;
+	width : 600px;
+	height : 25px;
+	background-color : #ddd;
+	margin : 0 auto;  /* 블럭 요소를 중앙으로 */
+	border-radius : 5px;
+	margin-bottom : 20px;
+}
+.footerLink li {
+	display : inline-block;
+	padding : 2px 12px;
+}
+.footerLink li:before {
+	content : "|";
+	margin-right : 20px;
+}
+.footerLink li:first-child:before {
+	content : "";
+}
+.copy p {
+	text-align : center;
+	margin-bottom : 7px;
+}
+.imgLink {
+	position : absolute;
+	top : 10px;
+	right : 0;
+}
+.imgLink li {
+	display : inline-block;
+	padding-left : 15px;
+}
