@@ -1,0 +1,107 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+ul {
+	list-style : none;
+}
+a:link, a:visited {
+	text-decoration : none;
+	color : #333
+}
+a:hover, a:active {
+	text-decoration : none;
+	color : #999;
+}
+#wrapper {
+	width : 1400px;
+	margin : 0 auto;
+}
+/* 헤더 영역 */
+#header {
+	height : 150px;
+	position : relative;
+}
+.local {
+	position : absolute;
+	top : 5px;
+	left : 3px;
+}
+.local li {
+	display : inline-block;
+	padding : 0 4px;
+}
+.local li:after {
+	content : "|";
+	padding-left : 12px;
+}
+.local li:last-child:after {
+	content : "";
+}
+#header h1 {
+	width : 328px;
+	height : 95px;
+	position : absolute;
+	top : 5px;
+	left : 536px;
+}
+.siteMenu {
+	position : absolute;
+	top : 5px;
+	right : 3px;
+}
+.siteMenu li {
+	display : inline-block;
+	padding : 0 4px;
+}
+.siteMenu li:after {
+	content : "|";
+	padding-left : 12px;
+}
+.siteMenu li:last-child:after {
+	content : "";
+	padding-left : 0;
+}
+#nav {
+	width : 1400px;
+	height : 60px;
+	position : absolute;
+	bottom : 5px;
+	text-align : center;
+	line-height : 60px;
+	border-bottom : 1px solid black;
+}
+#nav li {
+	display : inline-block;
+	padding : 0 20px;
+}
+#header p {
+	position : absolute;
+	right : 5px;
+	bottom : 5px;
+}
+/* 헤더와 배너 사이 */
+.mid {
+	height : 30px;
+	border-bottom : 1px solid black;
+	margin : 10px 0;
+}
+.mid p {
+	float : left;
+}
+.siteMap {
+	display : inline-block;
+	float : right;
+}
+.siteMap li{
+	display : inline-block;
+	padding : 0 3px;
+}
+.siteMap li:after {
+	content : ">";
+	padding-left : 10px;
+}
+.siteMap li:last-child:after {
+	content : "";
+	padding-left : 0;
+}
