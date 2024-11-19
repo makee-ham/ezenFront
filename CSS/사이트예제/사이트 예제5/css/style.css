@@ -1,0 +1,130 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+ul {
+	list-style : none;
+}
+a:link, a:visited {
+	color : #333;
+	text-decoration : none;
+}
+a:hover, a:active {
+	color : #f00;
+	text-decoration : none;
+}
+#wrapper {
+	width : 1400px;
+	margin : 0 auto;
+}
+/* 헤더 영역 */
+#header {
+	height : 150px;
+	position : relative;
+	margin-bottom : 20px;
+	border : 1px dashed red;
+}
+#header h1 {
+	width : 328px;
+	height : 95px;
+	margin : 0 auto;
+}
+.lLink {
+	position : absolute;
+	top : 5px;
+	left : 0;
+}
+.lLink li {
+	display : inline-block;
+}
+.lLink li:before {
+	content : "|";
+	padding : 0 7px 0 4px;
+}
+.lLink li:first-child:before {
+	content : "";
+	display : none;
+}
+.rLink {
+	position : absolute;
+	top : 5px;
+	right : 0;
+}
+.rLink li {
+	display : inline-block;
+}
+.rLink li:before {
+	content : "|";
+	padding : 0 7px 0 4px;
+}
+.rLink li:first-child:before {
+	content : "";
+	display : none;
+}
+/* 메인 메뉴 */
+.mainMenu {
+	text-align : center;
+	height : 60px;
+}
+.mainMenu li {
+	display : inline-block;
+	padding : 16px 20px;
+}
+.mainMenu li a {
+	font-family : HY견고딕, sans-serif;
+	font-size : 22px;
+}
+.icon1 {
+	width : 28px;
+	position : absolute;
+	right : 230px;
+	bottom : 10px;
+}
+/* 배너 영역 */
+#banner {
+	position : relative;
+}
+#banner h2 {
+	font-size : 18px;
+	border-bottom : 1px solid #999;
+	padding-bottom : 5px;
+	margin-bottom : 5px;
+}
+#banner p {
+	position : absolute;
+	right : 0;
+	top : 5px;
+}
+#banner p span {
+	font-weight : bold;
+	color : #ff8000;
+}
+/* 콘텐츠 영역 */
+#content {
+	position : relative;
+	margin : 10px 0;
+	height : 460px;
+}
+#content h2 {
+	font-size : 16px;
+}
+#content > h2 {
+	font-size : 18px;
+	border-bottom : 1px solid #999;
+	padding-bottom : 5px;
+	margin-bottom : 5px;
+}
+#content .cont {
+	width : 330px;
+	float : left;
+	margin-right : 20px;
+	text-align : center;
+}
+#content .cont:last-child {
+	margin-right : 0;
+}
+#content .cont p {
+	text-align : justify;
+	padding : 10px;
+}
+/* 푸터 영역 */
