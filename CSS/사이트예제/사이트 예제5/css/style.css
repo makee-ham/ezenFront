@@ -22,7 +22,6 @@ a:hover, a:active {
 	height : 150px;
 	position : relative;
 	margin-bottom : 20px;
-	border : 1px dashed red;
 }
 #header h1 {
 	width : 328px;
@@ -128,3 +127,43 @@ a:hover, a:active {
 	padding : 10px;
 }
 /* 푸터 영역 */
+#footer {
+	height : 180px;
+	background-color : #333;
+	position : relative;
+}
+#lfooter {
+	margin-left : 135px;
+	padding-top : 40px;
+}
+#lfooter p {
+	color : #999;
+}
+#lfooter p:last-child {
+	color : #555;
+	margin-top : 30px;
+}
+#rfooter {
+	width : 240px;
+	position : absolute;
+	top : 30px;
+	right : 60px;
+}
+#rfooter .info1 {
+	margin-left : 20px;
+	margin-top : -24px;
+	margin-bottom : 10px;
+}
+#rfooter p {
+	color : #fff;
+}
+#rfooter .tel {
+	font-size : 30px;
+}
+#rfooter .online {
+	border : 1px solid #fff;
+	height : 45px;
+	text-align : center;
+	line-height : 45px;
+	font-size : 14px;
+}
