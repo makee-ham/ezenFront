@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>삼성핸드폰사이트</title>
+		<meta charset="utf-8">
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<script>
+		  $(function(){
+		    $("img.menu").mouseover(function(){
+			  $(this).attr("src", $(this).attr("src").replace(".png", "_1.png"));
+			});
+			$("img.menu").mouseout(function(){
+			  $(this).attr("src", $(this).attr("src").replace("_1.png", ".png"));
+			});
+		  });
+		</script>
+	</head>
+	<body>
+		
+	</body>
+</html>
