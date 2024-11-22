@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* 기본 사항 */
+* {
+	margin : 0;
+	padding : 0;
+}
+body {
+	font-family : 나눔고딕, sans-serif;
+	color : #333;
+	background-color : #000;
+}
+ul { list-style : none; }
+a { text-decoration : none; }
+.wrap {
+	width : 1600px;
+	margin : 0 auto;
+}
+/* 헤더 영역 시작 */
+header {
+	height : 100px;
+	background-color : #fff;
+	position : relative;
+}
+header h1 {
+	width : 132px;
+	height : 47px;
+	position : absolute;
+	top : 25px;
+	left : 90px;
+}
+header .mainMenu {
+	position : absolute;
+	top : 40px;
+	left : 250px;
+}
+header .mainMenu li {
+	display : inline-block;
+	padding : 0 15px;
+}
+header .mainMenu li:last-child:after {
+	content : "";
+	display : inline-block;
+	width : 15px;  /* 인라인 요소는 크기가 안 잡힘 */
+	height : 16px;
+	background : url(../images/digital.png) no-repeat;
+	background-size : 15px 16px;
+	position : relative;
+	top : 2px;
+	left : 4px;
+}
+header .linkMenu {
+	position : absolute;
+	top : 40px;
+	right : 50px;
+}
+header .linkMenu li {
+	display : inline-block;
+	padding : 0 15px;
+}
+header .linkMenu img { width : 20px; }
+/* 배너 영역 시작 */
+#banner {
+	height : 500px;
+	background : url(../images/slidebanner.png) no-repeat;
+	background-position : 90% 0%;  /* 너비의 90, 수직의 0 */
+	padding-left : 240px;
+	overflow : hidden;
+	box-sizing : border-box;
+}
+#banner h2 {
+	margin-top : 140px;
+	color : #fff;
+	font-size : 35px;
+	margin-bottom : 20px;
+}
+#banner p {
+	color : #fff;
+	margin-bottom : 30px;
+	letter-spacing : -1px;
+}
+#banner p span {
+	background-color : #fff;
+	color : #000;
+	margin-right : 20px;
+	padding : 10px 20px;
+	border-radius : 20px;
+}
+#banner p:last-child {
+	font-size : 12px;
+}
+/* 콘텐츠 영역 */
+#content {
+	height : 750px;
+}
+#content h2 {
+	color : #fff;
+	font-size : 30px;
+	text-align : center;
+	margin-bottom : 15px;
+}
+#content ul { text-align : center; }
+#content ul li {
+	display : inline-block;
+	width : 330px;
+	height : 640px;
+	border : 2px solid #fff;
+	margin-right : 20px;
+}
+#content ul li:last-child {
+	margin-right : 0;
+}
+#content ul li p:first-child {
+	margin-top : 40px;
+}
+#content li h3 {
+	color : #fff;
+	margin-top : 30px;
+}
+#content li p {
+	color : #fff;
+	margin-top : 20px;
+}
+#content li p:last-child {
+	border : 1px solid #fff;
+	width : 70%;
+	margin : 50px auto 0;
+	padding : 10px 0;
+	border-radius : 40px;
+}
