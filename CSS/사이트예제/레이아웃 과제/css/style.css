@@ -1,0 +1,169 @@
+/* 공통 영역 */
+* {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+a:link, a:visited {
+    color : #333;
+    text-decoration : none;
+}
+a:hover, a:active {
+    color : #f00;
+    text-decoration : none;
+}
+#wrapper {
+    width : 1600px;
+    margin : 0 auto;
+}
+/* 헤더 영역 */
+header {
+    height : 100px;
+    position : relative;
+}
+h1 {
+    width : 200px;
+    height : 90px;
+    text-align : center;
+    line-height : 90px;
+    margin : 5px auto;
+    border : 1px solid #333;
+}
+.siteMenu {
+    font-size : 14px;
+    position : absolute;
+    top : 5px;
+    left : 0;
+}
+.siteMenu li {
+    display : inline-block;
+    padding : 0 5px;
+}
+.siteMenu li:after {
+    content : ":";
+    padding-left : 10px;
+}
+.siteMenu li:last-child:after {
+    content : "";
+}
+.lang {
+    font-size : 14px;
+    position : absolute;
+    top : 5px;
+    right : 0;
+}
+.lang li {
+    display : inline-block;
+    padding : 0 5px;
+}
+.lang li:before {
+    content : ":";
+    padding-right : 10px;
+}
+.lang li:first-child:before {
+    content : "";
+}
+/* 내비게이션 영역 */
+#nav {
+    height : 50px;
+    font-size : 20px;
+    font-weight : bold;
+    text-align : center;
+    line-height : 50px;
+    margin : 10px 0;
+}
+#nav li {
+    display : inline-block;
+    padding-right : 26px;
+}
+#nav li:last-child {
+    padding-right : 0;
+}
+/* 배너 영역 */
+#banner {
+    height : 200px;
+    margin : 20px 0;
+}
+.schoolImages {
+    width : 780px;
+    height : 200px;
+    border : 1px solid #333;
+    float : left;
+}
+.schoolImages:last-child {
+    float : right;
+}
+/* 콘텐츠 영역 */
+#content {
+    height : 240px;
+    margin : 20px 0;
+}
+.noti {
+    width : 780px;
+    height : 240px;
+    border : 1px solid #333;
+    float : left;
+}
+.noti:last-child {
+    float : right;
+}
+/* 이벤트 영역 */
+#event {
+    height : 100px;
+    margin : 20px 0;
+}
+.news {
+    width : 440px;
+    height : 100px;
+    border : 1px solid #333;
+    float : left;
+    margin-right : 26px;
+}
+.news:nth-child(2) {
+    width : 660px;
+}
+.news:last-child {
+    margin-right : 0;
+}
+/* 푸터 영역 */
+footer {
+    height : 100px;
+    border : 1px solid #333;
+    position : relative;
+}
+h2 {
+    width : 60px;
+    height : 60px;
+    border : 1px solid #333;
+    text-align : center;
+    line-height : 60px;
+    position : absolute;
+    top : 20px;
+    left : 10px;
+}
+.family {
+    width : 100px;
+    height : 80px;
+    position : absolute;
+    top : 10px;
+    right : 10px;
+}
+.family li {
+    display : inline-block;
+    width : 45px;
+    height : 80px;
+    border : 1px solid #333;
+    float : left;
+}
+.family li:last-child {
+    float : right;
+}
+.copy {
+    text-align : center;
+    margin-top : 25px;
+}
+.copy p:first-child {
+    padding-bottom : 8px;
+}
