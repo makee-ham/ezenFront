@@ -127,3 +127,36 @@ header .linkMenu img { width : 20px; }
 	padding : 10px 0;
 	border-radius : 40px;
 }
+/* 푸터 영역 */
+footer {
+	height : 170px;
+	position : relative;
+	background-color : #fff;
+}
+footer section {
+	margin-left : 140px;
+	padding-top : 35px;
+	width : 700px;  /*SNS 영역과 겹치는 게 없도록*/
+}
+footer section p {
+	margin-bottom : 5px;
+}
+footer section p span {
+	margin-right : 10px;
+}
+footer ul {
+	position : absolute;
+	top : 40px;
+	right : 100px;
+}
+footer ul li {
+	display : inline-block;
+}
+footer ul li:first-child {
+	margin-right : 20px;
+}
+footer ul li:nth-child(2) {
+	position : relative;
+	top : -13px;
+	margin-right : 10px;
+}
