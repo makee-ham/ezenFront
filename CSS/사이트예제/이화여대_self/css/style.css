@@ -87,14 +87,28 @@ header form input {
     box-sizing : border-box;
     outline : 0;
     border : 1px solid #ccc;
-    margin-right : -1px;
+	position : absolute;
+	top : 0;
+	left : 0;
+    /*margin-right : -1px;*/
+}
+header form span {  /* 박스 만들고 그 안에 아이콘 넣기, 전부 absolute 계산 */
+	display : inline-block;
+    box-sizing : border-box;
+	width : 43px;
+	height : 43px;
+	border : 1px solid #ccc;
+	border-left : 0;
+	position : absolute;
+	top : 0;
+	left : 284px;
 }
 header form img {
-    border : 1px solid #ccc;
-    border-left : none;
+    position : absolute;
     margin-left : -5px;
-    padding : 13px 10px 9.1px 10px;  /* 살려주세요 */
-    vertical-align: middle;
+    /*padding : 13px 10px 9.1px 10px;   살려주세요 */
+    top : 13px;
+	left : 300px;
 }
 header ul {
     width : 200px;
