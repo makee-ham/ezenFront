@@ -1,5 +1,8 @@
 @charset "utf-8";
-
+.hidden {
+	position : absolute;
+	left : -9999em;  /* 아니면 display : none; */
+}
 
 /* 웹폰트 */
 @font-face {
@@ -35,4 +38,127 @@
          url('font/webcafeIcon.ttf') format('truetype'),
          url('font/webcafeIcon.svg#webcaferegular') format('svg');
 }
-
+/* 초기화(기본 사항) */
+* {
+	margin : 0;
+	padding : 0;
+}
+ul { list-style : none; }
+/* 링크 스타일 */
+a:link {
+	color : #4f4f4f;
+	text-decoration : none;
+}
+a:visited {
+	color : #8a8e91;
+	text-decoration : none;
+}
+a:hover, a:focus {
+	color : #f00;
+	text-decoration : none;
+}
+/* 기본 스타일 */
+body {
+	color : #000;
+	background-color : #fff;
+	font-size : 0.75em;  /* 부모나 기준 없을 땐 16px 기준 */
+	line-height : 1.2;  /* 120% */
+	font-family : nanum;
+}
+/* 건너뛰기 링크 */
+#skipNav {
+	position : absolute;
+	left : -9999em;
+}
+#skipNav:focus {  /* tab 눌러서 얘가 선택되면 */
+	left : 50%;
+	margin : 3px 0 0 -3em;  /* em은 한 글자 */
+	padding : 5px 15px;
+	color : #fff;
+	background-color : #000;
+	outline : 0;  /* 포커스 됐을 때 선 안 진해지게 하기 */
+	z-index : 10;
+}
+/* 전체 레이아웃 */
+#wrapper {
+	background-color : #fff;
+	background-image : url(images/bg_flower.png), linear-gradient(to bottom, #c7c7c7 0%, #fff 100%);
+	background-repeat : no-repeat;
+	background-position : center top;
+}
+#header, #visual, #contentsArea, #slogan, #footerInner {
+	width : 940px;
+	margin : 0 auto;
+	box-sizing : border-box;
+}
+#header {
+	height : 110px;
+	background-color : #fff;
+	padding : 0 30px;
+	border-radius : 0 0 15px 15px;
+	position : relative;
+}
+#visual {
+	height : 120px;
+	position : relative;
+}
+#contentsArea {
+	min-height : 400px;  /* 최소 높이. 콘텐츠에 따라 더 커질 수 있음! */
+	padding : 30px 30px 0 30px;
+	background-color : #fff;
+	border-radius : 15px 15px 0 0;
+	overflow : hidden;
+}
+#usefulArea {
+	width : 250px;
+	float : left;
+	margin-right : 30px;
+}
+#infoArea {
+	width : 380px;
+	float : left;
+	margin-right : 30px;
+}
+#linkArea {
+	width : 190px;
+	float : left;
+}
+#slogan {
+	padding : 15px 0;
+	position : relative;
+}
+#footer {
+	padding : 15px 0;
+	background-image : linear-gradient(to bottom, #c7c7c7 0%, #fff 70%, #fff 100%);
+}
+#footerInner {
+	position : relative;
+}
+/* 헤더 영역 */
+.logo {
+	position : absolute;
+	top : 35px;
+	left : 60px;
+}
+.infoLink {
+	text-align : right;
+}
+.infoLink li {
+	display : inline-block;
+	padding : 8px 0 7px 3px;
+}
+.infoLink li:before {
+	content : ":";
+	padding-right : 8px;
+}
+.infoLink li:first-child:before {
+	content : "";
+}
+/* 메인 메뉴 */
+.mainMenu {
+	border-top : 2px solid #000;
+	background-image : linear-gradient(to bottom, #ffc848 0%, #ff8208 40%, #ff8208 60%, #ffc848 100%);
+	border-radius : 0 0 5px 5px;
+	height : 45px;
+	padding-left : 225px;
+}
