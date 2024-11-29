@@ -162,3 +162,99 @@ body {
 	height : 45px;
 	padding-left : 225px;
 }
+.mainMenu li, .mainMenu a {
+	display : inline-block;
+}
+.mainMenu > li > a {
+	font-family : NanumEX;
+	font-size : 14px;
+	letter-spacing : 1px;
+	padding : 15px 20px 14px;
+	color : #fff;
+	text-shadow : 1px 0px rgba(0,0,0,0.2), -1px 0px rgba(0,0,0,0.2), 0px 1px rgba(0,0,0,0.2);
+}
+.mainMenu > li > a:hover, .mainMenu > li > a:focus {
+	color : #ff0;
+}
+.mainMenu > li > a:hover:after {
+	content : "";
+	display : block;  /* 인라인 요소에는 width 못 주므로 */
+	width : 100%;
+	height : 2px;
+	background : #000;
+	position : relative;
+	top : 12px;
+}
+.mainMenu > li {
+	position : relative;
+}
+.mainMenu ul {
+	position : absolute;
+	white-space : nowrap;  /* 글씨가 가로로 다 들어가지 못할 때, 아래 줄로 떨어지지 않게 함! 기본은 wrap(떨어짐) */
+	z-index : 10; /* 배너 등에 안 가려지게 하기 위해 */
+	display : none;
+}
+.mainMenu ul a {
+	padding : 8px 0 7px 15px;
+}
+.mainMenu ul a:before {
+	font-family : webcafeIcon;
+	content : "r";
+	color : #666;
+	position : relative;
+	top : 2px;
+}
+.mainMenu ul a:hover:before, .mainMenu ul a:focus:before {
+	content : "c";
+	color : #f00;
+}
+/* 비주얼 영역 */
+/* 비주얼 텍스트 */
+@keyframes textAni {
+	0% {
+		font-size : 12px;
+		top : 0px;
+		left : 0px;
+		opacity : 0.2;
+	}
+	100% {
+		font-size : 24px;
+		top : 75px;
+		left : 400px;
+		opacity : 1;
+	}
+}
+#visual p {
+	font-family : Georgia, serif;
+	font-size : 24px;
+	font-weight : bold;
+	position : absolute;
+	top : 75px;
+	left : 400px;
+	animation : textAni 1s;
+}
+/* flower 애니메이션 */
+@keyframes flowerAni {
+	0% {
+		opacity : 1;
+	}
+	100% {
+		opacity : 0;
+	}
+}
+#visual:before, #visual:after {
+	width : 100%;
+	height : 140px;
+	position : absolute;  /* before..은 inline 요소라 너비높이 못 주는 게 기본이지만, absolute 주면서 붕 떠서 너비높이 지정이 가능하게 됨! */
+	top : -20px;
+	left : 0;
+	content : "";
+	animation : flowerAni 2s;
+	animation-iteration-count : infinite;
+	animation-direction : alternate;
+}
+#visual:before {
+	background-image : url(images/ani_flower_01.png), url(images/ani_flower_02.png);
+	background-repeat : no-repeat;
+	background-position : 0 5px, 670px 0;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>전환효과</title>
+	<style>
+		div {
+		width : 100px;
+		height : 50px;
+		border : 1px solid black;
+		background-color : yellow;
+		transition : all 1s;  /* width 바뀔 때 n초 걸려라! 부드럽게! */
+		}
+		div:hover {
+			width : 200px;
+			height : 100px;
+			background-color : pink;
+			transform : rotate(180deg);  /* degree */
+		}
+	</style>
+</head>
+<body>
+	<h2>전환효과</h2>
+	<div>마우스를 올려보세요</div>
+</body>
+</html>
