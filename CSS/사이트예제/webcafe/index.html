@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <title>WebCafe</title>
 <link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 	<!-- 건너뛰기 링크 시작 -->
@@ -93,7 +94,7 @@
 					<fieldset>
 						<legend>회원 로그인 폼</legend>
 						<p>
-							<label for="userId">아이디</label> <input type="text" id="userId" name="userId" required placeholder="Guest">
+							<label for="userId">아이디</label> <!-- for로 연결돼서 label 클릭해도 input 찍힘 --> <input type="text" id="userId" name="userId" required placeholder="Guest">
 						</p>
 						<p>
 							<label for="userPw">비밀번호</label> <input type="password" id="userPw" name="userPw" required placeholder="4자이상 8자이하">
@@ -247,7 +248,7 @@
 		<section id="slogan">
 			<h1 title="웹카페에서 웹표준을">Web Cafe 슬로건</h1>
 			<p>
-				<q>The power of the Web is in its universality, Access by everyone regardless of disability is an essential aspect.</q>
+				<q>The power of the Web is in its universality, Access by everyone regardless of disability is an essential aspect.</q> <!-- quote. before과 after의 값은 큰따옴표가 된다. -->
 				Tim Berners - Lee , W3C Director and inventor of the World Wide Web
 			</p>
 			<!-- 슬로건 푸터 시작 -->

@@ -1,0 +1,89 @@
+/* 로그인 영역 */
+.login {
+	background-image : radial-gradient(circle at top right, #ffc848, #ff8208);
+	border-ladius : 5px;
+	padding : 10px;
+	box-shadow : 1px 1px 5px rgba(0,0,0,0.2);
+}
+.login h1 {
+	color : #feff9a;
+	font-size : 14px;
+	font-weight : bold;
+	padding : 0 0 10px 10px;
+}
+.login form {
+	background-color : #fff;
+	border-radius : 3px 3px 0 0;
+	padding : 10px 10px 0 10px;
+	position : relative;
+}
+.login input {
+	width : 92px;
+	height : 18px;
+	padding : 1px 1px 1px 4px;
+	border : 1px solid #ccc;
+}
+.login label {
+	width : 48px;
+	display : inline-block;
+}
+.login button {
+	position : absolute;
+	top : 10px;
+	right : 10px;
+	width : 50px;
+	height : 50px;
+	font-size : 11px;
+	color : #fff;
+	border : 1px solid #ff4e00;
+	border-radius : 3px;
+	background-image : linear-gradient(to bottom, #fa5f18 0%, #fa4306 100%);
+}
+.login fieldset {
+	padding : 0 0 10px 0;
+	border-bottom : 1px solid #ccc;
+}
+#userId { margin-bottom : 6px; }
+.memberLink {
+	background-color : #fff;
+	border-radius : 0 0 3px 3px;
+	padding : 0 10px;
+	overflow : hidden;
+}
+.join {
+	padding : 10px 0;
+	float : left;
+}
+.find {
+	padding : 10px 0;
+	float : right;
+}
+.memberLink a:before {
+	font-family : webcafeIcon;
+	content : "g";
+	color : #fa3d00;
+	position : relative;
+	top : 2px;
+	margin-right : 3px;
+}
+/* 유효성 검사 영역 */
+.validation {
+	margin-top : 20px;
+}
+.validation li {
+	margin-bottom : 10px;
+	border : 1px solid #ccc;
+	border-radius : 20px;
+	background-color : #fff;  /* 배경색 안 주면 그림자 등 이상하게 먹을 수도 있음 */
+	background-image : linear-gradinet(to bottom, #fff 0%, #ebebeb 100%);
+}
+.validation a {
+	display : block;
+	height : 30px;
+	line-height : 30px;
+	color : #9c9c9c;
+	font-weight : bold;
+	text-indent : 45px;
+	background : url(images/validation_icon.png) no-repeat 20px 5px;
+	background-size : 20px 20px;
+}

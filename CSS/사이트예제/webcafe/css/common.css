@@ -1,7 +1,10 @@
 @charset "utf-8";
-.hidden {
+.hidden, legend {
 	position : absolute;
 	left : -9999em;  /* 아니면 display : none; */
+}
+fieldset {
+	border : 0;
 }
 
 /* 웹폰트 */
@@ -257,4 +260,80 @@ body {
 	background-image : url(images/ani_flower_01.png), url(images/ani_flower_02.png);
 	background-repeat : no-repeat;
 	background-position : 0 5px, 670px 0;
+}
+#visual:after {
+	background-image : url(images/ani_flower_03.png), url(images/ani_flower_04.png);
+	background-repeat : no-repeat;
+	background-position : 300px 35px, 800px 65px;
+	animation-delay : 1s;
+}
+/* 슬로건 영역 */
+#slogan h1 {  /* 그림이나 아이콘 넣는 방법으로서 요즘 추세!! */
+	width : 110px;
+	height : 90px;
+	white-space : nowrap;
+	text-indent : 110px;  /* 첫 줄 띄기 */
+	overflow : hidden;
+	background : url(images/coffee.png) no-repeat;
+	background-size : 110px 90px;
+	position : absolute;
+	bottom : -25px;
+	left : 30px;
+}
+#slogan p {
+	margin : 0 100px 0 200px;
+	color : #a09784;
+	font-size : 13px;
+}
+#slogan q {
+	font-weight : bold;
+}
+#slogan q:before {
+	font-size : 36px;
+	color : #765725;
+	position : relative;
+	top : 15px;
+	left : -5px;
+}
+#slogan q:after {
+	content : "";
+}
+/* 푸터 콘텐츠 */
+.guide, address, .copyright {
+	margin : 0 100px 0 200px;
+}
+.footerLogo {
+	position : absolute;
+	top : 45px;
+	left : 35px;
+}
+.guide {
+	background : #7b8385;
+	border-radius : 5px;
+	padding-left : 20px;
+	margin-bottom : 10px;
+	text-transform : uppercase;
+}
+.guide li {
+	display : inline-block;
+	padding : 10px 15px 10px 0;
+}
+.guide li a { color : #fff; }
+.guide li:before {
+	content : "|";
+	padding-right : 20px;
+	color : #fff;
+}
+.guide li:first-child:before {
+	content : "";
+}
+address {
+	font-style : normal;
+	margin-bottom : 5px;
+}
+address span { margin-right : 10px; }
+.techLogoArea {
+	position : absolute;
+	top : 0;
+	right : 0;
 }
