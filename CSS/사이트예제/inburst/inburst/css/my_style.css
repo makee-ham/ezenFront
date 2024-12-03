@@ -1,0 +1,86 @@
+* {
+    margin : 0;
+    padding : 0;
+}
+body {
+    font-family : "나눔고딕", sans-serif;
+    font-size : 14px;
+    color : #000;
+}
+ul {
+    list-style : none;
+}
+a:link, a:visited {
+    color : #000;
+    text-decoration : none;
+}
+a:hover, a:focus {
+    color : #333;
+    text-decoration : none;
+}
+#header, #banner2, #contents {
+    width : 1200px;
+    margin : 0 auto;
+}
+#header {
+    height : 115px;
+    position : relative;
+}
+#header h1 {
+    position : absolute;
+    top : 0;
+    left : 0;
+}
+.infoLink {
+    position : absolute;
+    top : 20px;
+    right : 0;
+}
+.infoLink li {
+    display : inline-block;
+    padding-left : 7px;
+}
+.infoLink li:before {
+    content : "|";
+    margin-right : 6px;
+}
+.infoLink li:first-child:before {
+    content : "";
+}
+form {
+    position : absolute;
+    bottom : 20px;
+    right : 0;
+}
+#header form input {
+    width : 250px;
+    height : 40px;
+    background-color : #eee;
+    border : 0;
+    padding-left : 20px;
+    border-radius : 20px;
+}
+#header form img {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    /* 여기 질문드림 */
+    top : 10px;
+    right : 20px;
+}
+.mainMenu {
+    position : absolute;
+    left : 20px;
+    bottom : 20px;
+}
+.mainMenu li {
+    display : inline-block;
+    padding : 0 20px 0 0;
+}
+.mainMenu li a {
+    font-weight : bold;
+    font-size : 16px;
+}
+.mainMenu li a:hover {
+    color : #f00;
+}
