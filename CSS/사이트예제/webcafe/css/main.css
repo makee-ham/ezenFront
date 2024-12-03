@@ -1,7 +1,7 @@
 /* 로그인 영역 */
 .login {
 	background-image : radial-gradient(circle at top right, #ffc848, #ff8208);
-	border-ladius : 5px;
+	border-radius : 5px;
 	padding : 10px;
 	box-shadow : 1px 1px 5px rgba(0,0,0,0.2);
 }
@@ -75,7 +75,7 @@
 	border : 1px solid #ccc;
 	border-radius : 20px;
 	background-color : #fff;  /* 배경색 안 주면 그림자 등 이상하게 먹을 수도 있음 */
-	background-image : linear-gradinet(to bottom, #fff 0%, #ebebeb 100%);
+	background-image : linear-gradient(to bottom, #fff 0%, #ebebeb 100%);
 }
 .validation a {
 	display : block;
@@ -86,4 +86,160 @@
 	text-indent : 45px;
 	background : url(images/validation_icon.png) no-repeat 20px 5px;
 	background-size : 20px 20px;
+}
+/* 웹 관련 용어 */
+.term {
+	margin-top : 20px;
+	border : 1px solid #ccc;
+	border-radius : 5px;
+	background-color : #fff;
+	background-image : linear-gradient(to bottom, #fff 0%, #ebebeb 100%);
+	padding : 15px 20px;
+	overflow : hidden;
+}
+.term h1 { font-size : 14px; }
+.term dl {
+	margin-top : 15px;
+}
+.term a dt {
+	color : #296897;
+	font-weight : bold;
+	float : right;  /* 하지만 블럭요소이므로 너비와 높이 줄 수 있다! 다시 한 번, 인라인 요소는 너비와 높이를 줄 수 없다.*/
+	width : 130px;
+	margin-bottom : 5px;
+}
+.term dd:nth-of-type(1) {
+	float : left;
+}
+.term dd:nth-of-type(2) {
+	float : right;
+	width : 130px;
+	line-height : 1.4;
+	text-align : justify;
+}
+/* 신규 이벤트 및 관련 사이트 */
+.eventRelatedArea {
+	border : 1px solid #ccc;
+	border-radius : 5px;
+	background-color : #fff;
+	background-image : linear-gradient(to bottom, #fff 0%, #f4f4f4 100%);
+	padding : 10px 13px;
+}
+.event { position : relative; }
+.event h1 {
+	font-size : 14px;
+	margin-bottom : 10px;
+}
+.event h1 span { color : #ff3c00; }
+.event img {
+	border : 1px solid #eee;
+	box-shadow : 4px 4px 4px rgba(0,0,0,0.1);
+}
+.event p {
+	padding : 10px 0;
+	line-height : 1.4;
+}
+.event em {
+	font-style : normal;
+	display : block;
+}
+.btnEventArea {
+	position : absolute;
+	top : 0;
+	right : 0;
+}
+.btnEventArea a {
+	display : inline-block;
+	width : 20px;
+	height : 20px;
+	white-space : nowrap;
+	text-indent : 20px;
+	overflow : hidden;
+	background-color : #fff;
+	background-image : url(images/back_forward.png);
+	background-repeat : no-repeat;
+}
+.btnEventPrev {
+	background-position : 0 0;
+}
+.btnEventNext {
+	background-position : 100% 0;  /* 수평 100%니까 float right와 같이 끝(우측)이 딱 붙어서 */
+}
+/* 관련 사이트 */
+.relatedLink h1 {
+	font-size : 14px;
+	border-top : 1px solid #ccc;
+	padding : 10px 0;
+}
+.relatedLink span {
+	color : #ff3c00;
+}
+.relatedLink ul {
+	border : 1px solid #ccc;
+	height : 25px;
+	border-radius : 5px;
+	background-color : #fff;
+	overflow : hidden;
+	transition : all 0.2s;
+}
+.relatedLink ul:hover {
+	height : 125px;
+}
+.relatedLink li {
+	height : 25px;
+	line-height : 25px;
+	text-indent : 1.5em;
+}
+.relatedLink li a {
+	display : block;
+}
+/* 인기 사이트 */
+.hotLink {
+	margin-top : 20px;
+	border : 1px solid #ccc;
+	border-radius : 5px;
+	background-color : #fff;
+	background-image : linear-gradient(to bottom, #fff 0%, #f4f4f4 100%);
+	padding : 10px 8px;
+	position : relative;
+}
+.hotLink h1 {
+	font-size : 14px;
+}
+.hotLink span { color : #ff3c00; }
+.hotLink ol {
+	margin-top : 5px;
+	overflow : hidden;
+}
+.hotLink li {
+	margin-top : 7px;
+	counter-increment : number;  /* increment 오름차순 decrement 내림차순 */
+}
+.hotLink li:before {
+	content : counter(number, decimal);  /* 이름, 형식 */
+	background : #a1a1a1;
+	padding : 1px 5px;
+	border-radius : 3px;
+	margin-right : 5px;
+	color : #fff;
+	font-size : 0.75em;
+}
+.hotLink em {
+	float : right;
+	width : 8px;
+	height : 0;
+	padding-top : 12px;
+	overflow : hidden;
+	background : url(images/rank.png) no-repeat 0 0;
+}
+.hotLink .stop {
+	background-position : 0 50%;
+}
+.hotLink .down {
+	background-position : 0 100%;
+}
+.hotLink .more {
+	position : absolute;
+	top : 8px;
+	right : 6px;
 }

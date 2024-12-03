@@ -1,0 +1,220 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+body {
+	font-family : "나눔고딕", sans-serif;
+	font-size : 14px;
+	color : #000;
+}
+ul { list-style : none; }
+/* 링크 스타일 */
+a:link, a:visited {
+	color : #000;
+	text-decoration : none;
+}
+a:hover, a:focus {
+	color : #333;
+	text-decoration : none;
+}
+#header, #contents, #banner2 {
+	width : 1200px;
+	margin : 0 auto;
+}
+#header {
+	height : 115px;
+	position : relative;
+}
+.infoLink {
+	position : absolute;
+	top : 20px;
+	right : 0;
+}
+.infoLink li {
+	display : inline-block;
+	padding : 0 0 7px 0;
+}
+.infoLink li:before {
+	content : "|";
+	margin-right : 6px;
+}
+.infoLink li:first-child:before {
+	content : "";
+}
+#header form {
+	position : absolute;
+	right : 0;
+	bottom : 20px;
+}
+#header form input {
+	width : 250px;
+	height : 40px;
+	background-color : #eee;
+	border : 0;
+	padding-left : 20px;
+	border-radius : 20px;
+}
+#header form img {
+	position : absolute;
+	width : 20px;
+	height : 20px;
+	top : 10px;
+	right : 20px;
+}
+.mainMenu {
+	position : absolute;
+	left : 20px;
+	bottom : 20px;
+}
+.mainMenu li {
+	display : inline-block;
+	padding : 0 20px 0 0;
+}
+.mainMenu li a {
+	font-weight : bold;
+	font-size : 16px;
+}
+.mainMenu li a:hover {
+	color : #f00;
+}
+.mainMenu li:first-child:before {
+	display : inline-block;
+	content : "";
+	width : 20px;
+	height : 20px;
+	background : url(../images/ft_nabi_icon01.png) no-repeat;
+	background-size : 20px 20px;
+	position : relative;
+	top : 4px;
+	margin-right : 5px;
+}
+#banner {
+	border-top : 1px solid #ccc;
+	padding-top : 10px;
+	text-align : center;
+}
+/* 콘텐츠 영역 */
+#bannerTop {
+	height : 75px;
+	position : relative;
+	overflow : hidden;
+}
+#bannerTop h1 {
+	font-size : 16px;
+	margin-top : 30px;
+	color : #333;
+}
+#bannerTop .more {
+	position : absolute;
+	top : 30px;
+	right : 5px;
+	border-bottom : 1px solid #999;
+}
+/* 콘텐츠 영역의 div 설정 */
+#contentMain {
+	overflow : hidden;
+}
+.contents {
+	width : 280px;
+	height : 380px;
+	text-align : center;
+	float : left;
+	margin-right : 26px;
+	margin-bottom : 30px;
+}
+#contentMain div:nth-child(4n+0) {
+	margin-right : 0;
+}
+.contents img {
+	border-radius : 20px;
+	border : 1px solid #ccc;
+}
+.contents h1 {
+	font-size : 16px;
+	margin : 20px 0;
+	text-align : left;
+}
+.contents p {
+	text-align : left;
+}
+.contents p span {
+	color : #f00;
+}
+.contents p b {
+	font-size : 24px;
+}
+.contents p strong {
+	color : #666;
+	text-decoration : line-through;
+}
+.contents p em {
+	font-style : normal;
+}
+/* 푸터 영역 */
+#footer {
+	background-color : #333;
+}
+.fLink {
+	height : 40px;
+	text-align : center;
+	box-sizing : border-box;
+	border-bottom : 1px solid #666;
+}
+.fLink li {
+	display : inline-block;
+	padding : 10px 20px;
+}
+.fLink li a {
+	color : #fff;
+	font-size : 15px;
+	font-weight : bold;
+}
+#fCopy {
+	padding : 15px 0;
+}
+#fCopy p {
+	color : #999;
+	text-align : center;
+	letter-spacing : -1px;
+}
+#fCopy p:first-child {
+	font-size : 15px;
+}
+#fCopy p span {
+	display : inline-block;
+	padding : 2px 5px;
+	border : 1px solid #999;
+	border-radius : 15px;
+	font-weight : bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
