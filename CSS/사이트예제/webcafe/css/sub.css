@@ -1,0 +1,23 @@
+#contents {
+	width : 620px;
+	float : left;
+	margin-right : 30px;
+	position : relative;
+}
+#twitter {
+	width : 200px;
+	float : left;
+	padding-top : 15px;
+	position : relative;
+	margin-left : 30px;  /* float를 하면 요소 각각의 '레이어'가 달라서, margin 주면 퉁쳐지지 않고 따로따로 다 적용됨! 같은 '레이어'에 있어야 margin 퉁쳐짐. */
+}
+#twitter:before {
+	content : "";
+	width : 10px;
+	height : 90%;
+	position : absolute;
+	top : 20px;
+	left : -35px;
+	border-radius : 50%;
+	background : linear-gradient(to right, rgba(251,251,251,0.5) 0%, rgba(229,229,229,0.7) 100%);  /* 그라디언트는 background-image나 background에서 줄 수 있고, background-color는 안 됨!! */
+}

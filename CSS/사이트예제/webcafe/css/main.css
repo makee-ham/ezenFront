@@ -243,3 +243,177 @@
 	top : 8px;
 	right : 6px;
 }
+/* 메인 중앙 infoArea 영역 */
+/* 검색 폼 */
+.search {
+	border-radius : 15px 15px 0 0;
+	background-image : linear-gradient(to bottom, #ddd 0%, #f8f8f8 50%, #fff 100%);
+	padding : 10px 20px 0;
+}
+.search label {
+	padding : 2px 0 4px 2px;
+	font-weight : bold;
+	color : #999;
+}
+.search label:before {
+	font-family : webcafeIcon;
+	content : "z";
+	position : relative;
+	top : 5px;
+	font-size : 18px;
+	color : #7d7d7d;
+	font-weight : normal;
+	margin-right : 5px;
+}
+#keyword {
+	width : 196px;
+	height : 18px;
+	border : 1px solid #ccc;
+	border-radius : 3px;
+	margin : 0 5px;
+}
+.search button {
+	padding : 3px 10px;
+	color : #fff;
+	font-weight : bold;
+	border-radius : 3px;
+	border : 1px solid #949494;
+	background : linear-gradient(to bottom, #9c9da1 0%, #666 30%, #4e4f56 100%);
+}
+/* 새소식 */
+.news {
+	margin-top : 20px;
+	position : relative;
+}
+.news:before {
+	content : "";
+	width : 362px;
+	height : 1px;
+	background-image : linear-gradient(to right, #e3e3e3 0%, #fff 100%);
+	position : absolute;
+	top : 27px;
+	left : 0;
+}
+.news > h1 {
+	font-size : 14px;
+	color : #ff5a00;
+}
+.news article {
+	margin : 25px 0 0 130px;
+}
+.news article h1 {
+	font-size : 12px;
+	margin-bottom : 10px;
+}
+.news article h1:before {
+	font-family : webcafeIcon;
+	content : "r";
+	position : relative;
+	top : 2px;
+	color : #666;
+}
+.news time {
+	font-size : 11px;
+	margin-left : 12px;
+}
+.news p {
+	margin-top : 10px;
+	margin-left : 12px;
+	line-height : 1.8;
+}
+.news figure {
+	position : absolute;
+	top : 45px;
+	left : 0;
+	text-align : center;
+}
+.news img {
+	box-shadow : 0 10px 15px #eee;
+	margin-bottom : 15px;
+}
+.news .more {
+	position : absolute;
+	top : 0;
+	right : 0;
+	padding : 8px;
+}
+/* 공지사항 및 자료실 */
+.board {
+	margin-top : 20px;
+	position : relative;
+	height : 170px;
+}
+.board:before {
+	content : "";
+	width : 362px;
+	height : 1px;
+	background-image : linear-gradient(to right, #e3e3e3 0%, #fff 100%);
+	position : absolute;
+	top : 27px;
+	left : 0;
+}
+.board section { position : relative; }
+.board h1 {
+	font-size : 12px;
+	float : left;
+}
+.board h1 a {
+	font-family : nanumEX;
+	color : #7a7a7a;
+	padding : 6px 15px;
+	border : 1px solid #c9c9c9;
+	border-radius : 5px 5px 0 0;
+	background-image : linear-gradient(to bottom, #fcfcfc 0%, #eaeaea 100%);
+	display : block;
+}
+.board section:target h1 a { /* target-찍혀서 지정된 애 */
+	background : #fff;
+	color : #ff4911;
+	border : 1px solid #ff6738;
+	border-bottom : 1px solid #fff;
+}
+.board ul {
+	position : absolute;
+	top : 40px;
+	left : 0;
+	width : 100%;
+	background : #fff;
+}
+.board .more {
+	position : absolute;
+	top : 0;
+	right : 0;
+	padding : 8px;
+}
+.board section:target {
+	z-index : 10;  /* 나중에 z-index 값 받은 애가 앞으로 옴 */
+}
+.board li {
+	margin-bottom : 10px;
+}
+.board ul a {
+	display : inline-block;
+	width : 300px;
+	white-space : nowrap;
+	overflow : hidden;
+	text-overflow : ellipsis;  /* 글 잘리면 뒷부분 ...으로 나옴 */
+}
+.board ul a:before {
+	font-family : webcafeIcon;
+	content : "r";
+	position : relative;
+	top : 2px;
+	color : #666;
+}
+.board time {
+	float : right;
+	margin-right : 10px;
+}
+.more:before {
+	font-family : webcafeIcon;
+	content : "p";
+	color : #00b745;
+	position : relative;
+	top : 2px;
+	margin-right : 3px;
+}
