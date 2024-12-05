@@ -21,3 +21,175 @@
 	border-radius : 50%;
 	background : linear-gradient(to right, rgba(251,251,251,0.5) 0%, rgba(229,229,229,0.7) 100%);  /* 그라디언트는 background-image나 background에서 줄 수 있고, background-color는 안 됨!! */
 }
+#twitter h1 {
+	font-size : 14px;
+	border-bottom : 1px solid #ccc;
+	padding-bottom : 10px;
+}
+#twitter h1:before {
+	font-family : webcafeIcon;
+	content : "t";
+	color : #00acee;
+	font-size : 24px;
+	position : relative;
+	top : 5px;
+	margin-right : 5px;
+}
+.twitterArticle {
+	margin : 20px 0;
+}
+.twitterUserProfile {
+	width : 45px;
+	height : 45px;
+	margin-right : 10px;
+}
+.twitterContent {
+	margin : 10px 0;
+	line-height : 1.4;
+}
+.twitterContent mark {
+	background-color : transparent;
+	font-weight : bold;
+}
+.twitterDate {
+	color : #787878;
+	/* 인라인 요소에는 text-align 안 됨 */
+	display : block;
+	text-align : right;
+}
+/* 서브 페이지 콘텐츠 영역 */
+.location {
+	possition : absolute;
+	top : 18px;
+	right : 30px;
+}
+.location strong {
+	color : #51a41e;
+}
+#contents h1 {
+	font-size : 18px;
+	font-family : nanumEX;
+	color : #ff3c00;
+	border-bottom : 2px solid #ff6738;
+	padding : 15px 0;
+	margin-bottom : 20px;
+	text-shadow : 1px 1px 0 rgba(0,0,0,0.2);
+}
+/* 이미지 갤러리 페이지 */
+.gallery ul { margin-top : 30px; }
+.gallery li {
+	float : left;
+	width : 135px;
+	margin : 0 10px 30px;
+	text-align : center;
+}
+.gallery figure {
+	background : #fff;
+	border : 1px solid #ccc;
+	box-shadow : 0 0 8px rgba(0,0,0,0.2);
+	padding : 10px;
+	margin-bottom : 10px;
+}
+.gallery img {
+	border : 1px solid #ccc;
+}
+/* 페이징 */
+.paging {
+	text-align : center;
+	margin-top : 20px;
+}
+.btnPrev, .btnNext {
+	display : inline-block;
+	width : 20px;
+	height : 20px;
+	white-space : nowrap;
+	text-indent : 20px;
+	overflow : hidden;
+	vertical-align : middle;
+	background-image : url(images/backpage_forwardpage.png);
+	background-repeat : no-repeat;
+}
+.btnPrev {
+	background-position : 0 0;
+}
+.btnNext {
+	background-position : 100% 0;
+}
+.paging a, .paging strong {
+	margin : 0 5px;
+}
+.paging strong {
+	color : #ff3c00;
+	border-bottom : 1px solid #ff3c00;
+}
+/* 묻고 답하기 */
+.allPost {
+	margin : 35px 0 10px;
+	text-align : right;
+}
+.allPost:before {
+	font-family : webcafeIcon;
+	content : "d";
+	font-size : 18px;
+	position : relative;
+	top : 6px;
+	margin-right : 3px;
+}
+.boardTable {
+	width : 100%;
+	border-collapse : collapse;
+}
+.bbsNumber { width : 15%; }
+.bbsTitle { width : 50%; }
+.bbsDate { width : 20%; }
+.bbsHit { width : 15%; }
+.boardTable th {
+	background-image : linear-gradient(to bottom, #ffc848 0%, #ff8308 40%, #ff8208 60%, #ffc848 100%);
+	color : #fff;
+}
+.boardTable th:first-child {
+	border-top-left-radius : 10px;
+}
+.boardTable th:last-child {
+	border-top-right-radius : 10px;
+}
+.boardTable th, .boardTable td {
+	padding : 10px 0;
+	text-align : center;
+}
+.boardTable td:nth-child(2) {
+	text-align : left;
+}
+.boardTable td {
+	border-bottom : 1px solid #ccc;
+}
+.boardTable a {
+	display : inline-block;
+	width : 90%;
+	white-space : nowrap;
+	overflow : hidden;
+	text-overflow : ellipsis;
+}
+.boardTable span {
+	color : #f48002;
+}
+/* 회원가입 */
+.formSign {
+	margin : 30px 0 10px;
+	text-align : right;
+}
+.require {
+	display : inline-block;
+	width : 10px;
+	height : 12px;
+	white-space : nowrap;
+	text-indent : 10px;
+	overflow : hidden;
+}
+.require:before {
+	font-family : webcafeIcon;
+	content : "s";
+	position : relative;
+	left : -10px;
+	color : #f48002;
+}
