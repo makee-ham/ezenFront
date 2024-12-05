@@ -1,0 +1,30 @@
+* {
+    margin : 0;
+    padding : 0;
+}
+ul {
+    list-style: none;
+}
+a:link, a:visited {
+    color: #203056;
+    font-weight : bold;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #e24545;
+    font-weight : bold;
+    text-decoration: none;
+}
+/* nav는 798892 > 1f2325 */
+#wrapper {
+    width : 1140px;
+    margin : 0 auto;
+}
+body {
+	color : #8f9bab;
+	background-color : #fff;
+	font-size : 16px;  /* 부모나 기준 없을 땐 16px 기준 */
+	line-height : 1.6;  /* 160% */
+	font-family : Poppins, sans-serif;
+}
+/* 이미지 볼록~ 커지는 건 다 css에 넣어보자  */
