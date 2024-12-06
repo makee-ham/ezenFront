@@ -193,3 +193,87 @@
 	left : -10px;
 	color : #f48002;
 }
+#joinForm {
+	border-top : 2px solid #ccc;
+}
+#joinForm p {
+	border-bottom : 1px solid #ccc;
+	position : relative;
+	overflow : hidden;
+}
+#joinForm label, .mailing em {
+	float : left;
+	width : 120px;
+	padding : 13px 20px;
+	color : #666;
+	font-weight : bold;
+	background : #fffcef;
+	margin-right : 10px;
+}
+#joinForm input {
+	margin : 10px 0;
+}
+#joinForm input:not([type="radio"]) { /* not([이런 애들을 제외하고]) */
+	border : 1px solid #aaa;
+	height : 18px;
+	padding-left : 5px;
+}
+input#address {
+	display : block;
+	margin : 5px 0 0;
+	width : 400px;
+}
+.labelAddress {
+	height : 50px;
+	line-height : 50px;
+}
+.mailing em {
+	font-style : normal;
+	height : 35px;
+	line-height : 35px;
+}
+.mailing span {
+	display : block;
+	margin : 7px 0;
+}
+#joinForm .mailing label {
+	background : none;
+	width : auto;
+	padding : 0;
+	float : none;
+}
+a.idCheck, a.findZipcode {
+	font-family : nanumEX;
+	font-size : 11px;
+	color : #fff;
+	background : #fe8389;
+	padding : 3px 15px;
+	border-radius : 20px;
+	margin-left : 5px;
+	text-shadow : 1px 1px 1px #ed676c, -1px -1px 1px #ed676c;
+}
+.findZipcode {
+	position : absolute;
+	top : 12px;
+	left : 315px;
+}
+.btnJoinArea {
+	margin : 15px 0;
+	text-align : center;
+}
+.btnJoinArea button {
+	font-family : nanumEX;
+	font-size : 14px;
+	color : #fff;
+	padding : 8px 20px;
+	border : 0;
+	border-radius : 3px;
+	margin : 0 5px;
+	letter-spacing : 1px;
+}
+.btnOk {
+	background : linear-gradient(to bottom, rgba(98,98,98,1) 0%, rgba(98,98,98,1) 50%, rgba(81,81,81,1) 51%, rgba(81,81,81,1) 100%);
+}
+.btnCancel {
+	background : linear-gradient(to bottom, rgba(145,145,145,1) 0%, rgba(145,145,145,1) 50%, rgba(81,81,81,1) 51%, rgba(81,81,81,1) 100%);
+}
