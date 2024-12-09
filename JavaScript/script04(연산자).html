@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트(연산자)</title>
+	<script>
+		// 산술 연산자
+		var num = 35;
+		console.log("num = " + num);
+		console.log("num = " + (++num));  // 전위형  num = 36
+		console.log("num = " + (num++));  // 후위형  num = 36
+		console.log("num = " + num);  // num = 37
+		
+		var increase = 0;
+		var add = 0;
+		++increase;
+		console.log(increase);  // 1
+		increase++;
+		console.log(increase);  // 2
+		add = ++increase;
+		console.log(increase);  // add=3 in~=3
+		add = increase++;
+		console.log(increase);  // add=3 in~=4
+		
+		
+		// 대입 연산자
+		var num1 = 30, num2 = 15, num3;
+		num3 = 10;
+		num3 = num3 + 5;  // num3 += 5;
+		num3 = num3 - 4;  // num3 -= 4;
+		num3 = num3 * 2;  // num3 *= 2;
+		num3 = num3 / 8;  // num3 /= 8;
+		num3 = num3 % 2;  // num3 %= 2;
+		
+		
+		// 비교 연산자
+		var temp1 = (7 != 5);
+		
+		
+		// 논리 연산자 && || !
+		// 비트 연산자 (써먹을 곳이 없습니다)
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
