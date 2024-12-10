@@ -21,7 +21,7 @@
         <!-- 메인 메뉴 시작 -->
         <nav>
             <ul class="mainMenu">
-                <li class="thereIsMore"><a href="#">Home</a>
+                <li class="thereIsMore"><a href="#" id="imHome">Home</a>
                     <ul class="aboutHome">
                         <li><a href="#">Magazine</a></li>
                         <li><a href="#">Personal</a></li>
@@ -34,13 +34,13 @@
                 <li><a href="#">Culture</a></li>
                 <li class="thereIsMore"><a href="#">Features</a>
                     <ul class="aboutFeatures">
-                        <li><a href="#">Post Layouts</a>
+                        <li class="moreAndMore"><a href="#">Post Layouts</a>
                             <ul class="aboutPostLayouts">
                                 <li><a href="#">Standard</a></li>
                                 <li><a href="#">Full Cover</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Post Formats</a>
+                        <li class="moreAndMore"><a href="#">Post Formats</a>
                             <ul class="aboutPostFormats">
                                 <li><a href="#">Standard</a></li>
                                 <li><a href="#">Gallery</a></li>
@@ -48,7 +48,7 @@
                                 <li><a href="#">Audio</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">Archive</a>
+                        <li class="moreAndMore"><a href="#">Archive</a>
                             <ul class="aboutArchive">
                                 <li><a href="#">List</a></li>
                                 <li><a href="#">Grid</a></li>
@@ -98,40 +98,44 @@
         </article>
         <article class="subPost">
             <ul class="postTab">
-                <li>
-                    <button>Popular</button>
-                </li>
-                <li>
-                    <button>Recent</button>
-                </li>
+                <li>Popular</li>
+                <li>Recent</li>
             </ul>
             <div class="smallPost">
                 <div class="circleThumb">
                     <a href="#"><img src="images/aleksander-vlad-Jym19Ty9Dc4-unsplash-60x60.jpg"></a>
                 </div>
-                <h3><a href="#">3 Easy Ways To Make Your iPhone Faster</a></h3>
-                <p>August 19, 2022</p>
+				<div class="smallPostText">
+                	<h3><a href="#">3 Easy Ways To Make Your iPhone Faster</a></h3>
+					<p>August 19, 2022</p>
+				</div>
             </div>
             <div class="smallPost">
                 <div class="circleThumb">
                     <a href="#"><img src="images/drop-the-label-movement-608463-unsplash-60x60.jpg"></a>
                 </div>
-                <h3><a href="#">Facts About Business That Will Help You Success</a></h3>
-                <p>August 23, 2022</p>
+				<div class="smallPostText">
+                	<h3><a href="#">Facts About Business That Will Help You Success</a></h3>
+                	<p>August 23, 2022</p>
+				</div>
             </div>
             <div class="smallPost">
                 <div class="circleThumb">
                     <a href="#"><img src="images/thought-catalog-640705-unsplash-60x60.jpg"></a>
                 </div>
-                <h3><a href="#">What Can You Do About Fashion Right Now</a></h3>
-                <p>August 17, 2022</p>
+				<div class="smallPostText">
+                	<h3><a href="#">What Can You Do About Fashion Right Now</a></h3>
+                	<p>August 17, 2022</p>
+				</div>
             </div>
             <div class="smallPost">
                 <div class="circleThumb">
                     <a href="#"><img src="images/david-van-dijk-255503-unsplash-60x60.jpg"></a>
                 </div>
-                <h3><a href="#">Your Light Is About To Stop Being Relevant</a></h3>
-                <p>August 23, 2022</p>
+				<div class="smallPostText">
+                	<h3><a href="#">Your Light Is About To Stop Being Relevant</a></h3>
+                	<p>August 23, 2022</p>
+				</div>
             </div>
         </article>
     </section>
@@ -153,7 +157,7 @@
 						<p>August 19, 2022</p>
 					</div>
 					<h2>3 Easy Ways To Make Your iPhone Faster</h2>
-					<p>
+					<p>  <!-- text-overflow : ellipsis -->
 						The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.
 					</p>
                 </div>

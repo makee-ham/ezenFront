@@ -25,6 +25,7 @@ a:hover, a:focus {
 .contentWrap {
 	width : 1140px;
 	margin : 0 auto;
+	padding : 0 10px;
 }
 body {
 	color : #8f9bab;
@@ -33,20 +34,19 @@ body {
 	line-height : 1.6;  /* 160% */
 	font-family : Poppins, sans-serif;
 }
-/* memo: 이미지 볼록~ 커지는 건 다 css에 넣어보자  */
+/* memo: 이미지 볼록~ 커지는 건 다 css에 넣어보자 transform scale  */
 
 /* header */
 header {
+	width : 100%;
 	height : 118px;
-	border : 1px dashed red;
+	padding-top : 40px;
 }
 .headerWrap {
 	width : 1140px;
 	height : 38px;
 	margin : 0 auto;
-	margin-top : 40px;
 	position : relative;
-	border : 1px dashed blue;
 }
 /* header logo */
 .logo {
@@ -54,10 +54,10 @@ header {
 	top : -3px;
 	left : 10px;
 }
-/* serch and burger(etcIcon) */
+/* search and burger(etcIcon) */
 .etcIcon {
 	position : absolute;
-	top : 0px;
+	top : 0;
 	right : 10px;
 }
 /* 질문 : 저도 원본처럼 버튼 호버하면 스르륵 스륵 하고 싶어요... << 꿈도 꾸지 마라 아직 */
@@ -99,16 +99,15 @@ header {
 	display : inline-block;
 	position : relative;
 }
-/* 질문 : 아이콘이 안 보여요... */
+/* 질문 : 아이콘이 안 보여요... << 백그라운드 이미지에 왜 노리핏ㅋㅋㅠ;*/
 .thereIsMore:after {
 	content : "";
 	position : absolute;
-	width : 10px;
-	height : 10px;
-	border : 1px dashed red;
+	top : 16px;
+	width : 8px;
+	height : 8px;
 	background : url(../images/download.png) no-repeat;
-	background-size : 10px 10px;
-	background-position : center top;
+	background-size : 8px 8px;
 	margin-left : -20px;
 }
 .mainMenu a {
@@ -130,17 +129,94 @@ header {
 	font-size : 0.9em;
 }
 .mainMenu > li > a {
-	border : 1px dashed red;
 	display : inline-block;
 	padding : 4px 20px;
 	border-radius : 20px;
+}
+.thereIsMore > a {
+	padding : 8px 30px 8px 20px !important;  /* 흑흑흑 */
+}
+#imHome {
+	background : linear-gradient(to left, #ff9f86 0%, #ff9f86 24%, #fe5171 100%);
+	color : #fff;
 }
 .mainMenu > li > a:active {
 	background : linear-gradient(to left, #ff9f86 0%, #ff9f86 24%, #fe5171 100%);
 	color : #fff;
 }
-/* 질문 : 메인메인메뉴 수평 어케 맞추고.. 아래 메뉴들은 어떻게 해야ㅠㅠㅠ */
-.aboutHome, .aboutFeatures, .aboutShop  { text-indent : 20px; position : absolute; }
+/* 질문 : << 메인메뉴 li relative, 그에 속한 서브메뉴 absolute */
+.aboutHome, .aboutFeatures, .aboutShop  {
+	text-indent : 24px;
+	position : absolute;
+	z-index : 555;
+	white-space : nowrap;
+	width : 150px;
+	background-color: #fff;
+	border-radius : 10px;
+	box-shadow: 0 6px 6px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+	display : none;
+}
+.thereIsMore > ul > li {
+	padding : 8px 0;
+	border-bottom : 1px solid rgba(9,9,9,0.05);
+}
+.thereIsMore > ul > li:last-child {
+	border-bottom : none;
+}
+.thereIsMore > ul > li > a:hover {
+	color: #e24545;
+}
+.thereIsMore:hover > ul {
+	display : block;
+}
+/* 서브 서브 메뉴 */
+.aboutPostLayouts, .aboutPostFormats, .aboutArchive  {
+	text-indent : 24px;
+	position : absolute;
+	left: 150px;
+	z-index : 666;
+	white-space : nowrap;
+	width : 150px;
+	background-color: #fff;
+	border-radius : 10px;
+	box-shadow: 0 6px 6px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.1);
+	display : none;
+}
+.aboutPostLayouts {
+	top : 0;
+}
+.aboutPostFormats {
+	top : 42px;
+}
+.aboutArchive {
+	top : 84px;
+}
+.moreAndMore:after {
+	content : "";
+	display : inline-block;
+	width : 10px;
+	height : 10px;
+	background : url(../images/chevron.png) no-repeat;
+	background-size : 10px 10px;
+	float : right;
+	position : relative;
+	top : 10px;
+	left : -10px;
+}
+.moreAndMore > ul > li {
+	padding : 8px 0;
+	border-bottom : 1px solid rgba(9,9,9,0.05);
+}
+.moreAndMore > ul > li:last-child {
+	border-bottom : none;
+}
+.moreAndMore > ul > li > a:hover {
+	color: #e24545;
+}
+.moreAndMore:hover > ul {
+	display : block;
+}
+
 
 
 
@@ -163,10 +239,8 @@ header {
 /* topSection */
 #topSection {
 	height : 533px;
-	border : 1px dashed blue;
 	margin-bottom : 50px;
 }
-
 /* topSection left */
 .mainPost {
 	width : 740px;
@@ -174,8 +248,9 @@ header {
 	position : relative;
 	float : left;
 	border-radius : 10px;
-	box-shadow : 10px 10px 3px #rgba(0,0,0,1);
+	box-shadow: 0 10px 10px rgba(0,0,0,0.1), 0 10px 10px rgba(0,0,0,0.1);
 	background-color : rgba(0,10,30,0.5);
+	overflow : hidden;
 }
 /* 질문 : img에 hover 시 볼~록 커지는 거 어떻게 하나요.. << 틀은 overflow hidden, 이미지만 키운다 */
 .mainPost > img {
@@ -183,10 +258,15 @@ header {
 	border-radius : 10px;
 	z-index : -100;
 }
+.mainPost:hover { cursor : pointer; }
+.mainPost:hover > img {
+	transform : scale(1.05);  /* memo : 마우스 오버시 이미지 크기를 1.05 배만큼 확대시킨다. */
+	transition : transform .35s;
+}
 .mainPost > button {
 	position : absolute;
 	left : 50px;
-	top : 300px;
+	top : 310px;
 }
 .mainPost > h2 {
 	position : absolute;
@@ -211,19 +291,85 @@ header {
 .mainPost p:last-child {
 	left : 160px;
 }
-
 /* topSection right */
 .subPost {
 	box-sizing : border-box;
 	width : 360px;
 	float : right;
-	padding : 40px;
-	border : 1px dashed red;
+	padding : 31px;
+	border : 1px solid rgba(0,0,0,0.1);
+	border-radius : 10px;
+	overflow : hidden;
 }
-.subPost {}
-
-
-
-.smallPost > h3 {
+/* 탭 메뉴 */
+.postTab {
+	text-align : center;
+	box-sizing : content-box;
+	overflow : hidden;
+}
+.postTab > li {
+	width : 130px;
+	height : 28px;
+	line-height : 28px;
+	border : none;
+	display : inline-block;
+	padding : 6px;
+	box-sizing : content-box;
+	border-radius : 24px;
+	background : linear-gradient(to left, #ff9f86 0%, #ff9f86 24%, #fe5171 100%);
+	font-size : 14px;
+	cursor : pointer;
+}
+.postTab > li:first-child {
+	color : #fff;
+	float : left;
+}
+.postTab > li:last-child {
+	background : none;
+	border : 1px solid rgba(0,0,0,0.1);
+	float : right;
+}
+/* smallPost */
+.smallPost {
+	height : 90px;
+	position : relative;
+	padding : 53px 0;
+	/* margin-top : 16px; */
+	border-bottom : 1px solid transparent;
+	border-image : linear-gradient(to right, rgb(255, 255, 255), rgba(51, 51, 51, 0.1));
+	border-image-slice : 1;
+	width:100%;
+}
+.smallPost:last-child {
+	border : none;
+}
+.circleThumb {
+	overflow : hidden;
+	width : 60px;
+	height : 60px;
+	border-radius : 60px;
+	position : absolute;
+	left : 0;
+	top : 25px;
+}
+.circleThumb img {
+	border-radius : 60px;
+}
+.circleThumb img:hover {
+	transform : scale(1.1);
+	transition : transform .35s;
+}
+.smallPostText {
+	position : absolute;
+	width : 70%;
+	right : 0;
+	top : 25px;
+}
+.smallPostText > h3 {
 	font-size : 0.9em;
+	line-height : 1.5;
 }
+.smallPostText > p {
+	font-size : 0.8em;
+}
+/* 흐릿한 수평선 */

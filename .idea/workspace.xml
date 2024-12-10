@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e1daea1c-4f50-4b22-99b5-800246e2067b" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selfClone/01_Katen/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/selfClone/01_Katen/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selfClone/01_Katen/images/download.png" beforeDir="false" afterPath="$PROJECT_DIR$/selfClone/01_Katen/images/download.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selfClone/01_Katen/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/selfClone/01_Katen/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -86,6 +88,7 @@
       <workItem from="1732527699312" duration="8534000" />
       <workItem from="1733226188742" duration="3050000" />
       <workItem from="1733650471548" duration="1847000" />
+      <workItem from="1733825381521" duration="8194000" />
     </task>
     <servers />
   </component>
