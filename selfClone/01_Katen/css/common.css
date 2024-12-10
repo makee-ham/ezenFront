@@ -1,6 +1,8 @@
+/* memo : 각종 버튼 색 #ff9f86 > #fe5171 */
 * {
     margin : 0;
     padding : 0;
+	box-sizing : border-box;
 }
 ul {
     list-style: none;
@@ -15,10 +17,14 @@ a:hover, a:focus {
     font-weight : bold;
     text-decoration: none;
 }
-/* nav는 798892 > 1f2325 */
+/* memo: nav는 798892 > 1f2325 */
 #wrapper {
-    width : 1140px;
+	width : 100%;
     margin : 0 auto;
+}
+.contentWrap {
+	width : 1140px;
+	margin : 0 auto;
 }
 body {
 	color : #8f9bab;
@@ -27,4 +33,49 @@ body {
 	line-height : 1.6;  /* 160% */
 	font-family : Poppins, sans-serif;
 }
-/* 이미지 볼록~ 커지는 건 다 css에 넣어보자  */
+/* memo: 이미지 볼록~ 커지는 건 다 css에 넣어보자  */
+
+/* header */
+header {
+	height : 118px;
+	border : 1px dashed red;
+}
+.headerWrap {
+	width : 1140px;
+	height : 38px;
+	margin : 0 auto;
+	margin-top : 40px;
+	position : relative;
+	border : 1px dashed blue;
+}
+/* header logo */
+.logo {
+	position : absolute;
+	top : -3px;
+	left : 10px;
+}
+/* serch and burger(etcIcon) */
+.etcIcon {
+	position : absolute;
+	top : 0px;
+	right : 10px;
+}
+.etcIcon li {
+	width : 24px;
+	height : 24px;
+	display : inline-block;
+	padding : 6px;
+	box-sizing : content-box;
+	border-radius : 24px;
+	transition : all 0.8s ease-out;
+	background : linear-gradient(to bottom, #ff9f86 0%, #ff9f86 24%, #fe5171 100%);
+}
+.etcIcon li:hover {
+	background : linear-gradient(to bottom, #fe5171 0%, #fe5171 60%, #ff9f86 100%);
+}
+.etcIcon li:first-child {
+	margin-right : 20px;
+}
+.etcIcon a {
+	display : block;
+}

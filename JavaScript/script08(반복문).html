@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트(반복문)</title>
+	<script>
+		/*
+			for(초기치; 조건; 증감분) {
+				실행문;
+			}
+		
+		var num = prompt("몇 번을 출력하시겠습니까?");
+		for(var cnt=1; cnt<=num; cnt++){
+			document.write("안녕하세요?<br>");  // 순서: 초기치 > 조건확인 > docuwrite > cnt++ (> cnt=2) > 조건확인 ...
+		}
+		
+		for(cnt=10; cnt>0 ;cnt--){
+			document.write("안녕하세요? " + cnt + "<br>");
+		}
+		*/
+		let cnt = prompt("구구단 몇 단을 출력하시겠습니까?(숫자만 써주세요)");
+		for(dan=1; dan<=9; dan++){
+			result = cnt * dan;
+			document.write(cnt + " * " + dan + " = " + result + "<br>");
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -21,17 +21,66 @@ nav {
 	font-weight : bold;
 	position : relative;
 }
+nav ul {
+	display : none;
+}
 nav ul li {
 	width : 100%;
 	text-align : center;
 	border-bottom : 1px solid #576979;
 }
 nav ul li a {
-	display : block;
+	display : block;  /* a를 블록 잡으면 꽉 차게 클릭 가능 */
 	height : 50px;
 	line-height : 50px;
 }
 nav a#trigger {
 	display : block;
 	background-color : #283744;
+	padding-left : 15px;
+	width : 100%;
+	height : 40px;
+	line-height : 40px;
+	position : relative;
+}
+nav a#trigger:after {
+	content : "";
+	width : 30px;
+	height : 30px;
+	position : absolute;
+	top : 10px;
+	right : 15px;
+	background : url(../nav.png) no-repeat;
+}
+
+@media screen and (min-width:721px) {  /* 721px 이상에서는~ */
+	nav {
+		height : 40px;
+		border-bottom : 2px solid #34495e;
+	}
+	nav ul {
+		display : block;
+		width : 720px;
+		height : 40px;
+		margin : 0 auto;
+	}
+	nav ul li {
+		display : inline-block;
+		width : 120px;
+		border-bottom : 0;
+		border-right : 1px solid #576979;
+		margin-right : -6px;
+	}
+	nav ul li:last-child {
+		border-right : 0;
+	}
+	nav ul li a {
+		display : block;
+		font-size : 1em;
+		height : 40px;
+		line-height : 40px;
+	}
+	nav a#trigger {
+		display : none;
+	}
 }

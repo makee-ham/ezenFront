@@ -1,0 +1,86 @@
+/* 우선 모바일 기준 */
+* {
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+}
+ul { list-style : none; }
+.clear:after {
+	content : "";
+	display : none;
+	clear : both;  /* 이 두 줄은 float 영역 끝나고 무효화 해줘서 안 올라오게 해준다. */
+}
+a {
+	line-height : 1.5;
+	color : #333;  /* a의 의사클래스? 에 전부 적용됨 */
+}
+body {
+	background-color : #f1f1f1;
+	font-size : 13px;
+}
+header {
+	background-color : coral;
+}
+header h1 {
+	font-size : 25px;
+	padding : 10px;
+	color : #fff;
+}
+.lnb li {
+	margin : 10px;
+	background : lightgreen;
+	padding : 10px;
+}
+.content {
+	padding : 20px;
+}
+.content h2 {
+	font-size : 20px;
+}
+.ext {
+	margin : 10px;
+	padding : 20px;
+	background-color : lightgreen;
+}
+footer {
+	background-color : #aaa;
+	padding : 10px;
+}
+/* 태블릿 버전 CSS  (media 장치 and (){} 반드시 괄호 띄어준다) )*/
+@media all and (min-width : 768px) and (max-width : 1024px) {
+	.lnb {
+		float : left;
+		width : 25%;
+	}
+	.content {
+		float : left;
+		width : 75%;
+	}
+	.aside {
+		clear : both;
+	}
+}
+/* PC 버전 */
+@media all and (min-width : 1025px) {
+	.lnb {
+		float : left;
+		width : 20%;
+	}
+	.content {
+		float : left;
+		width : 50%;
+	}
+	.aside {
+		float : right;
+		width : 30%;
+	}
+	.clear:after {
+		content : "";
+		display : block;
+		clear : both;
+	}
+	.wrap {
+		max-width : 1280px;  /* 더 넓어지면 휑하잖아~ 더 넓어지지 않게 해주자~ */
+		margin : 0 auto;
+	}
+}

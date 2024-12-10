@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>자바스크립트(조건문 if)</title>
+	<script>
+		/* 
+			if (조건) {
+				실행문; 조건에 만족하는 경우
+			} else {
+				실행문; 조건에 만족하지 않는 경우
+			} << else가 없으면 if만 보고 다음 코드로 넘어감
+		
+		var age = prompt("나이를 입력하세요...");
+		var admissionFee = "";
+		if ( age < 13 ) {
+			admissionFee = "2,000원";
+		} else {
+			admissionFee = "4,000원";
+		}
+		console.log("입장료 : " + admissionFee);
+		*/
+		var score = prompt("성적을 입력하세요...");
+		if(score>=60){
+			result = "합격";  // 자바스크립트의 경우, 변수 선언 없이 그냥 써도 넘어가긴 함. 원래는 if 전에 var result; 했어야 함.
+		} else {
+			result = "불합격";
+		}
+		console.log("귀하의 점수는 " + score + "점으로, " + result + "입니다.");
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
