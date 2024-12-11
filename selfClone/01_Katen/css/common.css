@@ -372,4 +372,46 @@ header {
 .smallPostText > p {
 	font-size : 0.8em;
 }
-/* 흐릿한 수평선 */
+
+
+
+/* Main Content's Layout */
+#mainContent {
+	overflow : hidden;
+	padding-top : 10px;
+}
+#mainLeft {
+	border : 1px dashed blue;
+	width : 740px;
+	float : left;
+}
+#mainRight {
+	border : 1px dashed blue;
+	width : 360px;
+	padding : 10px 10px;
+	float : right;
+}
+
+/* Left : 꿈틀꿈틀 지렁이 */
+#mainLeft > h2:after{
+	content : "";
+	display : block;
+	width : 37px;
+	height : 14px;
+	background : url(../images/worm.png) no-repeat;
+	background-size : 37px 14px;
+	margin-top : 5px;
+	margin-bottom : 32px;
+}
+#mainLeft > h2 { color: #203056; }
+
+/* Left : Editor's Pick */
+.editorsPick {
+	border : 1px solid rgba(0,0,0,0.1);
+	border-radius : 10px;
+	overflow : hidden;
+	padding : 30px;
+}
+
+
+
