@@ -239,7 +239,7 @@ header {
 /* topSection */
 #topSection {
 	height : 533px;
-	margin-bottom : 50px;
+	margin-bottom : 48px;
 }
 /* topSection left */
 .mainPost {
@@ -329,12 +329,13 @@ header {
 	border : 1px solid rgba(0,0,0,0.1);
 	float : right;
 }
+
+
 /* smallPost */
 .smallPost {
 	height : 90px;
 	position : relative;
 	padding : 53px 0;
-	/* margin-top : 16px; */
 	border-bottom : 1px solid transparent;
 	border-image : linear-gradient(to right, rgb(255, 255, 255), rgba(51, 51, 51, 0.1));
 	border-image-slice : 1;
@@ -379,9 +380,9 @@ header {
 #mainContent {
 	overflow : hidden;
 	padding-top : 10px;
+	margin-bottom : 48px;
 }
 #mainLeft {
-	border : 1px dashed blue;
 	width : 740px;
 	float : left;
 }
@@ -405,13 +406,270 @@ header {
 }
 #mainLeft > h2 { color: #203056; }
 
-/* Left : Editor's Pick */
+/* mainLeft : Editor's Pick */
+/* 망했다... 전부 absolute 해서 조정했어... 끼워맞추기야... */
 .editorsPick {
 	border : 1px solid rgba(0,0,0,0.1);
 	border-radius : 10px;
 	overflow : hidden;
 	padding : 30px;
 }
+.leftPick {
+	width : 327px;
+	height : 465px;
+	float : left;
+	overflow : hidden;
+	position : relative;
+}
+.rightPick {
+	width : 327px;
+	height : 465px;
+	float : right;
+	overflow : hidden;
+	position : relative;
+}
+.leftPick > div {
+	width : 325px;
+	height : 233px;
+	overflow : hidden;
+	border-radius : 10px;
+}
+.leftPick > a img {
+	border-radius : 10px;
+	position : relative;
+}
+.leftPick > div:hover > a > img {
+	transform : scale(1.1);  /* memo : 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
+	transition : transform .35s;
+}
+.leftPick > button {
+	position : absolute;
+	z-index : 20;
+	top : 20px;
+	left : 20px;
+}
+.circleThumbSmall {
+	overflow : hidden;
+	width : 32px;
+	height : 32px;
+	border-radius : 32px;
+	position : absolute;
+	left : 0;
+	top : 260px;
+	text-align : center;
+}
+.circleThumbSmall  img {
+	width : 32px;
+	height : 32px;
+}
+.editorProfile p {
+	position : absolute;
+	left : 50px;
+	font-size : 0.9em;
+	top : 264px;
+}
+.editorProfile p a:link, .editorProfile p a:visited {
+	color : #8f9bab;
+	font-weight : normal;
+}
+.editorProfile p a:hover, .editorProfile p a:focus {
+	color: #e24545;
+}
+.editorProfile p:last-child {
+	left : 160px;
+}
+.leftPick h2 {
+	font-size : 1.2em;
+	position : absolute;
+	top : 310px;
+}
+.leftPick > p {
+	position : absolute;
+	top : 388px;
+	
+	/* memo : n줄까지만 보이게 하기 */
+	width : 325px;
+	text-overflow: ellipsis;
+	overflow : hidden;
+	word-break: break-word;
+	
+	display: -webkit-box;
+   -webkit-line-clamp: 3; /* 원하는 라인수 */
+   -webkit-box-orient: vertical;
+}
+.rectangleThumb {
+	overflow : hidden;
+	width : 110px;
+	height : 80px;
+	border-radius : 10px;
+	position : absolute;
+	left : 0;
+	top : 25px;
+}
+.rectangleThumb img {
+	border-radius : 10px;
+}
+.rectangleThumb img:hover {
+	transform : scale(1.1);
+	transition : transform .35s;
+}
+.rectangleThumb {
+	position : absolute;
+	top : 20px;
+}
+.rightPick > div {
+	height : 96px;
+	box-sizing : content-box;
+	padding-top : 10px;
+	padding-bottom : 20px;
+}
+.rightPick > div:first-child {
+	height : 90px;
+	box-sizing : content-box;
+	padding-top : 0;
+}
+#imFirstPick {
+	top : 0;
+}
+.rightPick > div h3 {
+	width : 160px;
+	line-height : 150%;
+	position : absolute;
+	right : 32px;
+	top : -5px;
+}
+.rightPick > div:first-child h3 {
+	top : -24px;
+}
+.rightPick > div p {
+	position : absolute;
+	left : 38px;
+	top : 42px;
+}
+.rightPick > div:nth-child(2) p {
+	top : 62px;
+}
+.editorsPick {
+	margin-bottom : 48px;
+}
 
+/* mainLeft : AD */
+#adTitle {
+	text-align : center;
+	font-weight : normal;
+	font-size : 12px;
+	margin-bottom : 12px;
+}
+.sponsoredAd1 {
+	margin-bottom : 48px;
+}
 
+/* mainLeft : Trending */
+.trending {
+	border : 1px solid rgba(0,0,0,0.1);
+	border-radius : 10px;
+	height : 743px;
+	overflow : hidden;
+	padding : 30px;
+	margin-bottom : 48px;
+}
+.topPick {
+	width : 324px;
+	height : 458px;
+	position : relative;
+	float : left;
+	margin-bottom : 12px;
+}
+.trending > div:nth-child(2) {
+	float : right;
+}
+.topPick > div:first-child {
+	width : 325px;
+	height : 233px;
+	overflow : hidden;
+	border-radius : 10px;
+}
+.topPick > div:first-child > a img {
+	border-radius : 10px;
+	position : relative;
+}
+.topPick > div:first-child:hover > a > img {
+	transform : scale(1.1);  /* memo : 마우스 오버시 이미지 크기를 1.1 배만큼 확대시킨다. */
+	transition : transform .35s;
+}
+.topPick > button {
+	position : absolute;
+	z-index : 20;
+	top : 20px;
+	left : 20px;
+}
 
+/* 아이콘의 시간 */
+.icon {
+	width : 30px;
+	height : 30px;
+	display : inline-block;
+	padding : 6px;
+	box-sizing : content-box;
+	border-radius : 30px;
+	transition : all 0.5s ease-out;
+	background : linear-gradient(to bottom, #ff9f86 0%, #ff9f86 24%, #fe5171 100%);
+}
+.icon > img { width : 30px; height : 30px; }
+.topPick > div:nth-of-type(2)  /* .icon */ {
+	display : inline-block;
+	position : absolute;
+	right : 16px;
+	bottom : 212px;
+}
+.topPick > div:last-of-type {
+	position : relative;
+	top : -238px;
+}
+.topPick > h2 {
+	position : relative;
+	top : 68px;
+	font-size : 1.2em;
+}
+.topPick > p {
+	position : relative;
+	top : 80px;
+	
+	width : 325px;
+	text-overflow: ellipsis;
+	overflow : hidden;
+	word-break: break-word;
+	
+	display: -webkit-box;
+   -webkit-line-clamp: 3;
+   -webkit-box-orient: vertical;
+}
+.pickSmallPostLeft {
+	width : 325px;
+	float : left;
+}
+.pickSmallPostRight {
+	width : 325px;
+	float : right;
+}
+.pickSmallPost {
+	border-top : 1px solid transparent;
+	border-image : linear-gradient(to right, rgb(255, 255, 255), rgba(51, 51, 51, 0.1));
+	border-image-slice : 1;
+	width:100%;
+}
+
+/* mainLeft : Inspiration */
+
+.inspiration {
+	
+	margin-bottom : 48px;
+}
+
+/* mainLeft : Latest Posts */
+.latestPosts {
+	border : 1px solid rgba(0,0,0,0.1);
+	border-radius : 10px;
+	overflow : hidden;
+	padding : 30px;
+}

@@ -1,0 +1,171 @@
+* {
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+}
+body { font-family : 돋움; }
+a:link, a:visited, a:hover, a:active {
+	color : #000;
+	text-decoration : none;
+}
+ul { list-style : none; }
+
+/* 기본 CSS, 모바일 버전 CSS */
+header {
+	height : 70px;
+	position : relative;
+}
+header .logo {
+	position : absolute;
+	top : 23px;
+	left : 20px;
+	font-size : 1.3em;
+}
+header .logo span {
+	color : #1f5abb;
+	font-weight : bold;
+}
+header .menu {
+	position : absolute;
+	top : 20px;
+	right : 20px;
+	display : none;
+}
+header .menu_btn {
+	width : 20px;
+	position : absolute;
+	top : 20px;
+	right : 20px;
+}
+header .menu_btn li {
+	/* 부모인 ul이 width 20px이니까 얘네도 20px */
+	border-bottom : 2px solid #000;
+	padding : 3px 0;
+}
+
+.main_image img {
+	max-width : 100%;
+}
+.banner {
+	padding : 15px;
+}
+.banner li {
+	float : left;
+}
+.banners:after {
+	content : "";
+	display : block;
+	clear : both;
+}
+.items {
+	padding : 15px;
+	background-color : #f9f9f9;
+}
+.items img {
+	max-width : 100%;
+	display : block;
+}
+.items ul {
+	margin-bottom : 20px;
+}
+.items li:nth-child(2) {
+	padding : 15px 10px;
+}
+.items li:last-child {
+	padding : 0 10px 10px 10px;
+}
+.items:after {
+	content : "";
+	display : block;
+	clear : both;  /* items의 뒤 위치에 이게 생겨서, 높이가 잡히게 됨 */
+}
+footer .box div {
+	padding : 60px 0 0 20px;
+}
+footer .box div h1 {
+	margin-top : 20px;
+}
+/* 푸터 영역 */
+footer {
+	background-color : #292c32;
+	padding-bottom : 80px;
+	color : #fff;
+}
+footer:after {
+	content : "";
+	display : block;
+	clear : both;  /* footer의 뒤 위치에 이게 생겨서, 높이가 잡히게 됨 */
+}
+footer ul li {
+	display : inline-block;
+	margin-right : 5px;
+}
+footer p {
+	line-height : 150%;
+	margin-top : 20px;
+}
+.box {
+	max-width : 1170px;
+	margin : 0 auto;
+}
+
+
+
+/* 그리드 */
+
+[class*="col_"] { float : left; }
+/* 모바일 그리드 */
+.col_s_1 {width: 8.33%;}
+.col_s_2 {width: 16.66%;}
+.col_s_3 {width: 25%;}
+.col_s_4 {width: 33.33%;}
+.col_s_5 {width: 41.66%;}
+.col_s_6 {width: 50%;}
+.col_s_7 {width: 58.33%;}
+.col_s_8 {width: 66.66%;}
+.col_s_9 {width: 75%;}
+.col_s_10 {width: 83.33%;}
+.col_s_11 {width: 91.66%;}
+.col_s_12 {width: 100%;}
+
+
+@media all and (min-width:768px) {
+	/* 태블릿 그리드 */
+	.col_m_1 {width: 8.33%;}
+	.col_m_2 {width: 16.66%;}
+	.col_m_3 {width: 25%;}
+	.col_m_4 {width: 33.33%;}
+	.col_m_5 {width: 41.66%;}
+	.col_m_6 {width: 50%;}
+	.col_m_7 {width: 58.33%;}
+	.col_m_8 {width: 66.66%;}
+	.col_m_9 {width: 75%;}
+	.col_m_10 {width: 83.33%;}
+	.col_m_11 {width: 91.66%;}
+	.col_m_12 {width: 100%;}
+}
+
+
+@media all and (min-width:1200px) {
+	/* 데스크탑 그리드 */
+	.col_1 {width: 8.33%;}
+	.col_2 {width: 16.66%;}
+	.col_3 {width: 25%;}
+	.col_4 {width: 33.33%;}
+	.col_5 {width: 41.66%;}
+	.col_6 {width: 50%;}
+	.col_7 {width: 58.33%;}
+	.col_8 {width: 66.66%;}
+	.col_9 {width: 75%;}
+	.col_10 {width: 83.33%;}
+	.col_11 {width: 91.66%;}
+	.col_12 {width: 100%;}
+	
+	/* GNB 햄버거 탈출 */
+	.menu_btn { display : none; }
+	header .menu { display : block; }
+	header .menu li {
+		display : inline-block;
+		margin : 5px 0 0 50px;
+	}
+}
