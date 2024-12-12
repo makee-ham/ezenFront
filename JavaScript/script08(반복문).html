@@ -17,15 +17,175 @@
 		for(cnt=10; cnt>0 ;cnt--){
 			document.write("안녕하세요? " + cnt + "<br>");
 		}
-		*/
+		
 		let cnt = prompt("구구단 몇 단을 출력하시겠습니까?(숫자만 써주세요)");
 		for(dan=1; dan<=9; dan++){
 			result = cnt * dan;
 			document.write(cnt + " * " + dan + " = " + result + "<br>");
 		}
+		
+		// 두 개의 숫자를 입력한 후 그 중에서 큰 수를 출력하는 알고리즘
+		var num1 = Number(prompt("첫 번째 숫자를 입력하세요..."));
+		var num2 = Number(prompt("두 번째 숫자를 입력하세요..."));
+		document.write(typeof(num1));
+		// prompt는 뭘 입력해도 문자열로 받아들임!! 그래서 파싱... parseInt나 Number로 정수 형변환 해줘야! 안 그럼 한 자리씩 비교함;;
+		if( num1 > num2 ){
+			document.write("두 숫자 중 큰 숫자는 " + num1 + "입니다.");
+		} else {
+			document.write("두 숫자 중 큰 숫자는 " + num2 + "입니다.");
+		}
+		
+		// 3개의 숫자를 입력한 후 그 중에서 가장 큰 수를 출력하는 알고리즘
+		var num1 = Number(prompt("첫 번째 숫자를 입력하세요..."));
+		var num2 = Number(prompt("두 번째 숫자를 입력하세요..."));
+		var num3 = Number(prompt("세 번째 숫자를 입력하세요..."));
+		
+		if(num1<num2){  //num1에 큰 값 넣기로 했는데, num1이 애초에 더 크면 할 일이 없으니
+			num1 = num2;
+		}
+		if(num1<num3){
+			num1 = num3;
+		}
+		document.write("세 개의 숫자 중 가장 큰 숫자는 " + num1 + "입니다.");
+		
+		// 10개의 숫자를 입력한 후 그 중에서 가장 큰 숫자를 출력하는 알고리즘
+		var max = 0;
+		for(cnt=1; cnt<=10; cnt++){
+			num = Number(prompt(cnt+"번째 숫자를 입력하세요..."));
+			if(num>max){
+				max = num;
+			}
+		}
+		document.write("10개의 숫자들 중 가장 큰 숫자는 " + max + "입니다.");
+		
+		
+		// 10개의 숫자를 입력한 후 그 중에서 가장 작은 숫자를 출력하는 알고리즘
+		var min = 9999;
+		for(cnt=1; cnt<=10; cnt++){
+			num = Number(prompt(cnt + "번째 숫자를 입력하세요..."));
+			if(num<min){
+				min = num;
+			}
+		}
+		document.write("10개의 숫자들 중 가장 작은 숫자는 " + min + "입니다.");
+		
+		
+		// 10개의 숫자를 입력한 후 그 중에서 가장 큰 숫자와 그 순번을 출력하는 알고리즘
+		var max = 0;
+		var count = 0;
+		for(cnt=1; cnt<=10; cnt++){
+			num = Number(prompt(cnt+"번째 숫자를 입력하세요..."));
+			if(num>max){
+				max = num;
+				count = cnt;
+			}
+		}
+		document.write("10개의 숫자들 중 가장 큰 숫자는 " + max + "이며, " + count + "번째 숫자입니다.");
+		
+		
+		// 1부터 10까지의 정수를 출력하는 프로그램
+		for(i=1; i<=10; i++){
+			document.write(i+"<br>");
+		}
+		
+		
+		// 1부터 10까지의 정수와 그 합을 출력하는 프로그램
+		var sum = 0;
+		for(i=1; i<=10; i++){
+			sum += i;
+			document.write(i+ " "+ sum +"<br>");
+		}
+		
+		
+		변수 초기치
+		while(조건) {
+			실행문;
+			변수 증감분;
+		}
+		
+		
+		(무한 반복 하는 방법.. 조건에 true나 1을 써준다)
+		
+		
+		// while문을 이용해 1부터 10까지의 정수를 출력하는 알고리즘
+		var i = 1;
+		while(i<=10){
+			document.write( i + "<br>" );
+			i++;
+		}
+		
+		
+		변수 초기치
+		do {
+			변수 증감문;
+		}while(조건)
+		
+		
+		// do~while문을 이용해 1부터 10까지의 정수를 출력하는 알고리즘
+		var i = 1;
+		do {
+			document.write(i + "<br>");
+			i++;
+		} while(i<=10)
+		
+		
+		// 1부터 100까지의 숫자를 출력하되 10의 배수일 경우에는 숫자 옆에 * 를 표시하는 알고리즘
+		for(var i=1; i<=100; i++){
+			if(i%10==0){
+				document.write( i + "*<br>" );
+			} else {
+				document.write( i + "<br>" );
+			}
+		}
+		
+		
+		// 1부터 10까지의 정수를 출력하되 5를 건너뛰고 나머지 숫자를 출력하는 알고리즘
+		for(var i=1; i<=10; i++){
+			if(i==5){
+				continue;
+			}
+			document.write( i + "<br>" );
+		}
+		
+		// 반복문을 탈출해버리는 break문
+		for(var i=1; i<=10; i++){
+			if(i==5){
+				break;
+			}
+			document.write( i + "<br>" );
+		}
+		
+		
+		// String 객체(length)
+		var str = "javaScript";
+		var cnt = str.length;
+		document.write("str 변수의 값의 글자 수는 " + cnt + "글자입니다.");
+		
+		
+	
+		function 함수명() {
+			
+		}
+		*/
+		
+		function idCheck(){  // 대소문자 구분!!
+			var id = document.frm.userId;  // 만약 스크립트에서 그냥 frm만 선언하면, html에서의 frm과 다른 변수이다.
+			var cnt = id.value.length;
+			if(cnt<8 || cnt>14){
+				alert("아이디는 8자 이상, 14자 이하이어야 합니다.");
+				id.value = "";
+				id.focus();  // 입력창 안 내용을 지우고 거기에 커서 가게 함
+			}
+		}
 	</script>
 </head>
 <body>
-	
+	<!-- .length의 활용 -->
+	<form name="frm" action="" method="get">  <!-- !! name은 Javascript와 서버용 이름이다. id나 class도 불러올 수 있지만... get뭐시기를 써야 한다. !! -->
+		<h2>회원가입</h2>
+		아이디 : <input type="text" name="userId"><br>
+		비밀번호 : <input type="password" name="pwd"><br>
+		<input type="button" value="확인" onclick="idCheck()">  <!-- onclick 이벤트에서 idCheck() 함수를 작동하게 한다. -->
+	</form>
 </body>
 </html>
