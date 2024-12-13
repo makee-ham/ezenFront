@@ -1,0 +1,18 @@
+.container {
+	display : flex;
+	background-color : #eee;
+	border : 1px solid #222;
+	margin-bottom : 10px;
+}
+.box {
+	background-color : #222;
+	margin : 5px;
+	padding : 5px 45px;
+}
+p {
+	color : #fff;
+	text-align : center;
+}
+.opt1 { flex-wrap : nowrap; }
+.opt2 { flex-wrap : wrap; }
+.opt3 { flex-wrap : wrap-reverse; }

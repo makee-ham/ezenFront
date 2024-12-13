@@ -1,0 +1,20 @@
+.container {
+	display : flex;
+	background-color : #eee;
+	border : 1px solid #222;
+	margin-bottom : 10px;
+}
+.box {
+	width : 80px;
+	background-color : #222;
+	margin : 5px;
+	padding : 5px 45px;
+}
+p {
+	color : #fff;
+	text-align : center;
+}
+.opt1 { flex-direction : row; }
+.opt2 { flex-direction : row-reverse; }
+.opt3 { flex-direction : column; }
+.opt4 { flex-direction : column-reverse; }

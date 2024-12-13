@@ -1,0 +1,24 @@
+.container {
+	display : flex;
+	width : 100%;
+	height : 150px;
+	flex-flow : row wrap;
+	background-color : #eee;
+	border : 1px solid #222;
+	margin-bottom : 20px;
+}
+.box {
+	background-color : #222;
+	margin : 5px;
+	padding : 5px 45px;
+}
+p {
+	color : #fff;
+	text-align : center;
+}
+/* 수직 각기 정렬 */
+.box1 { align-self : flex-start; } /* 위쪽정렬 */
+.box2 { align-self : flex-end; }  /* 아랫쪽정렬 */
+.box3 { align-self : center; }  /* 중앙정렬 */
+.box4 { align-self : baseline; } /* 부모의 기준선(윗선)을 기준으로 나옴 */
+.box5 { align-self : stretch; } /* 수직 늘리기 */

@@ -1,0 +1,25 @@
+.container {
+	display : flex;
+	width : 220px;
+	height : 250px;
+	flex-flow : row wrap;
+	background-color : #eee;
+	border : 1px solid #222;
+	margin-bottom : 20px;
+}
+.box {
+	background-color : #222;
+	margin : 5px;
+	padding : 5px 45px;
+}
+p {
+	color : #fff;
+	text-align : center;
+}
+/* 수직정렬 */
+.opt1 { align-content : flex-start; } /* 위쪽정렬 */
+.opt2 { align-content : flex-end; }  /* 아랫쪽정렬 */
+.opt3 { align-content : center; }  /* 중앙정렬 */
+.opt4 { align-content : space-between; } /* 수직양쪽정렬(균등한 사이간격) */
+.opt5 { align-content : space-around; } /* 수직으로 둥글게 말았을 때 균등한 사이간격 */
+.opt6 { align-content : stretch; }  /* 수직으로 늘려서 맞추기 */

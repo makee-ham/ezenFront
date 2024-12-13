@@ -1,0 +1,21 @@
+.container {
+	display : flex;
+	background-color : #eee;
+	border : 1px solid #222;
+	margin-bottom : 10px;
+}
+.box {
+	background-color : #222;
+	margin : 5px;
+	padding : 5px 45px;
+}
+p {
+	color : #fff;
+	text-align : center;
+}
+/* 수평정렬 */
+.opt1 { justify-content : flex-start; } /* 왼쪽정렬 */
+.opt2 { justify-content : flex-end; }  /* 오른쪽정렬 */
+.opt3 { justify-content : center; }  /* 가운데정렬 */
+.opt4 { justify-content : space-between; } /* 양쪽정렬(균등한 사이간격) */
+.opt5 { justify-content : space-around; } /* 둥글게 말았을 때 균등한 사이간격 */

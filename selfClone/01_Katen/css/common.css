@@ -385,6 +385,7 @@ header {
 #mainLeft {
 	width : 740px;
 	float : left;
+	margin-bottom : 20px;
 }
 #mainRight {
 	width : 360px;
@@ -666,7 +667,7 @@ header {
 }
 
 /* mainLeft : Inspiration */
-.leftRight {
+.insLR {
 	position : relative;
 	left : 674px;
 	bottom : 64px;
@@ -949,6 +950,13 @@ header {
 	color : #8f9bab;
 }
 
+.more p:hover {
+	border : 1px solid #fe5171;
+	
+}
+.more a:hover {
+	color : #fe5171;
+}
 
 /* mainRight */
 /* Right : 꿈틀꿈틀 지렁이 */
@@ -1088,6 +1096,51 @@ header {
 	border : 1px solid rgba(0,0,0,0.1);
 	margin-bottom : 40px;
 }
+.joinS {
+	color: #203056;
+	font-weight : bold;
+	font-size : 0.9em;
+	text-align : center;
+}
+.newsletter > form > input {
+	display : block;
+	width : 100%;
+	height : 40px;
+	border-radius : 40px;
+	text-align : center;
+}
+.getEmail {
+	outline-color : #fe5171;
+	outline-width : 1px;
+	border : 1px solid rgba(0,0,0,0.1);
+	color : #798892;
+	margin-top : 16px;
+	margin-bottom : 8px;
+}
+.signUp {
+	border : none;
+	background : linear-gradient(to left, #ff9f86 0%, #ff9f86 24%, #fe5171 100%);
+	font-size : 14px;
+	cursor : pointer;
+	color : #fff;
+	font-weight : bold;
+	margin-bottom : 16px;
+	letter-spacing : 0.5px;
+}
+.signUp:hover {
+	background : linear-gradient(to left, #fe5171 0%, #fe5171 60%, #ff9f86 100%);
+}
+.newsletter > p:last-child {
+	text-align : center;
+	font-size : 0.7em;
+}
+.newsletter > p:last-child > a {
+	color : #fe5171;
+	font-weight : normal;
+}
+.newsletter > p:last-child > a:hover {
+	color : #203056;
+}
 
 /* mainRight : celebration */
 .celebration {
@@ -1098,6 +1151,48 @@ header {
 	border-radius : 10px;
 	border : 1px solid rgba(0,0,0,0.1);
 	margin-bottom : 40px;
+}
+.celebration > a {
+	display : block;
+	width : 100%;
+	height : 200px;
+	border-radius : 10px;
+	overflow : hidden;
+}
+.celebration > a > img {
+	width : 100%;
+	height : 200px;
+	border-radius : 10px;
+}
+.celebration > a:hover > img {
+	transform : scale(1.05);
+	transition : transform .35s;
+}
+.celebration > button {
+	position : relative;
+	left : 20px;
+	top : -180px;
+}
+.celebration > h3 {
+	line-height : 140%;
+}
+.celebration p {
+	font-size : 0.8em;
+	z-index : 2;
+	display : inline-block;
+	margin-top : 8px;
+	margin-bottom : 28px;
+}
+.celebration > p:last-of-type {
+	margin-left : 24px;
+}
+.celebration p a {
+	color : #8f9bab;
+	font-weight : normal;
+}
+.celeLR {
+	position : relative;
+	left : 115px;
 }
 
 /* mainRight : ad */
@@ -1117,4 +1212,114 @@ header {
 	padding : 30px;
 	border-radius : 10px;
 	border : 1px solid rgba(0,0,0,0.1);
+}
+.hashtags { display : inline-block; }
+.hashtags a {
+	text-align : center;
+	display : inline-block;
+	box-sizing : content-box;
+	padding : 5px 10px;
+	border : 1px solid rgba(0,0,0,0.1);
+	border-radius : 36px;
+	margin-right : 5px;
+	margin-bottom : 5px;
+	height : 16px;
+	line-height : 16px;
+	color : #8f9bab;
+	font-weight : normal;
+	font-size : 0.8em;
+}
+.hashtags a:hover {
+	border : 1px solid #fe5171;
+	color : #fe5171;
+}
+
+
+/* bottomSection */
+/* images */
+#bottomSection {
+	width : 1116px;
+	height : 194px;
+	margin : 0 auto 32px;
+}
+.imgAs {
+	width : 182px;
+	height : 182px;
+	border-radius : 10px;
+} 
+.bottomImgs {
+	width : 182px;
+	height : 182px;
+	border-radius : 10px;
+}
+
+/* go to instagram button */
+.btn {
+	display : block;
+	width : 200px;
+	height : 40px;
+	border-radius : 40px;
+	text-align : center;
+	line-height : 40px;
+	border : none;
+	background : linear-gradient(to left, #ff9f86 0%, #ff9f86 24%, #fe5171 100%);
+	font-size : 14px;
+	color : #fff !important;
+	font-weight : normal !important;
+	
+	margin : 0 auto;
+	position : relative;
+	top : -116px;
+}
+.btn:hover {
+	background : linear-gradient(to left, #fe5171 0%, #fe5171 60%, #ff9f86 100%);
+}
+
+
+/* footer */
+footer {
+	width : 1116px;
+	margin : 0 auto;
+	height : 36px;
+	box-sizing : content-box;
+	padding : 40px 0;
+	border-top : 1px solid rgba(0,0,0,0.1);
+	position : relative;
+}
+footer > address {
+	font-style : normal;
+	position : absolute;
+	line-height : 36px;
+}
+.bottomSns {
+	text-align : center;
+	line-height : 36px;
+	padding-top : 3px;
+}
+#goTop {
+	position : absolute;
+	right : 0;
+	top : 36px;
+	
+	font-size : 0.9em;
+	color : #8f9bab;
+	font-weight : normal;
+	
+	box-sizing : content-box;
+	border : 1px solid rgba(0,0,0,0.1);
+	padding : 8px 16px;
+	border-radius : 32px;
+}
+#goTop:before {
+	content : "";
+	width : 10px;
+	height : 10px;
+	display : inline-block;
+	background : url(../images/upload.png) no-repeat;
+	background-size : 10px 10px;
+	margin-right : 10px;
+}
+#goTop:hover {
+	border : 1px solid #fe5171;
+	color : #fe5171;
 }

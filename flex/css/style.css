@@ -1,0 +1,23 @@
+body { padding : 20px; }
+.box {
+	width : 100px;
+	height : 50px;
+	margin : 5px;
+	background-color : #222;
+}
+p {
+	color : #fff;
+	text-align : center;
+}
+#container {
+	border : 1px solid #222;
+	display : flex;  /* flex는 부모에게 주는 것임 */
+	/*
+		flex : 주축(x)과 교차축(y)으로 이루어진다.
+		주축이 가지는 4가지 값
+		flex-direction : row, row-reverse, column, column-reverse
+		flex-wrap : 자식 요소를 줄바꿈할 것인지의 여부 (wrap, 기본은 nowrap)
+		[위 두 개 같이 써주는 법] flex-flow : flex-direction flex-wrap;
+	*/
+	flex-flow : row wrap;
+}
