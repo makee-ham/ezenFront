@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/jquery.scrollTo.min.js"></script>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div id="container">
+		<header>
+			<h1>어디까지 가 봤니?</h1>
+			<nav>
+				<a href="#eu" class="nav-btn">유럽</a>
+				<a href="#us" class="nav-btn">미국</a>
+				<a href="#ch" class="nav-btn">중국</a>
+				<a href="#jp" class="nav-btn">일본</a>
+			</nav>
+		</header>
+		<section id="eu" class="page1">
+			<h2>Europe</h2>
+			<a href="header"><img src="images/home.png" alt=""></a>
+		</section>
+		<section id="us" class="page2">
+			<h2>United States</h2>
+			<a href="header"><img src="images/home.png" alt=""></a>
+		</section>
+		<section id="ch" class="page3">
+			<h2>China</h2>
+			<a href="header"><img src="images/home.png" alt=""></a>
+		</section>
+		<section id="jp" class="page4">
+			<h2>Japan</h2>
+			<a href="header"><img src="images/home.png" alt=""></a>
+		</section>
+	</div>
+	<script>
+		$(function(){
+			$("nav a, section a").click(function(e){
+				$.scrollTo(this.hash || 0, 1500);
+				e.preventDefault();
+			});
+		});
+	</script>
+</body>
+</html>

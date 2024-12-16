@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>요소의 변경</title>
+	<script>
+		function changeImage() {
+			var obj = document.getElementById("image");
+			obj.src = "poodle.png";
+		}
+		function changeImage2() {
+			var obj = document.getElementById("image");
+			obj.src = "pome.png";
+		}
+	</script>
+</head>
+<body>
+	<img id="image" src="pome.png" width="200"><br>
+	<input type="button" value="버튼1" onclick="changeImage()">
+	<input type="button" value="버튼2" onclick="changeImage2()">
+</body>
+</html>

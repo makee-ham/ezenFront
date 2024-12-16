@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>요소의 변경</title>
+	<script>
+		function changeText(){
+			var obj = document.getElementById("subject");
+			obj.style.color = "#ff0000";
+			obj.style.fontFamily = "Times New Roman";  // JS는 css의 '-' 대신 카멜문자?로 씀
+			obj.style.fontSize = "25px";
+			obj.style.fontStyle = "italic";
+			obj.style.fontWeight = "bold";
+			obj.style.border = "2px solid red";
+			obj.style.backgroundColor = "green";
+		}
+	</script>
+</head>
+<body>
+	<h1 id="subject">JavaScript</h1>
+	<input type="button" value="눌러보세요" onclick="changeText()">
+</body>
+</html>

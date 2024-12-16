@@ -221,7 +221,7 @@
 		// substr(start index, cher_digit) : 지정한 index번째부터 지정한 개수의 문자열 반환
 		var str = "javascript";
 		console.log(str.substr(3,4));
-		*/
+		
 		
 		// split : 문자열을 특정한 문자를 기준으로 분리하여 원하는 배열로 지정하여 저장시킴
 		var str = "java,script,program,web,content";
@@ -229,6 +229,45 @@
 		console.log(division);
 		for(var i=0; i<division.length; i++){  // 배열에서의 length는 방의 수!
 			console.log(i + "번 index : " + division[i]);
+		}
+		
+		
+		var alphabet = ["home","html","css","javascript","jquery"];
+		var clone=alphabet.slice(0, 3);
+		console.log(alphabet.slice(2));
+		console.log(clone);
+		console.log(alphabet);
+		
+		var tel=["010","2973","4650"];
+		console.log(tel.join("-"));
+		
+		var alphabet = ['a', 'b', 'c', 'd', 'e'];
+		alphabet.shift();
+		console.log(alphabet);
+		alphabet.unshift('a');
+		console.log(alphabet);
+		alphabet.splice(2,1,"kim");  // 대체
+		console.log(alphabet);
+		alphabet.splice(2,0,"lee");  // 추가
+		console.log(alphabet);
+		alphabet.splice(2,2,"han","jung");
+		console.log(alphabet);
+		
+		var num = [ 52, 13, 8, 26, 24, 57, 86, 20 ];
+		console.log(num);
+		console.log(num.sort(function(a,b){return a-b}));  // 오름차순  return b-a 하면 내림차순
+		*/
+		var num = [ 52, 13, 8, 26, 24, 57, 86, 20, 19, 43 ];
+		var search = prompt("찾고자 하는 숫자를 입력하세요..");  // 원래는 입력받은 값 숫자화 해야 함
+		for(var cnt=0; cnt<num.length; cnt++){
+			if(search == num[cnt]){
+				break;
+			}
+		}
+		if(cnt<10){
+			console.log("찾고자 하는 숫자 " + search 	+"는 " + (cnt+1) + "번째 숫자입니다");  // JS에선 for문 안에 있는 지역 변수도 밖에서 살아있음 ㄷㄷ
+		}else{
+			console.log("찾고자 하는 숫자가 없습니다");
 		}
 	</script>
 </head>
