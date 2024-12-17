@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>요소의 변경</title>
+	<script>
+		function process() {
+			// var obj = document.getElementById("target");  // id로 찾기
+			var obj = document.myform.name;  // name으로 찾기
+			alert( obj.value + " 님 환영합니다" );
+		}
+	</script>
+</head>
+<body>
+	<form name="myform">
+		성 명 : <input type="text" id="target" name="name">
+		<input type="button" value="제출" onclick="process()">
+	</form>
+	<ul>
+		<li>List Item1</li>
+		<li>List Item2</li>
+		<li>List Item3</li>
+		<li>List Item4</li>
+		<li>List Item5</li>
+	</ul>
+	<script>
+		var list = document.getElementsByTagName("ul")[0];  // 0번째 ul
+		var allItems = list.getElementsByTagName("li");  // allItems가 배열로 인식되게 됨
+		for(i=0; i<allItems.length; i++){
+		alert(allItems[i].firstChild.data);
+		}
+	</script>
+</body>
+</html>

@@ -4,19 +4,31 @@
 	<meta charset="UTF-8">
 	<title>요소의 변경</title>
 	<script>
+		var cnt = 0;
 		function changeImage() {
+			cnt++;
+			var obj1 = document.getElementById("number");
+			obj1.innerHTML = cnt;
 			var obj = document.getElementById("image");
-			obj.src = "poodle.png";
-		}
-		function changeImage2() {
-			var obj = document.getElementById("image");
-			obj.src = "pome.png";
+			if(cnt%2==1) {
+				obj.src = "poodle.png";
+				} else {
+				obj.src = "pome.png";
+				}
 		}
 	</script>
+	<style>
+		div {
+			width : 210px;
+			height : 210px;
+		}
+	</style>
 </head>
 <body>
+	<div>
 	<img id="image" src="pome.png" width="200"><br>
+	</div>
 	<input type="button" value="버튼1" onclick="changeImage()">
-	<input type="button" value="버튼2" onclick="changeImage2()">
+	<div id="number">0</div>
 </body>
 </html>

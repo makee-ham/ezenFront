@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>setInterval</title>
+	<script>
+		var start;
+		function changeColor() {
+			start = setInterval(flashText, 500);
+		}
+		function flashText() {
+			var elem = document.getElementById("target");
+			elem.style.color = (elem.style.color=="red") ? "blue" : "red";
+			elem.style.backgroundColor = (elem.style.backgroundColor=="green") ? "yellow" : "green" ;
+		}
+		function stopTextColor() {
+			clearInterval(start);
+		}
+	</script>
+</head>
+<body onload="changeColor()">
+	<div id="target">
+		<p>네온사인 효과</p>
+	</div>
+	<button onclick="stopTextColor()">중지</button>
+	<button onclick="changeColor()">재생</button>
+</body>
+</html>
