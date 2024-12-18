@@ -1,0 +1,265 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+body {
+	font-family : "맑은 고딕", sans-serif;
+	color : #333;
+	background-color : #fff;
+}
+ul { list-style : none; }
+a {
+	color : #333;
+	text-decoration : none;
+}
+/* 헤더 영역 */
+header {
+	width : 100%;
+	height : 100px;
+	background-color : #ddd;
+}
+.wrap {
+	width : 1200px;
+	margin : 0 auto;
+}
+.logo {
+	width : 200px;
+	height : 100px;
+	float : left;
+}
+.logo img {
+	margin-top : 30px;
+}
+.menu {
+	width : 800px;
+	height : 100px;
+	float : right;
+}
+.navi {
+	margin-top : 50px;
+}
+.navi > li {
+	float : left;
+}
+.navi > li > a {
+	display : block;
+	width : 200px;
+	height : 50px;
+	text-align : center;
+	line-height : 50px;
+	background-color : #333;
+	color : #fff;
+	font-weight : bold;
+}
+.navi > li > a:hover {
+	background-color : #006478;
+}
+.submenu {
+	width : 200px;
+	height : 160px;
+	background-color : #bbb;
+	position : absolute;
+	z-index : 3;
+	display : none;
+}
+.submenu > li > a {
+	display : block;
+	width : 200px;
+	height : 40px;
+	line-height : 40px;
+	text-align : center;
+	background-color : #bbb;
+	color : #333;
+	font-weight : bold;
+}
+.submenu > li > a:hover {
+	background-color : #006478;
+}
+/* 이미지 슬라이드 영역 */
+.imgslide {
+	width : 1200px;
+	height : 300px;
+	margin : 0 auto;
+	overflow : hidden;
+}
+.imgslide a {
+	display : block;
+	position : relative;
+}
+.imgtext {
+	width : 300px;
+	height : 50px;
+	background-color : rgba(0,0,0,0.4);
+	position : absolute;
+	color : #fff;
+	text-align : center;
+	line-height : 50px;
+	font-weight : bold;
+	top : 50%;
+	left : 50%;
+	margin-left : -150px;  /* 반만큼 보내기... */
+	margin-top : -25px;
+}
+/* 콘텐츠 영역 */
+.content {
+	width : 1200px;
+	height : 200px;
+	margin : 0 auto;
+}
+.notice {
+	width : 400px;
+	height : 200px;
+	float : left;
+}
+.gallery {
+	width : 400px;
+	height : 200px;
+	float : left;
+}
+.banner {
+	width : 400px;
+	height : 200px;
+	float : right;
+}
+.notice h4 {
+	height : 50px;
+	line-height : 50px;
+	font-size : 18px;
+}
+.notice div {
+	width : 380px;
+	border-bottom : 2px solid #fa9600;
+	margin-left : 10px;
+}
+.notice li {
+	height : 27px;
+	line-height : 27px;
+	font-size : 15px;
+	margin : 0 10px;
+}
+.notice li:hover {
+	font-weight : bold;
+}
+.notice li:nth-child(2n) {
+	background-color : #ccc;
+}
+.notice li span {
+	float : right;
+}
+.gallery h4 {
+	height : 50px;
+	line-height : 50px;
+	font-size : 18px;
+}
+.gallery div {
+	width : 380px;
+	border-bottom : 2px solid #fa9600;
+	margin-left : 10px;
+}
+.gallery li {
+	float : left;
+	margin : 10px 0 0 10px;
+}
+.gallery img {
+	padding : 10px;
+}
+.gallery img:hover {
+	opacity : 0.5;
+}
+.banner { position : relative; }
+.banner img {
+	width : 400px;
+	height : 180px;
+	margin : 10px 0;
+	object-fit : cover;
+}
+.bntext {
+	width : 300px;
+	height : 30px;
+	background-color : rgba(40,40,40,0.5);
+	text-align : center;
+	line-height : 30px;
+	color : #fff;
+	position : absolute;
+	top : 85px;
+	left : 50px;
+}
+.banner img:hover {
+	opacity : 0.5;
+}
+/* 푸터 영역 */
+footer {
+	width : 100%;
+	height : 100px;
+	background-color : #bbb;
+}
+.btlogo {
+	width : 200px;
+	height : 100px;
+	float : left;
+}
+.btlogo img { margin-top : 30px; }
+.copy {
+	width : 800px;
+	float : left;
+	text-align : center;
+	line-height : 100px;
+}
+.sns {
+	width : 200px;
+	height : 100px;
+	float : right;
+}
+.sns ul {
+	text-align : center;
+	margin-top : 30px;
+}
+.sns ul li {
+	display : inline-block;
+}
+/* 레이어 팝업 */
+#modal {
+	position : absolute; /* body가 기준 */
+	width : 100%;
+	height : 100%;  /* 질문 : 왜 화면 줄이면 안 차지  << height 100%는 표준이 아님 */
+	top : 0;
+	left : 0;
+	background-color : rgba(0,0,0,0.6);
+	z-index : 10;
+	display : none;
+}
+#modal.active {
+	display : block;
+}
+.modal_up {
+	width : 400px;
+	height : 300px;
+	position : fixed;
+	top : 20%;
+	left : 30%;
+	background-color : #fff;
+}
+.uptitle {
+	font-size : 20px;
+	text-align : center;
+	margin-top : 20px;
+	font-weight : bold;
+}
+.upbody {
+	padding : 30px;
+	line-height : 30px;
+	text-align : center;
+}
+.btn {
+	width : 80px;
+	height : 20px;
+	text-align : center;
+	line-height : 20px;
+	font-size : 15px;
+	font-weight : bold;
+	background-color : #ccc;
+	position : absolute;
+	right : 10px;
+	bottom : 10px;
+	cursor : pointer;
+}

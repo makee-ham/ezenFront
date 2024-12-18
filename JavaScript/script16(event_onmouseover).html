@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>event(onmouseover)</title>
+	<script>
+		function onMouseIn(obj) {
+			obj.style.border = "2px solid red";
+		}
+		function onMouseOut(obj) {
+			obj.style.border = "";
+		}
+	</script>
+	<style>
+		div { width : 200px; background-color : yellow; }
+	</style>
+</head>
+<body>
+	<div onmouseover="onMouseIn(this)" onmouseout="onMouseOut(this)">  <!-- this는 이벤트가 벌어진 대상. 예약어이므로 parameter나 변수로 쓰지 말자! -->
+		마우스를 이 요소 위에 이동하세요...
+	</div>
+</body>
+</html>
