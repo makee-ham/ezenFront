@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>focus, blur 이벤트</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("input").focus(function(){
+				$(this).css("background-color","pink");
+			});
+			$("input").blur(function(){
+				$(this).css("background-color","white");
+			});
+		});
+	</script>
+</head>
+<body>
+	아이디 : <input type="text" name="id" id="userId"><br>
+	성명 : <input type="text" name="name"><br>
+	출신도시 : <input type="text" name="city">
+</body>
+</html>

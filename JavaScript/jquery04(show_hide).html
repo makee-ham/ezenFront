@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>show_hide</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	
+</head>
+<body>
+	<button class="show">Show It</button><button class="hide">Hide It</button><br>
+	<img id="dog" src="dog.png" alt="dog" width="150" style="display : none;">
+	<script>
+		$(document).ready(function(){
+			$(".show").click(function(){
+				$("#dog").show("slow");
+			});
+			$(".hide").click(function(){
+				$("#dog").hide("slow");
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>요소의 콘텐츠 가져오기</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("#text").click(function(){
+				alert($("#target").text())
+			});
+			$("#html").click(function(){
+				alert($("#target").html())
+			});
+		});
+	</script>
+</head>
+<body>
+	<p id="target">이것은 <strong>하나의 </strong>단락입니다</p>
+	<button id="text">text()</button>
+	<button id="html">html()</button>
+</body>
+</html>

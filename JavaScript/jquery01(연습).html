@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>jquery 몸풀기</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("h2").click(function(){
+				$(this).hide();
+			});
+			$(".btn").click(function(){
+				$("#target").show(1000);
+			});
+		});
+	</script>
+</head>
+<body>
+	<h2 id="target">클릭하면 사라집니다</h2>
+	<input type="button" class="btn" value="나타나게 해보자">
+</body>
+</html>

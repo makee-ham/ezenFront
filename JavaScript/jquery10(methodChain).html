@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>메소드 체이닝</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				$("#dog").css("display" , "none").show("slow").fadeOut("slow").slideDown("slow");
+			});
+		});
+	</script>
+</head>
+<body>
+	<button>메소드 체이닝</button><br>
+	<img id="dog" src="dog.png" alt="dog" width="150" style="display : none"><br>
+</body>
+</html>

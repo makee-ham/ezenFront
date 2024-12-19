@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>slideDown, slideUp</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	
+</head>
+<body>
+	<button class="down">slideDown</button> <button class="up">slideUp</button>
+	<img id="dog" src="dog.png" alt="dog" width="150" style="display : none;">
+	<script>
+		$(document).ready(function(){
+			$(".down").click(function(){
+				$("#dog").slideDown("slow");  // 서브 메뉴 만들 때 많이 사용
+			});
+			$(".up").click(function(){
+				$("#dog").slideUp("slow");
+			});
+		});
+	</script>
+</body>
+</html>

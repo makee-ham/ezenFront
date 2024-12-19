@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>mouseover 이벤트</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	<style>
+		div.out {
+			width : 200px;
+			height : 60px;
+			background-color : pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="out">
+		<p>마우스를 여기로 움직이세요.</p>
+		<p>0</p>
+	</div>
+	<script>
+		var cnt = 0;
+		$("div.out").mouseover(function(){
+			cnt++;
+			$("p:first", this).text("mouse over");  // 현재 이벤트가 벌어진 '걔' 안에 있는 p의 first
+			$("p:last", this).text(cnt);
+		});
+	</script>
+</body>
+</html>

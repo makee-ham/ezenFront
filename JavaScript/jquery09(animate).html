@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>animate</title>
+	<script src="js/jquery-2.1.1.js"></script>
+	<script>
+	var pos = 0;
+		$(document).ready(function(){
+			$("button").click(function(){
+				pos += 100;
+				$("#dog").animate({ left : pos });  // 중괄호는 여러 명령어 쓸 때 대비해서 씀
+			});
+		});
+	</script>
+</head>
+<body>
+	<img id="dog" src="dog.png" alt="dog" width="150" style="position : relative"><br>
+	<button>animate</button>
+</body>
+</html>
