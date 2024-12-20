@@ -1,0 +1,195 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+body {
+	font-family : "맑은 고딕", sans-serif;
+	color : #333;
+	background-color : #fff;
+}
+a {
+	color : #333;
+	text-decoration : none;
+}
+ul { list-style : none; }
+#wrapper {
+	width : 1000px;
+}
+/* 헤더 영역 */
+header {
+	width : 200px;
+	height : 650px;
+	float : left;
+	background-color : #aaa;
+}
+.logo {
+	width : 200px;
+	height : 100px;
+}
+.logo img {
+	margin : 30px 0;
+}
+.menu {
+	width : 180px;
+	text-align : center;
+	margin-left : 10px;
+}
+.navi > li > a {
+	display : block;
+	width : 180px;
+	height : 40px;
+	line-height : 40px;
+	font-size : 16px;
+	font-weight : bold;
+	color : #fff;
+	background-color : #222328;
+}
+.navi > li > a:hover {
+	background-color : #930930;
+	color : #ff0;
+}
+.submenu {
+	width : 180px;
+	background-color : #ccc;
+	display : none;
+}
+.submenu > li > a {
+	display : block;
+	width : 180px;
+	height : 40px;
+	line-height : 40px;
+	font-size : 14px;
+	font-weight : bold;
+	background-color : #ccc;
+	color : #fff;
+}
+.submenu > li > a:hover {
+	background-color : #999;
+	color : #ff0;
+}
+/* 이미지 슬라이드 영역 */
+.imgslide {
+	width : 800px;
+	height : 350px;
+	float : right;
+	position : relative;
+}
+.imgslide a {
+	display : block;
+	position : absolute;
+	top : 0;
+	left : 0;
+}
+.imgtext {
+	width : 300px;
+	height : 50px;
+	text-align : center;
+	line-height : 50px;
+	background-color : rgba(40,40,40,0.3);
+	color : #fff;
+	position : absolute;
+	top : 50%;
+	left : 50%;
+	margin : -25px 0 0 -150px;
+}
+/* 콘텐츠 영역 */
+.contents {
+	width : 800px;
+	height : 200px;
+	float : right;
+}
+.tabmenu {
+	width : 290px;
+	height : 180px;
+	margin : 10px 0 10px 5px;
+	float : left;
+	position : relative;
+}
+.tabmenu > li {
+	width : 80px;
+	line-height : 30px;
+	float : left;
+}
+.tabmenu > li > a {
+	display : block;
+	font-size : 14px;
+	text-align : center;
+	background-color : #ccc;
+	border : 1px solid #ddd;
+	border-bottom : none;
+}
+.tabmenu > li:first-child a {
+	border-right : none;
+}
+.tabmenu > li > a:hover {
+	background-color : #eee;
+}
+.tabmenu > li.active > a {
+	background-color : #fff;
+}
+.tabmenu > li div {
+	position : absolute;
+	left : 0;
+	height : 0;
+	overflow : hidden;
+}
+.tabmenu > li.active div {
+	width : 288px;
+	height : 148px;
+	border : 1px solid #ddd;
+	z-index : 1;
+}
+.notice ul {
+	width : 288px;
+	margin : 12px 0;
+}
+.notice ul li {
+	height : 32px;
+	line-height : 32px;
+	font-size : 13px;
+	margin : 0 10px;
+}
+.notice li:nth-child(2n) {
+	background-color : #ccc;
+}
+.notice li span {
+	float : right;
+}
+/* 갤러리 */
+.gallery li {
+	float : left;
+	margin : 20px 0 0 5px;
+}
+.gallery img {
+	width : 70px;
+	height : 90px;
+	padding : 10px;
+}
+.gallery li:hover {
+	opacity : 0.5;
+}
+/* 배너 */
+.banner {
+	width : 295px;
+	height : 185px;
+	float : left;
+	margin : 10px 0;
+	position : relative;
+}
+.banner img {
+	width : 295px;
+	height : 180px;
+}
+.bntext {
+	width : 200px;
+	height : 40px;
+	text-align : center;
+	line-height : 40px;
+	font-weight : bold;
+	background-color : rgba(40,40,40,0.3);
+	color : #fff;
+	position : absolute;
+	top : 70px;
+	left : 48px;
+}
+.banner img:hover { opacity : 0.5; }
