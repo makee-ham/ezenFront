@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<title>마우스롤오버메뉴만들기-replace속성(이미지)</title>
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$("img.menu").mouseover(function(){
+				$(this).attr("src", $(this).attr("src").replace(".jpg","_on.jpg"))
+			});
+			$("img.menu").mouseout(function(){
+				$(this).attr("src", $(this).attr("src").replace("_on.jpg", ".jpg"))
+			});
+		});
+	</script>
+	<style>
+		body { margin : 0; padding : 0; border : 0; }
+		ul { list-style : none; }
+		ul li { float : left; }
+		img { border : 0; }
+	</style>
+	</head>
+	<body>
+	<ul>
+		<li><a href="#"><img src="index01.jpg" class="menu" ></a></li>
+		<li><a href="#"><img src="index02.jpg" class="menu" ></a></li>
+		<li><a href="#"><img src="index03.jpg"class="menu" ></a></li>
+		<li><a href="#"><img src="index04.jpg" class="menu" ></a></li>
+		<li><a href="#"><img src="index05.jpg" class="menu" ></a></li>
+		<li><a href="#"><img src="index06.jpg" class="menu" ></a></li>
+	</ul>
+	</body>
+</html>

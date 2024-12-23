@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>  아코디언패널 </title>
+  <script src="js/jquery-1.8.2.min.js"></script>
+  <script>
+	$(document).ready(function(){
+		$("dd:not(:first)").css("display","none");
+		$("dl dt").click(function(){
+			if($("+dd",this).css("display")=="none"){  // +dd는 this 그 다음의 dd
+				// 클릭한 dt의 바로 다음에 있는 dd의 display 상태가 none일 때
+				// 모든 dd를 slideUp
+				$("dd").slideUp("slow");
+				// 클릭한 dt의 바로 다음에 있는 dd를 slideDown
+				$("+dd",this).slideDown("slow");
+			}
+		});
+	});
+  </script>
+  <style>
+	body { background-color : pink; }
+	* { margin : 0; padding : 0; border : 0; }
+	dl { width : 800px; margin : 50px auto; }
+	dt {
+		height : 35px; text-indent : 3em; cursor : pointer;
+		background : url(images/background.jpg);
+		color : #fff; font-weight : bold; line-height : 35px;
+	}
+	dd { height : 300px; background : #fff; }
+	dd p { padding : 20px; text-indent : 1em; }
+  </style>
+ </head>
+
+ <body>
+		<dl>
+				<dt> 공지사항 </dt>
+				<dd>
+					<p>
+						저희 CoUzleIT는 프로그래밍에서 꼭 필요한 code 작업을 재밌고 즐겁게 만들고, 교육하는 기업입니다.저희 CouzleIT에서 교육하는 과목으로는 C / C++, 웹표준, 모바일웹앱, java/jsp가 있으며, 프로그래밍을 전문으로 하여 초보에서 부터 전문가까지 쉽고 빠르게 현장에서 충분한 능력을 펼칠 수 있도록 최선의 교육을 지향합니다.
+					</p>
+				</dd>
+
+				<dt> 게시판 </dt>
+				<dd>
+					<p>
+						저희 CoUzleIT는 프로그래밍에서 꼭 필요한 code 작업을 재밌고 즐겁게 만들고, 교육하는 기업입니다.저희 CouzleIT에서 교육하는 과목으로는 C / C++, 웹표준, 모바일웹앱, java/jsp가 있으며, 프로그래밍을 전문으로 하여 초보에서 부터 전문가까지 쉽고 빠르게 현장에서 충분한 능력을 펼칠 수 있도록 최선의 교육을 지향합니다.
+					</p>
+				</dd>
+
+				<dt> 갤러리 </dt>
+				<dd>
+					<p>
+						저희 CoUzleIT는 프로그래밍에서 꼭 필요한 code 작업을 재밌고 즐겁게 만들고, 교육하는 기업입니다.저희 CouzleIT에서 교육하는 과목으로는 C / C++, 웹표준, 모바일웹앱, java/jsp가 있으며, 프로그래밍을 전문으로 하여 초보에서 부터 전문가까지 쉽고 빠르게 현장에서 충분한 능력을 펼칠 수 있도록 최선의 교육을 지향합니다.
+					</p>
+				</dd>
+		</dl>
+ </body>
+</html>
+<!--
+		:::::::::::::: 아코디언패널
+			: 라벨을 클릭하면 숨겨져있던패널 슬라이드효과로 표시되는 UI
+			: 공간의 제약이 있을경우 사용
+
+			구조(html) + 표현(css ) + 움직임(jQuery)
++++++++++++++++++++++++ 구조
+		공지사항 |  게시판 | 갤러리
+
+		리스트(ul | ol | dl)
+		ul : ●  
+		ol : 1,2,3,
+		dl(내가정의내린리스트 : dt-제목 | dd-설명)
+
+		<dl>
+			<dt> 제목:공지사항 </dt>
+			<dd>
+				<p>
+						저희 CoUzleIT는 프로그래밍에서 꼭 필요한 code 작업을 재밌고 즐겁게 만들고, 교육하는 기업입니다.저희 CouzleIT에서 교육하는 과목으로는 C / C++, 웹표준, 모바일웹앱, java/jsp가 있으며, 프로그래밍을 전문으로 하여 초보에서 부터 전문가까지 쉽고 빠르게 현장에서 충분한 능력을 펼칠 수 있도록 최선의 교육을 지향합니다.
+				</p>
+			</dd>
+		</dl>
+-->
