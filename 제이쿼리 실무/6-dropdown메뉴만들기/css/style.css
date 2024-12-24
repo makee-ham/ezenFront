@@ -1,0 +1,32 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+#container {
+	margin : 100px auto;
+	width : 1000px;
+	position : relative;
+}
+ul { list-style : none; }
+a {
+	text-decoration : none;
+	font-size : 1.2em;
+	font-weight : bold;
+	color : white;
+}
+a:hover { color : red; }
+.menu { text-align : center; }
+.menu > li {
+	width : 200px;
+	float : left;
+	height : 80px;
+	line-height : 80px;
+	background-color : black;
+}
+.sub {
+	position : absolute;
+	width : 200px;
+}
+.sub li {
+	background-color : gray;
+}

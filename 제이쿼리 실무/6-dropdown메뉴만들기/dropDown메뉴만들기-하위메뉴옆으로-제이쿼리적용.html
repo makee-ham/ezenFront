@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <title>  dropdown메뉴만들기 </title>
+  <link rel="stylesheet" href="css/style2.css">
+  <script src="js/jquery-1.8.2.js"></script>
+  <script>
+	$(document).ready(function(){
+		$(".sub").hide();
+		$(".menu_s").hover(function(){
+			$(".sub", this).toggle(500);
+		});
+	});
+  </script>
+ </head>
+
+ <body>
+		<div  id="container">
+			<ul  class="menu">
+				<li class="menu_s"><a href="#"> Home </a>
+						<ul  class="sub g1">
+							<li><a  href="http:www.naver.com">  subA  </a></li>
+							<li><a  href="#">  subA  </a></li>
+							<li><a  href="#">  subA  </a></li>
+						</ul>
+				</li>
+				<li class="menu_s"><a href="#"> 회사소개 </a>
+						<ul  class="sub g2">
+							<li><a  href="#">  subB  </a></li>
+							<li><a  href="#">  subB  </a></li>
+							<li><a  href="#">  subB  </a></li>
+						</ul>				
+				</li>
+				<li class="menu_s"><a href="#"> 사업문의 </a>
+						<ul  class="sub g3">
+							<li><a  href="#">  subC  </a></li>
+							<li><a  href="#">  subC  </a></li>
+							<li><a  href="#">  subC  </a></li>
+						</ul>				
+				</li>
+				<li class="menu_s"><a href="#"> 연습장 </a>
+						<ul  class="sub g4">
+							<li><a  href="#">  subD  </a></li>
+							<li><a  href="#">  subD  </a></li>
+							<li><a  href="#">  subD  </a></li>
+						</ul>				
+				</li>
+				<li class="menu_s"><a href="#"> 갤러리 </a>
+						<ul  class="sub g5">
+							<li><a  href="#">  subE </a></li>
+							<li><a  href="#">  subE </a></li>
+							<li><a  href="#">  subE </a></li>
+						</ul>				
+				</li>
+			</ul>
+			<div  id="under">
+			</div>
+		</div>
+ </body>
+</html>

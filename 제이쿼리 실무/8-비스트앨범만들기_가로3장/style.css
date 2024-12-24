@@ -1,0 +1,11 @@
+body {margin:0; padding:0; position:relative;}
+			ul { padding:0;}
+			ul li { display:inline-block; list-style:none;}
+			img { border:0;}
+			.mm1 { position:absolute; left:0px; top:0px;}
+			.mm { position:absolute; left:100px; top:100px;}
+			
+			.pop1 {position:absolute; left:250px; top:130px;  z-index:100; width:700px; background-color:#fff;  border:8px double #ccc;}
+			.pop1 p { text-indent:10px; font-size:80%; line-height:12px;}
+			.pop1 span { color:#146a9c; font-weight:bold; font-size:100%; }
+			.pop1 strong { color : #6b1616; font-size:120%;}

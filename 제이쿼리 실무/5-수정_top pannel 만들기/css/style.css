@@ -1,0 +1,39 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+#wrap {
+	width : 750px;
+	margin : 50px auto;
+	position : relative;
+}
+ul { list-style : none; }
+a {
+	text-decoration : none;
+	color : #666;
+}
+#tab li a {
+	float : left;
+	width : 250px;
+	text-align : center;
+	height : 40px;
+	line-height : 40px;
+	background-color : black;
+	color : #fff;
+}
+#tab li a:hover {
+	background-color : orange;
+	color : black;
+}
+.panel {
+	position : absolute;
+	left : 0;
+	top : 40px;
+	background-color : orange;
+	width : 750px;
+}
+.panel div { float : left; }
+.panel div p:first-child {
+	color : blue;
+	font-size : 1.2em;
+}

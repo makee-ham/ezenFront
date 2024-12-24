@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+	<title>마우스롤오버메뉴만들기-replace속성(이미지)</title>
+		<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+		<link href="style.css" rel="stylesheet">
+		<script>
+			$(function(){
+				$('.pop1').hide();
+				$('ul.menu1 li a img').hover(function(){
+					$(this).stop().fadeTo('slow',0.1);
+					$(this).attr("src",$(this).attr("src").replace(".jpg","_on.jpg"));
+					
+				}, function(){
+					$(this).attr("src",$(this).attr("src").replace("_on.jpg",".jpg"));
+					$(this).stop().fadeTo('slow',1);
+				});
+
+				$('ul.menu1 li a').click(function(){
+					var s = $(this).attr('href');
+					$('.pop1 img').attr("src", s);			
+					$('.pop1').fadeIn('slow')
+				  	 $('.mm ul li a').stop().fadeTo('slow',0.3);	
+				return false
+				});
+				
+				$('.pop1').click(function(){
+					$('.pop1').fadeOut('slow')
+					 $('ul.menu1 li a').stop().fadeTo('slow',1);		 
+					return false				  
+			});
+							});
+		</script>
+		<style></style>
+	</head>
+	<body>
+		<div class="mm">
+			<ul class="menu1">
+				<li><a href="images/beast1_big.jpg" ><img src="images/beast1.jpg"></a></li>
+				<li><a href="images/beast2_big.jpg"><img src="images/beast2.jpg"></a></li>
+				<li><a href="images/beast3_big.jpg"><img src="images/beast3.jpg"></a></li>
+				<li><a href="images/beast4_big.jpg"><img src="images/beast4.jpg"></a></li>
+				<li><a href="images/beast5_big.jpg" ><img src="images/beast5.jpg"></a></li>
+				<li><a href="images/beast6_big.jpg"><img src="images/beast6.jpg"></a></li>
+				<li><a href="images/beast7_big.jpg"><img src="images/beast7.jpg"></a></li>
+				<li><a href="images/beast8_big.jpg"><img src="images/beast8.jpg"></a></li>
+				<li><a href="images/beast9_big.jpg"><img src="images/beast9.jpg"></a></li>
+				<li><a href="images/beast10_big.jpg"><img src="images/beast10.jpg"></a></li>
+			</ul>
+	
+			<div class="pop1"><img src="images/beast1_big.jpg" id="pop">
+				<p><strong>비스트 (BEAST) 가수</strong></p> 
+				<p><span>멤버 : </span>윤두준(리더, 보컬), 양요섭(메인보컬), 장현승(리드보컬), 이기광(보컬), 용준형(랩), 손동운(보컬)</p>
+				<p><span>소속사 : </span> 큐브엔터테인먼트</p>
+				<p><span>데뷔 : </span>2009년 EP 앨범 [Beast Is The B2ST]</p>
+				<p><span>수상 : </span>2015년 제24회 하이원 서울가요대상 최고음반상</p>
+				<p><span>경력 : </span>2012.08 K-코믹스 만화 홍보대사</p>
+				<p><span>관련정보 : </span>네이버[스타캐스트] - 이제 곧, 12시 30분</p>
+				<p><span>사이트 : </span>공식사이트, 페이스북, 유튜브</p>
+		</div>
+	</div>
+	</body>
+</html>

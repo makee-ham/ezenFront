@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>12°­ quick menu</title>
+<script src="js/jquery-2.1.1.js" type="text/javascript"></script>
+	<script>
+	$(function(){
+		var defaultTop =parseInt( $("#quick").css("top"));
+		$(window).on("scroll",function(){
+			var scv = $(window).scrollTop();
+			
+			$("#quick").stop().animate({top:scv+defaultTop+"px"},1000);
+		});
+		});
+	</script>
+</head>
+<body>
+	<div id="wrap">
+		<header></header>
+		<nav></nav>
+		<section></section>
+		<div id="quick">
+			<img src="images/quick_title.png">
+			<ul>
+				<li><a href="#"><img src="images/quick_list_1.png"></a></li>
+				<li><a href="#"><img src="images/quick_list_2.png"></a></li>
+				<li><a href="#"><img src="images/quick_list_3.png"></a></li>
+				<li><a href="#"><img src="images/quick_top_btn.png"></a></li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

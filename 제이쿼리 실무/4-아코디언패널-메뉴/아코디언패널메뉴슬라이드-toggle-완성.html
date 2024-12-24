@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+ <head>
+  <title>  아코디언메뉴패널 </title>
+  <script src="js/jquery-1.8.2.js"></script>
+  <script>
+	$(document).ready(function(){
+		$(".sub").hide();
+		$(".aa").click(function(){
+			$(".sub",this).slid
+			eToggle("slow");
+		});
+	});
+  </script>
+  <style>
+	ul { list-style : none; width : 200px; margin : 0 auto; padding : 0; }
+	ul li {
+		background-color : black; color : yellow; text-align : center;
+		line-height : 35px; cursor : pointer;
+	}
+	.sub li {
+		background-color : #999; color : black; border-bottom : 1px solid black;
+	}
+	.sub li:first-child { margin-top : 5px; }
+	
+  </style>
+ </head>
+
+ <body>
+		<ul>
+				<li class="aa">회사소개
+					<ul class="sub">
+						<li>경영이념</li>
+						<li>연혁</li>
+						<li>오시는길</li>
+					</ul>
+				</li>
+				<li class="aa">커뮤니티
+					<ul class="sub">
+						<li>이벤트</li>
+						<li>드렌드스토리</li>
+						<li>오시는길</li>
+					</ul>
+				</li>
+				<li class="aa">매장소개
+					<ul class="sub">
+						<li>인천점</li>
+						<li>목포점</li>
+						<li>울산점</li>
+					</ul>
+				</li>
+	
+		</ul>
+ </body>
+</html>

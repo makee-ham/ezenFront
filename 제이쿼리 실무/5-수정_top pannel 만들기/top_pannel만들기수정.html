@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<title>탭 패널 만들기</title>
+		<link rel="stylesheet" href="css/style.css">
+		<script src="js/jquery-1.8.2.js"></script>
+		<script>
+			$(function(){
+				$(".panel:not(:first)").hide();
+				$(".tab_1").click(function(){
+					$(".panel").hide();  // 일단 감추고
+					$(".panel", this).show();  // 보여줘
+				});
+			});
+		</script>
+	</head>
+	<body>
+	<div id="wrap">
+		<ul id="tab">
+			<li class="tab_1"><a href="#">2015 벤츠 SL클래스</a>
+				<ul class="panel">
+					<li>
+						<div><img src="b_sl.png"></div>
+						<div>
+							<p>1억 2,900만원 </p>
+							<p>제조사 벤츠</p> 
+							<p>차종 수입 | 스포츠카 </p>
+							<p>연비 9.7km/ℓ </p>
+							<p>연료 가솔린</p> 
+							<p>판매 국내출시</p> 
+						</div>
+					</li>
+				</ul>
+			</li>
+			<li class="tab_1"><a href="#">2015 롤스로이스 고스트 시리즈2</a>
+				<ul class="panel">
+						<li>
+							<div><img src="r_g.png"></div>
+							<div>
+								<p>4억 1,000 ~ 4억 8,000만원  </p>
+								<p>제조사 롤스로이스 </p> 
+								<p>차종 수입 | 대형 </p>
+								<p>연비 6.3km/ℓ  </p>
+								<p>연료 가솔린</p> 
+								<p>판매 국내출시</p> 
+							</div>
+						</li>
+					</ul>
+			</li>
+			<li class="tab_1"><a href="#">2015 폭스바겐 시로코</a>
+				<ul class="panel">
+						<li>
+							<div><img src="ss.png"></div>
+							<div><p>4,300만원  </p>
+								<p>제조사 폭스바겐  </p> 
+								<p>차종 수입 | 소형 </p>
+								<p>연비 14.8km/ℓ   </p>
+								<p>연료 디젤</p> 
+								<p>판매 국내출시</p>
+							</div>
+						</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	</body>
+</html>
