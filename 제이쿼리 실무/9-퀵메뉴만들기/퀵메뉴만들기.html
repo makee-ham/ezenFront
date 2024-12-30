@@ -8,11 +8,23 @@
 		var defaultTop =parseInt( $("#quick").css("top"));
 		$(window).on("scroll",function(){
 			var scv = $(window).scrollTop();
-			
 			$("#quick").stop().animate({top:scv+defaultTop+"px"},1000);
 		});
 		});
 	</script>
+	<style>
+		* { margin : 0; padding : 0; }
+		ul { list-style : none; }
+		#wrap {
+			width : 1000px; height : 2500px;
+			background-color : lightgreen; position : relative;
+		}
+		#quick {
+			width : 95px; position : absolute;
+			top : 100px; right : -96px;
+			border : 1px solid gray;
+		}
+	</style>
 </head>
 <body>
 	<div id="wrap">

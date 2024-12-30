@@ -1,0 +1,90 @@
+* {
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+}
+body {
+	color : #333;
+	background-color : #fff;
+}
+a {
+	color : #333;
+	text-decoration : none;
+}
+ul { list-style : none; }
+/* wrapper 좌우 배치 */
+#wrapper {
+	display : flex;
+}
+header {
+	width : 200px;
+}
+.contents {
+	width : 400px;
+}
+.imgslide {
+	width : calc(100% - 600px);
+}
+/* header 영역 */
+header h1 {
+	width : 200px;
+	height : 100px;
+}
+header h1 img {
+	margin : 27px 0 0 5px;
+}
+.menu {
+	width : 180px;
+	margin-top : 10px;
+	margin-left : 10px;
+}
+.navi > li {
+	position : relative;
+}
+.navi > li > a {
+	display : block;
+	width : 180px;
+	height : 40px;
+	line-height : 40px;
+	font-weight : bold;
+	background-color : #0066ad;
+	color : #fff;
+	padding-left : 5px;
+}
+.navi > li > a:hover {
+	background-color : #30a3f3;
+}
+.submenu {
+	position : absolute;
+	top : 0;
+	left : 180px;
+	display : none;
+}
+.submenu > li > a {
+	display : block;
+	width : 180px;
+	height : 35px;
+	line-height : 35px;
+	text-align : center;
+	font-weight : bold;
+	background-color : #ababab;
+	color : #fff;
+}
+.submenu > li > a:hover {
+	background-color : #30a3f3;
+}
+/* 콘텐츠 영역 */
+.banner {
+	height : 120px;
+}
+.notice {
+	height : 250px;
+}
+.notice div { margin-top : 20px; }
+.notice div h4 {
+	width : 100px;
+	height : 30px;
+	line-height : 30px;
+	text-align : center;
+	background-color : #ccc;
+}

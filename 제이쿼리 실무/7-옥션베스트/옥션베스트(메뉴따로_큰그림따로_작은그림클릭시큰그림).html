@@ -1,7 +1,35 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
-		<title>옥션베스트상품만들기 (작은그림클릭시 큰이미지보이기) </title>
+		<title>옥션베스트상품만들기 (작은그림클릭시 큰이미지보이기) </title> 
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				// 롤오버 효과
+				$("img.m1").mouseover(function(){
+					$(this).attr("src",$(this).attr("src").replace(".png","_on.png"));
+				});
+				$("img.m1").mouseout(function(){
+					$(this).attr("src",$(this).attr("src").replace("_on.png",".png"));
+				});
+				// 상품 이미지 바꾸기
+				$(".banner1 > li > a").click(function(){
+					var name = $(this).attr("href");
+					$(".big").attr("src", name);
+					return false;
+				});
+			});
+		</script>
+		<style>
+			* { margin : 0; padding : 0; }
+			ul { list-style : none; }
+			.banner { width : 920px; position : relative; }
+			.banner1 {
+				width : 630px;
+				margin : 0 auto;
+			}
+			.banner1 li { float : left; }
+		</style>
 	</head>
 	<body>
 	<div>

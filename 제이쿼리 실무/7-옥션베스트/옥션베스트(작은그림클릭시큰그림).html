@@ -2,6 +2,36 @@
 <html>
 	<head>
 		<title>옥션베스트상품만들기 (작은그림클릭시 큰이미지보이기) </title>
+		<script src="js/jquery-1.10.2.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				// 롤오버 효과
+				$("img.m1").mouseover(function(){
+					$(this).attr("src",$(this).attr("src").replace(".png","_on.png"));
+				});
+				$("img.m1").mouseout(function(){
+					$(this).attr("src",$(this).attr("src").replace("_on.png",".png"));
+				});
+				// 상품 이미지 바꾸기
+				$(".sub:not(:first)").hide();
+				$(".banner1 > li").click(function(){
+					$(".sub").hide();
+					$(".sub", this).show();
+				});
+			});
+		</script>
+		<style>
+			* { margin : 0; padding : 0; }
+			ul { list-style : none; }
+			.banner { width : 920px; position : relative; }
+			.banner1 { width : 630px; margin : 0 auto; }
+			.banner1 > li { float : left; }
+			.sub li {
+				position : absolute;
+				top : 120px;
+				left : 0;
+			}
+		</style>
 	</head>
 	<body>
 	<div>
@@ -22,7 +52,7 @@
 						<li><img src="images/3.png"></li>				
 					</ul>
 				</li>
-				<li><a href="#"><img src="images/4s.png"></a>
+				<li><a href="#"><img src="images/4s.png" class="m1"></a>
 					<ul class="sub">
 						<li><img src="images/4.png"></li>				
 					</ul>
@@ -32,7 +62,7 @@
 						<li><img src="images/5.png"></li>				
 					</ul>
 				</li>
-				<li><a href="#"><img src="images/6s.png"></a>
+				<li><a href="#"><img src="images/6s.png" class="m1"></a>
 					<ul class="sub">
 						<li><img src="images/6.png"></li>				
 					</ul>
