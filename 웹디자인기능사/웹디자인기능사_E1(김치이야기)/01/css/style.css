@@ -1,0 +1,267 @@
+* {
+	margin : 0;
+	padding : 0;
+	box-sizing : border-box;
+}
+html, body { height : 100%; }
+body {
+	background-color : #fff;
+	color : #333;
+	font-family : "맑은 고딕", sans-serif;
+}
+a {
+	text-decoration : none;
+	color : #333;
+}
+ul { list-style : none; }
+#wrapper {
+	width : 100%;
+	height : 100%;
+	position : relative;
+}
+/* header */
+header {
+	width : 200px;
+	height : calc(100% - 120px);
+	float : left;
+}
+.logo {
+	width : 200px;
+	height : 50px;
+}
+.logo a {
+	margin-left: 5px;
+	margin-top : 2.5px;
+}
+.menu {
+	width : 180px;
+	margin-left : 10px;
+	margin-top : 24px;
+}
+.navi > li > a {
+	display : block;
+	width : 180px;
+	height : 40px;
+	background-color : #f04467;
+	line-height : 40px;
+	font-weight : bold;
+	padding-left : 5px;
+}
+.navi a:hover {
+	background-color : #a9c0f6;
+}
+.submenu { display : none; }
+.submenu > li > a {
+	display : block;
+	width : 180px;
+	height : 40px;
+	background-color : #ddd;
+	line-height : 40px;
+	font-weight : bold;
+	padding-left : 10px;
+}
+.spot {
+	margin-top : 24px;
+	text-align : center;
+}
+.spot li {
+	display : inline-block;
+	margin : 0 5px 0 5px;
+}
+
+/* contents */
+.contents {
+	width : 400px;
+	height : calc(100% - 120px);
+	float : left;
+	display : flex;
+	flex-direction : column;
+	gap : 16px;
+	padding-right : 16px;
+}
+.banner, .shortcut {
+	height : 15%;
+}
+.notice, .gallery {
+	height : 35%;
+}
+.banner {
+	background-color : #eee;
+	position : relative;
+}
+.banner img { height : 100%; }
+.banner a {
+	display : block;
+	width : 100%;
+	height : 100%;
+}
+.banner span {
+	position : absolute;
+	top : 30%;
+	left : 30%;
+	margin-left : 24px;
+	font-size : 1.5rem;
+}
+.banner p {
+	position : absolute;
+	top : 70%;
+	left : 80%;
+}
+.notice h4, .gallery h4 {
+	display : inline-block;
+	padding : 10px;
+	border : 1px solid #ddd;
+	border-bottom : none;
+	margin-left : 5px;
+}
+.notice ul, .gallery ul {
+	border : 1px solid #ddd;
+	height : 80%;
+	display : flex;
+}
+.notice ul { flex-direction : column; }
+/* 질문: line-height가 안 먹어요... padding 어쩌죠 반응형 */
+.notice li {
+	display : block;
+	width : 100%;
+	height : 25%;
+	border-bottom : 1px solid #ddd;
+	padding : 14px 10px 0 10px;
+}
+.notice li:last-child { border-bottom : none; }
+.notice span { float : right; }
+.gallery li {
+	width : 50%;
+	height : 100%;
+	text-align : center;
+}
+.gallery img {
+	width : 90%;
+	margin-top : 20%;
+}
+.shortcut { width : 100%; }
+.shortcut ul {
+	width : 100%;
+	display : flex;
+	justify-content : space-around;
+	text-align : center;
+}
+/* imgslide */
+.imgslide {
+	width : calc(100% - 200px - 400px);
+	height : calc(100% - 120px);
+	float: right;
+	overflow : hidden;
+}
+.slidelist {
+	height : 100%;
+}
+/* 질문 : 글씨가 왜 자꾸 저리로 가죠;; */
+.slidelist a {
+	display : block;
+	width : 100%;
+	height : 100%;
+	position : relative;
+	float : left;
+}
+.image1 {
+	background : url("../images/slide1.jpg") no-repeat center;
+	background-size : cover;
+}
+.image2 {
+	background : url("../images/slide2.jpg") no-repeat center;
+	background-size : cover;
+}
+.image3 {
+	background : url("../images/slide3.jpg") no-repeat center;
+	background-size : cover;
+}
+.imgtext {
+	text-align : center;
+	width : 500px;
+	height : 80px;
+	background : rgba(0,0,0,0.6);
+	position : absolute;
+	top : 50%;
+	left : 50%;
+	color : #fff;
+	margin-top : -40px;
+	margin-left : -250px;
+	font-size : 1.2rem;
+	padding-top : 14px;
+}
+
+/* clear */
+.clear {
+	clear : both;
+}
+
+/* footer */
+footer {
+	width : 100%;
+	height : 120px;
+	background-color : #a9c0f6;
+	overflow : hidden;
+}
+.bt_logo {
+	width : 30%;
+	height : 120px;
+	float : left;
+	text-align : center;
+	padding-top : 42px;
+}
+.bt_menu {
+	width : 70%;
+	height : 120px;
+	float : right;
+}
+.site_menu {
+	height : 60px;
+	text-align : center;
+}
+.site_menu li {
+	display : inline-block;
+	line-height : 60px;
+	padding : 0 24px;
+}
+.copy {
+	text-align : center;
+	height : 60px;
+	line-height : 60px;
+}
+
+/* modal */
+#modal {
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+	background : rgba(0,0,0,0.8);
+	display : none;
+}
+#modal.active { display : block; }
+.modal_up {
+	background-color : #fff;
+	position : absolute;
+	width : 30%;
+	height : 30%;
+	top : 30%;
+	left : 30%;
+	padding : 32px;
+}
+.modal_up h5 {
+	font-size : 1.2rem;
+	margin-bottom : 24px;
+}
+.modal_up span {
+	position : absolute;
+	right : 10%;
+	bottom : 10%;
+	width : 80px;
+	height : 40px;
+	line-height : 40px;
+	text-align : center;
+	background-color : #ddd;
+	cursor : pointer;
+}
