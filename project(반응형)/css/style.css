@@ -1,0 +1,185 @@
+* {
+	margin : 0;
+	padding : 0;
+}
+.clear {
+	content : "";
+	display : block;
+	clear : both;
+}
+.box_inner {
+	width : 1050px;
+	margin : 0 auto;
+}
+body {
+	font-family : "맑은 고딕", sans-serif;
+	letter-spacing : -1px;
+	color : #444;
+}
+ul { list-style : none; }
+a {
+	text-decoration : none;
+	color : #444;
+}
+.skipnavi {
+	position : absolute;
+	text-indent : -9999px;
+}
+/* 헤더 영역 */
+header {
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 113px;
+	background : rgba(0,0,0,0.5);
+	z-index : 100;
+}
+header .header_area h1 {
+	float : left;
+	padding-top : 45px;
+}
+header .header_area h1 a {
+	display : block;
+	width : 270px;
+	height : 71px;
+	text-indent : -9999px; /* placeholder 텍스트 치우기 */
+	background : url(../img/logo.png) no-repeat;
+}
+header .header_area .openMOgnb { display : none; }
+.header_cont {
+	float : right;
+	width : 780px;
+}
+.header_cont .util {
+	float : right;
+	padding-top : 10px;
+}
+.header_cont .util li { display : inline-block; }
+.header_cont .util li:after {
+	content : "|";
+	padding : 0 10px;
+	font-size : 10px;
+	color : #eee;
+	position : relative;
+	top : -2px;
+}
+.header_cont .util li:last-child:after {
+	content : "";
+	display : none; /* padding 등도 지우기 위함 */
+}
+.header_cont .util li a {
+	font-size : 14px;
+	color : #eee;
+}
+.header_cont .gnb {
+	float : right;
+	padding-top : 5px;
+	box-sizing : border-box;
+}
+.header_cont .gnb li { float : left; }
+.header_cont .gnb li a {
+	display : block;
+	padding : 25px 40px;
+	font-size : 18px;
+	color : #fff;
+}
+.header_cont .gnb li:last-child a {
+	padding-right : 0;
+}
+.header_cont .closePop { display : none; }
+.gnb_depth {
+	position : absolute; /* 서브메뉴 띄우기 */
+	left : 0;
+	top : 113px;
+	width : 100%;
+	background : rgba(250,100,0,0.85);
+	z-index : 100;
+	display : none;
+}
+.gnb_depth .submenu_list {
+	width : 1050px;
+	margin : 0 auto;
+	text-align : left;
+}
+.gnb_depth2_1 .submenu_list {
+	box-sizing : border-box;
+	padding-left : 480px;
+}
+.gnb_depth2_2 .submenu_list {
+	box-sizing : border-box;
+	padding-left : 600px;
+}
+.gnb_depth2_3 .submenu_list {
+	box-sizing : border-box;
+	padding-left : 730px;
+}
+.gnb_depth2_4 .submenu_list {
+	box-sizing : border-box;
+	padding-left : 940px;
+}
+.gnb_depth .submenu_list li a {
+	display : inline-block;
+	padding : 20px;
+}
+.gnb_depth .submenu_list li:last-child a {
+	padding-right : 0;
+}
+/* container 영역 */
+.main_rolling_mobile { display : none; }
+.visualRoll {
+	width : 100%;
+	position : relative;
+}
+.viewImgList {
+	width : 100%;
+	position : relative;
+}
+.viewImgList li {
+	text-align : center;
+	height : 550px;
+	line-height : 550px;
+}
+.viewImgList li.imglist0 {
+	position : relative;
+	z-index : 50;
+	background : url(../img/mainslide01.jpg) no-repeat center;
+}
+.viewImgList li.imglist1 {
+	position : absolute;
+	width : 100%; /* absolute는 크기가 요소에 맞춰지니, 줄어들지 않도록 width를 준다 */
+	top : 0;
+	left : 0;
+	z-index : 10;
+	background : url(../img/mainslide02.jpg) no-repeat center;
+}
+.viewImgList li.imglist2 {
+	position : absolute;
+	width : 100%;
+	top : 0;
+	left : 0;
+	z-index : 10;
+	background : url(../img/mainslide03.jpg) no-repeat center;
+}
+.viewImgList li {
+	background-size : cover !important;
+}
+.rollbtnArea {
+	position : absolute;
+	width : 100%;
+	left : 0;
+	bottom : 25px;
+	z-index : 200;
+}
+.rollbtnArea .rollingbtn {
+	width : 320px;
+	margin : 0 auto;
+	text-align : center;
+}
+.rollbtnArea .rollingbtn li {
+	display : inline-block;
+	margin-right : 5px;
+}
+.rollbtnArea .rollingbtn li.rollplay {
+	display : none; /* 재생버튼 처음에 안 보이게 하기 */
+}

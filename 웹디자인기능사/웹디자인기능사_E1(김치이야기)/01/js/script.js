@@ -16,10 +16,19 @@ $(document).ready(function(){
 	});
 	
 	// image slide
+	let sWidth = $(".imgslide").width();
+	$(".slidelist").width(sWidth*3);
+	$(".slidelist a").width(sWidth);
+	
+	// 윈도우 창 크기 바뀔 때 너비 담게 하기
+	window.addEventListener("resize", function(){
+		sWidth = document.querySelector(".imgslide").offsetWidth;
+		$(".slidelist a").width(sWidth);
+		$(".slidelist").width(sWidth*3);
+	});
+	
 	setInterval(function(){
-		$(".slidelist").width("300vw");
-		$(".slidelist a").width("100vw");
-		$(".slidelist").animate({"marginLeft" : "-100vw"}, function(){
+		$(".slidelist").animate({"marginLeft" : -sWidth}, function(){
 			$(".slidelist a:first").appendTo(".slidelist");
 			$(".slidelist").css({"marginLeft":"0"});
 		});
