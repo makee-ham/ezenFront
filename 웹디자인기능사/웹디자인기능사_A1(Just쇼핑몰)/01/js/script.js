@@ -21,4 +21,12 @@ $(document).ready(function(){
 			$(".slidelist").css("margin-top", "0");
 		});
 	} ,3000);
+	
+	// modal
+	$(".notice > li:first").click(function(){
+		$("#modal").addClass("active");
+	});
+	$(".btn").click(function(){
+		$("#modal").removeClass("active");
+	});
 });

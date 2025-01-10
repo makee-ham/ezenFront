@@ -245,6 +245,7 @@ header .header_area .openMOgnb { display : none; }
 	padding-top : 5px;
 	color : #666;
 }
+.appbbs_area { padding : 60px 0; }
 .appbbs_area .appbbs_box .app_line {
 	float : left;
 	width : 66%;
@@ -408,4 +409,93 @@ footer .foot_area .snslink li + li a {
 }
 footer .foot_area .snslink li + li + li a {
 	background-image : url(../img/ico_instargram_r.png);
+}
+/* 레이어 팝업 */
+.popup_base {
+	position : absolute;
+	top : 0;
+	left : 0;
+	width : 100%;
+	height : 100%;
+	background : rgba(0,0,0,0.7
+	);
+	z-index : 200;
+	display : none;
+}
+.popup_base .pop_content {
+	position : relative;
+	width : 580px;
+	margin : 200px auto 0;
+	background-color : #fff;
+	box-sizing : border-box;
+}
+.pop_content .btn_xpop {
+	position : absolute;
+	right : 0;
+	top : -55px;
+}
+.pop_content .btn_xpop a {
+	display : block;
+	width : 45px;
+	height : 45px;
+	text-indent : -9999px;
+	overflow : hidden;
+	background : url(../img/btn_xpop.png) no-repeat;
+}
+.pop_content .pop_list li {
+	padding : 36px;
+	text-align : center;
+}
+.pop_content .pop_list li + li {
+	background : #f4f0e9;
+}
+.pop_content .pop_list li + li + li { background : #fff; }
+.pop_content .pop_list li h2.tit_pop {
+	padding : 10px 0 24px;
+	font-size : 30px;
+	letter-spacing : -2px;
+}
+.pop_content .pop_list li img.pop_img {
+	width : 100%;
+}
+.pop_content .pop_list li .pop_txt {
+	padding-top : 15px;
+}
+.pop_content .pop_list li .pop_txt p {
+	padding-top : 10px;
+	line-height : 1.8;
+	font-size : 17px;
+	width : 95%;
+	margin : 0 auto;
+	letter-spacing : -2px;
+}
+
+/* 테블릿 버전 */
+@media all and (max-width : 1065px) and (min-width : 801px) {
+	.box_inner { width : 100%; }
+	header .header_area h1 {
+		padding-left : 20px;
+	}
+	.header_cont {
+		float : right;
+		width : 60%;
+		padding-right : 20px;
+	}
+	.header_cont .gnb li a {
+		padding : 25px 25px;
+	}
+	.gnb_depth .submenu_list {
+		width : 100%;
+		padding-left : 52%;
+	}
+	#container { padding-bottom : 20px; }
+	.about_area .place_list {
+		box-sizing : border-box;
+		padding : 0 20px;
+	}
+	.appbbs_area .appbbs_box {
+		box-sizing : border-box;
+		padding : 0 20px;
+	}
+	.appbbs_box .app_line a { font-size : 20px; }
 }
