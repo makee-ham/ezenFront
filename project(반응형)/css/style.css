@@ -497,5 +497,328 @@ footer .foot_area .snslink li + li + li a {
 		box-sizing : border-box;
 		padding : 0 20px;
 	}
-	.appbbs_box .app_line a { font-size : 20px; }
+	.appbbs_box .app_line a { font-size : 18px; }
+	footer .foot_area {
+		box-sizing : border-box;
+		padding-left : 20px;
+	}
+	footer .foot_area .snslink li {
+		margin-left : 15px;
+	}
+	.quick_area .quick_list { display : none; }
+	.to_top {
+		position : fixed;
+		right : 20px;
+		bottom : 110px;
+		background : none;
+		z-index : 100;
+	}
+	.to_top a {
+		display : block;
+		width : 45px;
+		height : 45px;
+		border-left :none;
+		border-bottom : none;
+		background : url(../img/ico_totop_mo.png) no-repeat center;
+		background-size : 45px;
+	}
+}
+/* 모바일 버전 CSS */
+@media all and (max-width : 800px) {
+	.box_inner { width : 100%; } /* 안 그러면 1050 되니까 */
+	header {
+		height : 90px;
+		text-align : center;
+		z-index : 200;
+		background : rgba(0,0,0,0.5);
+	}
+	header .header_area h1 {
+		float : none;
+		width : 100%;
+		height : 50px;
+		text-align : center;
+		padding-top : 35px;
+	}
+	header .header_area h1 a {
+		display : inline-block;
+		width : 180px;
+		height : 23px;
+		background-size : 180px 23px;
+	}
+	header .header_area .openMOgnb {
+		display : block;
+		position : absolute;
+		top : 35px;
+		left : 15px;
+		width : 23px;
+		height : 16px;
+	}
+	header .header_area .openMOgnb span {
+		display : block;
+		width : 25px;
+		height : 3px;
+		background : #fff;
+		margin-bottom : 4px;
+		border-radius : 10px;
+	}
+	header .header_area .openMOgnb span + span {
+		width : 17px;
+	}
+	header .header_area .openMOgnb span:last-child {
+		width : 25px;
+		margin-bottom : 0;
+	}
+	.header_cont  {
+		float : none;
+		width : 100%;
+		background : #31353d;
+		overflow : hidden;
+		display : none;
+	}
+	.header_cont .util { padding : 20px; }
+	.header_cont .util li { float : left; }
+	.header_cont .util li:after {
+		content : "|";
+		display : inline-block;
+		padding : 0 10px;
+		font-size : 10px;
+		color : #a2a2a2;
+		position : relative;
+		top : -2px;
+	}
+	.header_cont .util li:last-child:after {
+		content : "";
+		display : none;
+	}
+	.header_cont .util li a { font-size : 16px; color : #fff; }
+	.header_cont .closePop {
+		display : block;
+		position : absolute;
+		right : 0;
+		top : 15px;
+	}
+	.header_cont .closePop a {
+		display : block;
+		width : 60px;
+		height : 60px;
+		text-indent : -9999px;
+		overflow : hidden;
+		background : url(../img/btn_closeMenu.png) no-repeat;
+		background-size : 60px;
+	}
+	.header_cont .gnb {
+		float : none;
+		box-sizing : border-box;
+		padding-top : 0;
+		height : auto;
+		border-top : 1px solid #83868b;
+	}
+	.header_cont .gnb li {
+		float : left;
+		width : 50%;
+		text-align : left;
+		box-sizing : border-box;
+		border-bottom : 1px solid #83868b;
+	}
+	.header_cont .gnb li:nth-child(odd) {
+		border-right : 1px solid #83868b;
+	}
+	.header_cont .gnb li a {
+		display : block;
+		padding : 0 0 0 65px;
+		height : 60px;
+		line-height : 60px;
+		background : url(../img/ico_gnb01.png) no-repeat 10px center;
+		background-size : 49px 56px;
+		font-size : 16px;
+		color : #fff;
+	}
+	.header_cont .gnb li + li a {
+		background-image : url(../img/ico_gnb02.png);
+	}
+	.header_cont .gnb li + li + li a {
+		background-image : url(../img/ico_gnb03.png);
+	}
+	.header_cont .gnb li + li + li + li a {
+		background-image : url(../img/ico_gnb04.png);
+	}
+	.gnb_depth { display : none; }
+	/* main rolling */
+	.main_rolling_pc { display : none; }
+	.main_rolling_mobile { display : block; }
+	.main_rolling_mobile .swiper-container .swiper-wrapper .swiper-slide img {
+		width : 100%;
+	}
+	/* about_area */
+	.about_area h2 {
+		padding : 27px 0 25px;
+		font-size : 20px;
+	}
+	.about_area h2 b {
+		display : block;
+		margin-top : 10px;
+	}
+	.about_area .about_box {
+		background : #fff;
+	}
+	.about_area .place_list li {
+		float : none;
+		width : 100%;
+		margin : 0;
+		box-sizing : border-box;
+		padding : 0 20px;
+		top : 0;
+	}
+	.about_area .place_list li p.txt {
+		padding : 10px 50px 30px;
+		line-height : 1.4;
+	}
+	.about_area .place_list li .view {
+		padding-bottom : 10px;
+		margin : 0 0 30px;
+	}
+	/* appbbs_area */
+	.appbbs_area { padding : 0 20px; }
+	.appbbs_box .app_line { display : none; }
+	.appbbs_box .bbs_line {
+		float : none;
+		width : 100%;
+		padding : 20px 0;
+		border-top : 1px solid #d6d7d8;
+	}
+	.appbbs_box .bbs_line h3 {
+		font-size : 19px;
+	}
+	/* quick_list */
+	.quick_area .quick_list {
+		position : fixed;
+		left : 0;
+		bottom : 0;
+		width : 100%;
+	}
+	.quick_area .quick_list li {
+		float : left;
+		width : 31%;
+		text-align : left;
+		background : #3a3e46;
+		font-size : 15px;
+	}
+	.quick_area .quick_list li + li {
+		width : 37%;
+	}
+	.quick_area .quick_list li + li + li {
+		width : 32%;
+	}
+	.quick_area .quick_list li:first-child:after {
+		content : "";
+		display : inline-block;
+		width : 1px;
+		height : 16px;
+		background : #76787e;
+		position : absolute;
+		top : 50%;
+		right : 31%;
+		margin-top : -8px;
+	}
+	.quick_area .quick_list li:last-child:before {
+		content : "";
+		display : inline-block;
+		width : 1px;
+		height : 16px;
+		background : #76787e;
+		position : absolute;
+		top : 50%;
+		left : 32%;
+		margin-top : -8px;
+	}
+	.quick_area .quick_list li a {
+		display : block;
+		padding : 10px 0;
+		border-top : none;
+		color : #fff;
+	}
+	.quick_area .quick_list li a h3 {
+		height : 37px;
+		line-height : 37px;
+		padding-bottom : 0;
+		padding-left : 45px;
+		background : url(../img/ico_phone_mobtm.png) no-repeat 20px center;
+		background-size : 20px;
+		color : #fff;
+		letter-spacing : -1px;
+	}
+	.quick_area .quick_list li + li a h3 {
+		background : url(../img/ico_katalk_mobtm.png) no-repeat 20px center;
+		background-size : 20px;
+	}
+	.quick_area .quick_list li + li + li a h3 {
+		background : url(../img/ico_contact_mobtm.png) no-repeat 20px center;
+		background-size : 20px;
+	}
+	.quick_area .quick_list li a h3 em { display : inline; font-style : normal; }
+	.quick_area .quick_list li a p { display : none; }
+	.to_top {
+		position : fixed;
+		right : 20px;
+		bottom : 110px;
+		text-align : center;
+		background : none;
+		z-index : 100;
+	}
+	.to_top a {
+		display : block;
+		width : 45px;
+		height : 45px;
+		border-left :none;
+		border-bottom : none;
+		background : url(../img/ico_totop_mo.png) no-repeat center;
+		background-size : 45px;
+	}
+	/* footer 영역 */
+	footer .foot_area {
+		box-sizing : border-box;
+		padding : 0 20px 90px;
+	}
+	footer .foot_area h2 {
+		padding-top : 30px;
+		font-size : 14px;
+	}
+	footer .foot_area .addr {
+		line-height : 1.3;
+		font-size : 14px;
+		color : #767676;
+	}
+	footer .foot_area .copy {
+		padding : 3px 0 20px;
+		font-size : 14px;
+		color : #767676;
+	}
+	footer .gubun { color : #fff; }
+	footer .br_line { display : block; }
+	footer .foot_area .snslink {
+		position : static;
+		width : 210px;
+		margin : 10px auto 90px;
+	}
+	footer .foot_area .snslink li {
+		margin-left : 30px;
+	}
+	footer .foot_area .snslink li:first-child {
+		margin-left : 0;
+	}
+	/* 팝업 (모바일) */
+	.popup_base .pop_content {
+		position : relative;
+		width : 90%;
+		margin : 100px auto 0;
+	}
+	.pop_content .btn_xpop {
+		top : -40px;
+	}
+	.pop_content .btn_xpop a {
+		display : block;
+		width : 30px;
+		height : 30px;
+		background-size : 30px;
+	}
 }
