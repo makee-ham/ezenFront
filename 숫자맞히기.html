@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>숫자 맞히기</title>
+	<script>
+		const ans = Math.random()*100+1;
+		let cnt = 0;
+		const question = function() {
+			cnt++;
+			let sel = Number(document.getElementById("select").value);
+			if(ans === sel) {
+				const str = "정답!<br>" + cnt + "번만에 맞혔으니 한 잔 해~";
+				document.getElementById("message").innerHTML = str;
+			} else {
+				if(ans > sel) {
+					document.getElementById("message").innerHTML = "사나이답게 좀 더 팍팍 높게 질러봐~";
+				} else {
+					document.getElementById("message").innerHTML = "너무 질렀다 얘; 좀 낮춰봐~";
+				}
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="box">
+		<h2>숫자 맞히기</h2>
+		<form name="quiz">
+			<p>1~100까지의 숫자를 맞혀보세요</p>
+			숫자 입력 :
+			<input type="text" id="select">
+			<input type="button" id="btn" value="제출" onclick="question()">
+			<p id="message"></p>
+		</form>
+	</div>
+</body>
+</html>
