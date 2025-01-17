@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>마우스 드래그로 오브젝트 이동</title>
+	<meta charset="UTF-8">
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		$(function(){$("#obj").draggable()});
+		$(document).read(function(){
+			
+		});
+	</script>
+	<style>
+		.drag { width : 200px; height : 100px; background-color : red; border-style : solid; }
+	</style>
+</head>
+<body>
+	<div id="obj" class="drag">
+		<p>Drag me around</p>
+	</div>
+</body>
+</html>

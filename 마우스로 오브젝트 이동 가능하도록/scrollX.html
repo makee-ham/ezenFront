@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>무한 스크롤</title>
+	<meta charset="UTF-8">
+	<script src="js/jquery-2.1.1.js"></script>
+	<script src="js/jquery-ui.js"></script>
+	<script>
+		tWidth = 0;
+		uWidth = 0;
+		$(document).ready(function(){
+			tWidth = $(window).width();
+			uWidth = $("#scrollX ul").width();
+			num = $("#scrollX ul li").length;
+			cnt = Math.ceil(tWidth / uWidth);
+			$("#scrollX ul").css("width", cnt*num*100);
+			console.log(cnt);
+			for(var i=1; i<=cnt*num; i++){
+				$("#scrollX ul li:first").clone().appendTo("#scrollX ul");
+			}
+			
+			setInterval(function(){
+				$("#scrollX ul").animate({"marginLeft":"-100px"},500, "linear", function(){
+					$("#scrollX ul li:first").appendTo("#scrollX ul");
+					$("#scrollX ul").css({"marginLeft":"0"});
+				})
+			},500);
+		});
+	</script>
+	<style>
+		* { margin : 0; padding : 0; box-sizing : border-box; }
+		ul { list-style : none; }
+		#scrollX {
+			width : 100%;
+			height : 35px;
+			background-color : lightblue;
+			overflow : hidden;
+		}
+		#scrollX ul {
+			text-align : center;
+			float : left;
+		}
+		#scrollX ul li {
+			float : left;
+			width : 100px;
+			line-height : 35px;
+		}
+	</style>
+</head>
+<body>
+	<div id="scrollX">
+		<ul>
+			<li>text scroll</li>
+			<li>text scroll</li>
+			<li>text scroll</li>
+			<li>text scroll</li>
+			<li>text scroll</li>
+		</ul>
+	</div>
+</body>
+</html>

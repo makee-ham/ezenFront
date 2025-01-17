@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>영어 단어 맞히기</title>
+	<meta charset="UTF-8">
+	<style>
+		#newQue { cursor: pointer; }
+	</style>
+	
+</head>
+<body>
+	<div id="wrapper">
+		<h2>영어 단어 퀴즈</h2>
+		
+		<h3>1 : 단어 등록</h3>
+		<form name="new">
+			<p>
+				등록 단어 ? <input type="text" name="voca">
+			</p>
+			<p>
+				단어 해설 ? <input type="text" name="mean">
+			</p>
+			<input type="button" id="regi" value="등록" onclick="newVoca()">
+			<p id="regiCheck"></p>
+		</form>
+		
+		<hr>
+		
+		<h3 id="newQue">2 : 단어 맞히기(여기를 클릭하세요)</h3>
+		<form name="frm">
+			<p>
+				문제 : <input type="text" name="question">
+			</p>
+			<p>
+				답안 : <input type="text" name="answer">
+			</p>
+			<input type="button" value="제출" onclick="result()">
+			<p>
+				결과 : <input type="text" name="msg" value="???">
+			</p>
+		</form>
+	</div>
+	
+	<script>
+		const que = ["book", "calender", "ant", "pencil", "coffee", "remocon", "teacher"]
+		const ans = ["책", "달력", "개미", "연필", "커피", "리모콘", "티쳐"]
+		let num = 0;
+		
+		function ready(){
+		num = Math.floor(Math.random() * que.length);
+		document.frm.question.value = que[num];
+		}
+		
+		function newVoca() {
+			que.push(document.new.voca.value);
+			ans.push(document.new.mean.value);
+			console.log(que);
+			console.log(ans);
+		}
+		
+		function result() {
+			let dab = document.frm.answer.value;
+			if(ans[num] == dab) {
+				document.frm.msg.value = "참 잘했어요"
+			} else {
+				document.frm.msg.value = "허~~ 틀렸네요"
+			}
+		}
+		
+		function reset() {
+			document.new.voca.value = "";
+			document.new.mean.value = "";
+		}
+		
+		function check () {
+			document.getElementById("regiCheck").innerHTML = `${que[que.length - 1]} 등록 확인`;
+		}
+		
+		document.querySelector("#newQue").addEventListener('click', ready);
+		document.querySelector("#regi").addEventListener('click', reset);
+		document.querySelector("#regi").addEventListener('click', check);
+	</script>
+	
+</body>
+</html>
