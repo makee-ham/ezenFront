@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>영상박물관</title>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-1.12.3.js"></script>
+</head>
+<body>
+<div id="wrapper">
+	<!-- 헤더 영역 -->
+	<header>
+		<h1 class="logo">
+			<a href="#"><img src="images/logo.png" alt="로고"></a>
+		</h1>
+		<nav class="menu">
+			<ul class="navi">
+				<li><a href="#">박물관 소개</a>
+					<ul class="submenu">
+						<li><a href="#">인사말</a></li>
+						<li><a href="#">박물관연혁</a></li>
+						<li><a href="#">박물관 조직도</a></li>
+						<li><a href="#">오시는 길</a></li>
+					</ul>
+				</li>
+				<li><a href="#">전시</a>
+					<ul class="submenu">
+						<li><a href="#">전시 리스트</a></li>
+						<li><a href="#">전시일정</a></li>
+						<li><a href="#">특별전</a></li>
+						<li><a href="#">지역작가</a></li>
+					</ul>
+				</li>
+				<li><a href="#">체험행사</a>
+					<ul class="submenu">
+						<li><a href="#">문화행사</a></li>
+						<li><a href="#">진로체험</a></li>
+						<li><a href="#">명사특강</a></li>
+					</ul>
+				</li>
+				<li><a href="#">커뮤니티</a>
+					<ul class="submenu">
+						<li><a href="#">사용자메뉴얼</a></li>
+						<li><a href="#">박물관 약도</a></li>
+						<li><a href="#">게시판</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		<div class="spotmenu">
+			<a href="#">로그인</a>
+			<span> | </span>
+			<a href="#">회원가입</a>
+		</div>
+	</header>
+	<!-- 콘텐츠 영역 -->
+	<div class="contents">
+		<!-- 배너 영역 -->
+		<div class="banner">
+			<a href="#">
+				<img src="images/banner.jpg" alt="배너">
+			</a>
+		</div>
+		<!-- 공지사항 영역 -->
+		<div class="notice">
+			<div>
+				<h4><a href="#">공지사항</a></h4>
+				<ul>
+					<li><a href="#">세계사진영상기기 100년사 초대전<span>2023.10.26</span></a></li>
+					<li><a href="#">세계전파, 방송기기 100년사 특별 초대전<span>2023.10.10</span></a></li>
+					<li><a href="#">제8차 이동전 개최 안내<span>2023.10.05</span></a></li>
+					<li><a href="#">박물관 휴관 안내입니다<span>2023.09.18</span></a></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 갤러리 영역 -->
+		<div class="gallery">
+			<div>
+				<h4><a href="#">갤러리</a></h4>
+				<ul>
+					<li><a href="#">
+						<img src="images/gallery1.jpg" alt="갤러리">
+						<span>실감형 영상 전시</span>
+					</a></li>
+					<li><a href="#">
+						<img src="images/gallery2.jpg" alt="갤러리">
+						<span>원격 유물/콘텐츠 진단</span>
+					</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- 이미지 슬라이드 영역 -->
+	<div class="imgslide">
+		<div class="slidelist">
+			<a href="#" class="image1"><span class="imgtext">영상의 모든 것</span></a>
+			<a href="#" class="image2"><span class="imgtext">영상 음향 박물관에 초대합니다</span></a>
+			<a href="#" class="image3"><span class="imgtext">영상자료를 제공합니다</span></a>
+		</div>
+	</div>
+	<!-- 푸터 영역 -->
+	<footer>
+		<div class="btlogo">
+			<a href="#"><img src="images/logo_bottom.png" alt="하단로고"></a>
+		</div>
+		<div class="copy">
+			kofa@koreafilm.or.kr &copy; Korean Film Archive. All Rights Reserved.
+		</div>
+		<div class="sns">
+			<ul>
+				<li><a href="#"><img src="images/sns1.jpg" alt="sns1"></a></li>
+				<li><a href="#"><img src="images/sns2.jpg" alt="sns2"></a></li>
+				<li><a href="#"><img src="images/sns3.jpg" alt="sns3"></a></li>
+			</ul>
+		</div>
+	</footer>
+</div>
+<!-- 레이어 팝업 -->
+<div id="modal">
+	<div class="modal_up">
+		<div class="uptitle">세계사진영상기기 100년사 초대전 개최</div>
+		<div class="upbody">
+			대우원로 사진가회가 주최하는 대구원로작가 환경 사진전과
+			세계사진 영상기기 100년사전을
+			아래와 같이 개최하오니 찾아주시면 감사하겠습니다.
+			<br><br>
+			개최일시 : 2023년 11월 02일 오후 5시~<br>
+			개최장소 : 대구국체보상공원 내 중앙도서관 가온갤러리
+		</div>
+		<div class="btn">닫기</div>
+	</div>
+</div>
+
+<script src="js/script.js"></script>
+
+</body>
+</html>

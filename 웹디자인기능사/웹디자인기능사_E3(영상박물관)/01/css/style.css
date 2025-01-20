@@ -1,0 +1,256 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+ul { list-style : none; }
+body {
+	font-family : "맑은 고딕", sans-serif;
+	color : #333;
+	background-color: #fff;
+}
+a {
+	color: #333;
+	text-decoration: none;
+}
+#wrapper {
+	display: flex;
+	flex-wrap: wrap;
+}
+header { width: 200px; }
+.contents { width: 400px; }
+.imgslide {
+	width: calc(100% - 600px);
+}
+.logo {
+	width: 200px;
+	height: 100px;
+}
+.logo img {
+	margin: 25px 0 0 5px;
+}
+/* 메인 메뉴 */
+.menu {
+	width: 180px;
+	margin: 10px 0 0 10px;
+}
+.navi > li {
+	position: relative;
+}
+.navi > li > a {
+	display : block;
+	width: 180px;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	color: #fff;
+	background-color: #0066ad;
+	padding-left: 5px;
+}
+.navi > li > a:hover {
+	background-color : #30a3f3;
+}
+.submenu {
+	width: 180px;
+	height: 140px;
+	position: absolute;
+	top: 0;
+	left: 180px;
+	display: none;
+}
+.submenu a {
+	display : block;
+	width: 180px;
+	height: 35px;
+	line-height: 35px;
+	text-align: center;
+	font-weight: bold;
+	color: #fff;
+	background-color: #ababab;
+}
+.submenu a:hover {
+	background-color : #30a3f3;
+}
+.spotmenu {
+	margin-top: 20px;
+	text-align: center;
+}
+.spotmenu span {margin: 0 10px;}
+/* banner */
+.banner {height: 150px;}
+.notice { height: 250px; }
+.notice div { margin-top: 20px; }
+.notice div h4 {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #ccc;
+	margin-left: 10px;
+}
+.notice ul {
+	width: 390px;
+	margin-left : 5px;
+	border: 1px solid #ccc;
+	padding : 5px 0;
+}
+.notice ul li {
+	height: 40px;
+	line-height: 40px;
+	margin: 0 10px;
+	border-bottom: 1px solid #ccc;
+}
+.notice ul li:last-child {
+	border-bottom: none;
+}
+.notice ul li a { font-size: 14px; }
+.notice ul li a span { float : right; }
+/* 갤러리 */
+.gallery { height: 250px; }
+.gallery div { margin-top: 10px; }
+.gallery div h4 {
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background-color: #ccc;
+	margin-left: 10px;
+}
+.gallery ul {
+	width: 390px;
+	margin-left: 5px;
+	border: 1px solid #ccc;
+	padding : 10px 0;
+	display : flex;
+	justify-content: space-around;
+}
+.gallery ul li {
+	width: 50%;
+}
+.gallery ul li a {
+	display: block;
+	text-align: center;
+}
+.gallery ul li img {
+	width: 95%;
+	border: 1px solid #ccc;
+}
+.gallery ul li a span {
+	display: block;
+	font-size: 14px;
+	text-align: center;
+}
+/* 이미지 슬라이드 */
+.imgslide {
+	height: 700px;
+	overflow: hidden;
+}
+.slidelist {
+	height: 2100px;
+}
+.slidelist a {
+	display: block;
+	height: 700px;
+	position: relative;
+}
+.image1 {
+	background: url(../images/slide1.jpg) no-repeat center;
+	background-size: cover;
+}
+.image2 {
+	background: url(../images/slide2.jpg) no-repeat center;
+	background-size: cover;
+}
+.image3 {
+	background: url(../images/slide3.png) no-repeat center;
+	background-size: cover;
+}
+.slidelist span {
+	position: absolute;
+	width: 400px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	background: rgba(40,40,40,0.8);
+	top: 50%;
+	left: 50%;
+	margin-top: -25px;
+	margin-left: -200px;
+}
+/* 푸터 영역 */
+footer {
+	width: 100%;
+	height: 100px;
+	display : flex;
+}
+.btlogo {
+	width: 200px;
+	height: 100px;
+}
+.btlogo img {
+	margin: 25px 0 0 5px;
+}
+.copy {
+	width: calc(100% - 500px);
+	height: 100px;
+	text-align: center;
+	line-height: 100px;
+}
+.sns {
+	width: 300px;
+	height: 100px;
+}
+.sns ul {
+	text-align: center;
+	margin-top: 22px;
+}
+.sns ul li {
+	display: inline-block;
+	margin: 0 10px;
+}
+/* 레이어 팝업 */
+#modal {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background : rgba(0,0,0,0.6);
+	z-index: 10;
+	display: none;
+}
+#modal.active { display : block; }
+.modal_up {
+	width: 500px;
+	height: 400px;
+	position: fixed;
+	top: 20%;
+	left: 40%;
+	background-color: #fff;
+}
+.uptitle {
+	margin-top: 35px;
+	text-align: center;
+	font-size: 20px;
+	font-weight: bold;
+}
+.upbody {
+	padding: 30px;
+	line-height: 40px;
+	text-align: center;
+}
+.btn {
+	width: 80px;
+	height: 20px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 15px;
+	font-weight: bold;
+	background: #ccc;
+	border-radius: 3px;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	cursor: pointer;
+}

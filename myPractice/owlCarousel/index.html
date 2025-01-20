@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>부엉부엉</title>
+	<!-- Owl Carousel을 위한 CSS CDN -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<!-- jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Owl Carousel의 javascript CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	
+	<style> 
+		/* 캐러셀의 크기 지정 */       
+		.owl-carousel {
+			width: 400px;
+			height: 300px;
+			margin: 0 auto;
+			position: relative; /* dots 배치를 위해 */
+		}
+		
+		.owl-dots {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			transform: translateY(-60%);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 10px;
+			z-index: 10; /* 부모 요소 z-index 유지 */
+		}
+
+		.owl-dots .owl-dot {
+			width: 12px;
+			height: 12px;
+			background-color: #ccc;
+			border-radius: 50%;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.owl-carousel .active span {
+			width:12px;
+			height:12px;
+			margin:5px 7px;
+			background: #ff69b4 !important;
+			display:block;
+			-webkit-backface-visibility:visible;
+			-webkit-transition:opacity 200ms ease;
+			-moz-transition:opacity 200ms ease;
+			-ms-transition:opacity 200ms ease;
+			-o-transition:opacity 200ms ease;
+			transition:opacity 200ms ease;
+			-webkit-border-radius:30px;
+			-moz-border-radius:30px;
+			border-radius:30px;
+		}
+
+		.owl-carousel .item img {
+			width: 100%;
+			height: 300px; /* 슬라이드 높이를 고정 */
+			object-fit: cover; /* 이미지가 비율을 유지하며 잘리지 않도록 */
+		}
+	</style>
+</head>
+<body>
+	<!-- 캐러셀 및 이미지 -->
+	<div class="owl-carousel owl-theme">
+		<!-- 이미지의 위치에 맞게 src 경로 설정. 여기서는 index.html과 image1,2,3이 같은 폴더 내에 같은 위계에 위치     -->
+		<div class="item"><img src="./slide1_m.png" alt="Image 1"></div>
+		<div class="item"><img src="./slide2_m.png" alt="Image 2"></div>
+		<div class="item"><img src="./slide3_m.png" alt="Image 3"></div>
+	</div>        
+	<script>
+		$(document).ready(function(){
+			  var owl = $('.owl-carousel');
+			  owl.owlCarousel({
+				items: 1, // 한번에 보여지는 이미지 수
+				dots: true, // 초기화...
+				loop: true, // 항목들을 무한으로 반복하여 보여줄지 여부
+				autoplay: true, // 자동으로 슬라이드 쇼를 시작할지 여부
+				autoplayTimeout: 3000, // 다음 이미지로 넘어가는 시간 (단위 : 밀리초)
+				autoplayHoverPause: true, // 마우스가 이미지에 위에 있을 때 자동 슬라이드를 일시중지 할지 여부
+			});           
+		});
+	</script>   
+</body>
+</html>
