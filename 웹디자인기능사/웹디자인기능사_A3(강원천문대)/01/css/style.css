@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "맑은 고딕", sans-serif;
+  background-color: #fff;
+  color: #333;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+ul {
+  list-style: none;
+}
+#wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+/* 헤더 */
+header {
+  position: relative;
+  height: 100px;
+}
+.logo {
+  width: 200px;
+  height: 40px;
+}
+.logo img {
+  margin-top: 30px;
+}
+/* nav */
+.menu {
+  width: 800px;
+  height: 40px;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+}
+.navi > li {
+  float: left;
+}
+.navi > li > a {
+  display: block;
+  width: 200px;
+  height: 40px;
+  background-color: #384fd8;
+  color: #fff;
+  line-height: 40px;
+  text-align: center;
+  font-weight: bold;
+}
+.navi > li > a:hover {
+  background-color: #0e1b66;
+}
+.submenu {
+  position: absolute;
+  z-index: 2;
+  display: none;
+}
+.submenu > li > a {
+  display: block;
+  width: 200px;
+  height: 40px;
+  background-color: #fcfdb1;
+  line-height: 40px;
+  text-align: center;
+  color: #333;
+  font-size: 15px;
+  font-weight: bold;
+}
+.submenu > li > a:hover {
+  background-color: #fac96f;
+}
+/* submenu bg */
+.menu_bg {
+  position: absolute;
+  width: 1200px;
+  height: 120px;
+  top: 100px;
+  background-color: #fcfdb1;
+  z-index: 1;
+  display: none;
+}
+/* 이미지 슬라이드 */
+.imgslide {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+.imgslide a {
+  display: block;
+  position: relative;
+}
+.imgslide span {
+  width: 500px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: rgba(40, 40, 40, 0.6);
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -25px;
+}
+/* 콘텐츠 영역 */
+.contents {
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+/* 공지사항/갤러리 */
+.board {
+  width: 400px;
+  height: 200px;
+}
+.tabmenu {
+  width: 390px;
+  height: 190px;
+  margin-top: 5px;
+  margin-left: 5px;
+  position: relative;
+}
+.tabmenu > li > a {
+  float: left;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid #333;
+  background-color: #ccc;
+  border-radius: 5px 5px 0 0;
+  border-bottom: none;
+}
+.tabmenu > li:first-child > a {
+  border-right: none;
+}
+.tabmenu > li > a:hover {
+  background-color: #eee;
+}
+.tabmenu > li.active > a {
+  background-color: #fff;
+}
+.tabmenu > li div {
+  width: 390px;
+  position: absolute;
+  top: 30px;
+  height: 0; /* 잊지 말자 */
+  overflow: hidden;
+}
+.tabmenu > li.active div {
+  height: 150px;
+  padding: 10px 0;
+  border: 1px solid #333;
+}
+.notice li {
+  height: 32px;
+  line-height: 32px;
+  padding: 0 10px;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+.notice li:last-of-type {
+  border-bottom: none;
+}
+.notice li span {
+  float: right;
+}
+.gallery ul {
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+  margin-top: 8px;
+}
+.gallery img {
+  width: 90%;
+}
+/* footer */
+footer {
+  height: 100px;
+  position: relative;
+  background-color: #fac96f;
+}
+.logoBottom {
+  width: 200px;
+  height: 40px;
+}
+.logoBottom img {
+  margin-top: 30px;
+}
+.footerRight {
+  width: 500px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.siteMenu {
+  height: 50px;
+}
+.siteMenu ul {
+  text-align: right;
+  padding-right: 32px;
+}
+.siteMenu li {
+  display: inline-block;
+  line-height: 50px;
+  font-size: 0.85rem;
+}
+.siteMenu li:after {
+  content: "|";
+  margin: 0 24px;
+}
+.siteMenu li:last-of-type:after {
+  content: "";
+  display: none;
+}
+.copy {
+  height: 50px;
+  line-height: 50px;
+  text-align: right;
+  padding-right: 32px;
+  font-size: 0.85rem;
+}
+/* 레이어 팝업 */
+#modal {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+#modal.active {
+  display: block;
+}
+.modalUp {
+  width: 500px;
+  height: 500px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -250px;
+  margin-top: -250px;
+  padding: 40px;
+}
+.modalTitle {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+}
+.modalBody {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 32px 0;
+}
+.btn {
+  width: 80px;
+  height: 40px;
+  background-color: #fac96f;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  right: 40px;
+  bottom: 40px;
+  cursor: pointer;
+}
