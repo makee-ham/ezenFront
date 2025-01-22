@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영어 단어 퀴즈!</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="wrapper">
+      <div class="header">
+        <h2>영어 단어 퀴즈</h2>
+      </div>
+      <div class="regiSection">
+        <h3>1 : 단어 등록하기</h3>
+        <form name="new">
+          <p>
+            등록할 영어 단어를 입력하세요 :
+            <input type="text" name="voca" placeholder="영어 단어 입력!" />
+          </p>
+          <p>
+            단어의 뜻을 입력하세요 :
+            <input type="text" name="mean" placeholder="단어의 뜻 입력!" />
+          </p>
+          <input type="button" id="regi" value="등록" onclick="newVoca()" />
+          <p id="regiCheck"></p>
+        </form>
+      </div>
+
+      <div class="quizSection">
+      <h3 id="newQue">2 : 단어 맞히기</h3>
+      <button>새 퀴즈</button>
+      <form name="frm">
+        <p>단어 : <input type="text" name="question" /></p>
+        <p>뜻 : <input type="text" name="answer" /></p>
+        <input type="button" value="제출" onclick="result()" />
+        <p>결과 : <input type="text" name="msg" value="???" /></p>
+      </form>
+    </div>
+  </body>
+</html>

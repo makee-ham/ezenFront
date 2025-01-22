@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poor Story", sans-serif;
+}
+#wrapper {
+  width: 300px;
+  height: 600px;
+  margin: 0 auto;
+  border: 1px dashed red;
+  background-color: rgb(243, 202, 222);
+}
+/* 헤더 */
+.header {
+  text-align: center;
+  padding: 10px;
+  background-color: rgb(169, 247, 247);
+}
+/* 레지스터(단어등록) 섹션 */
+.regiSection {
+  height: 250px;
+  padding: 24px;
+  margin-bottom: 32px;
+}
+
+/* 퀴즈 섹션 */
+.quizSection {
+  height: 250px;
+  padding: 24px;
+}

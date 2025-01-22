@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>자바스크립트 문제 모음</title>
+	<meta charset="UTF-8">
+	<script>
+		// 태양계의 행성 중 n번째를 입력하면 그 n번째 행성의 이름이 나타날 수 있는 프로그램
+		/*
+		// const planets = ['수성', '금성', '지구', '화성', '목성', '토성', '천왕성', '해왕성'];
+		const str = "수성,금성,지구,화성,목성,토성,천왕성,해왕성";
+		const planets = str.split(',');
+		let num = Number(prompt("몇 번째 행성의 이름이 궁금하세요?", "숫자만 입력"));
+		document.write( num + "번째 행성의 이름은 " + planets[num - 1] + "입니다.");
+		*/
+		
+		// 태양계 행성의 이름을 입력하면 해당되는 행성의 영어이름이 출력되도록 하는 프로그램
+		/*
+		const str = "수성,금성,지구,화성,목성,토성,천왕성,해왕성"
+		const str2 = "Mercury,Venus,Earth,Mars,Jupiter,Saturn,Uranus,Neptune";
+		const kor = str.split(',');
+		const eng = str2.split(',');
+		const ques = prompt("행성의 이름을 한글로 입력해 주세요...");
+		let cnt = kor.indexOf(ques);
+		// indexOf(): 내가 찾는 ques의 값이 kor 배열에서 몇 번째 방(index)에 있는지 검색해주는 메소드
+		document.write(ques + " 행성의 영어 이름은 " + eng[cnt] + "입니다.");
+		*/
+		/*
+		const planets = {
+			수성 : "Mercury",
+			금성 : "Venus",
+			지구 : "Earth",
+			화성 : "Mars",
+			목성 : "Jupiter",
+			토성 : "Saturn",
+			천왕성 : "Uranus",
+			해왕성 : "Neptune",
+		}
+		const name = prompt("행성의 이름을 한글로 입력해 주세요...");
+		document.write(planets[name]);
+		*/
+		
+		
+		/*
+		// 샘의 특별 문제 1: 문자열 검색해서 걔의 index 전부 뽑기
+		const dogs = ['에리', '에리', '해냄', '에리', '해냄', '해냄', '현동'];
+			
+		
+		function howMany(doggo) {
+			let result = [];
+			let index = dogs.indexOf(doggo);
+
+			while (index !== -1) {
+				result.push(index);
+				index = dogs.indexOf(doggo, index + 1);
+			}
+
+			if (result.length > 0) {
+				return `${doggo}(이)는 ${result.join(", ")}번째에 있습니다.`;
+			} else {
+				return `${doggo}는 리스트에 없습니다.`;
+			}
+		}
+		
+		const search = prompt("어떤 강아지 이름을 찾고 있나요?");
+		const answer = howMany(search);
+		document.write(answer);
+		*/
+		
+		/*
+		// 샘의 특별 문제 2: 입력받은 문자열을 반대로 출력 (reverse 사용 x)
+		let reversed = [];
+		let cnt = 0;
+		function reversedStr(str) {
+			for (let i = str.length - 1; i >= 0; i--) {
+			reversed.push(str[i]);
+		}
+			
+			if (reversed.length > 0) {
+				return reversed;
+			} else {
+				return "너 뭘 입력한 거야";
+			}
+		}
+		
+		const str = prompt("로꾸꺼~ 로꾸꺼~ 로꾸꺼~ 빠라밤!");
+		document.write(reversedStr(str).join(""));
+		*/
+
+		
+
+		/*
+		let now = new Date();
+		console.log(now);
+		let year = now.getFullYear(); // 연도만 뽑기 4자리
+		console.log(year);
+		let month = now.getMonth(); // 1월이면 0! 하나 적게 나온다 0~11
+		console.log(month); 
+		let day = now.getDate(); // 일 1~31
+		console.log(day); 
+		let day2 = now.getDay(); // 요일 0~6 (일~토)
+		console.log(day2);
+		// getHours(), getMinutes(), getSeconds()
+		*/
+		
+		/*
+		// 화면에 디지털 시계를 출력하는 프로그램
+		function setClock(){
+			let now = new Date();
+			let hour = now.getHours();
+			if(hour < 10) {
+				hour = "0" + hour; 
+			}
+			let minute = now.getMinutes();
+			if(minute < 10) {
+				minute = "0" + minute;
+			}
+			let second = now.getSeconds();
+			if(second < 10) {
+				second = "0" + second;
+			}
+			str = hour + ":" + minute + ":" + second;
+			
+			document.getElementById("clock").innerHTML = str;
+			setTimeout("setClock()", 1000);
+		}
+		*/
+		
+		
+		
+		
+		/*
+		//confirm 메소드 연습
+		let yesNo = confirm("게임 한 판 하실래요?");
+		if(yesNo === true) {
+			confirm("좋습니다. 게임을 시작합니다.");
+		} else {
+			confirm("네, 나중에 하시죠!");
+		}
+		*/
+		
+		/*
+		// 하나의 영어 문장을 입력한 후 그 문장이 몇 개의 단어로 이루어져 있는지 단어 수를 표시하는 프로그램
+		// 예) To be to be loved is the greatest happiness in life
+		// 답) 해당 문장의 단어는 11개입니다.
+		let sentence = prompt("영어 문장을 입력해 주세요. 단어 개수 세어드려요.^^");
+		
+		let words = [];
+		
+		function wordCounter(sectence) {
+			words = sentence.split(" ");
+			
+			return `해당 문장의 단어는 ${words.length}개입니다.`;
+		}
+		
+		document.write(wordCounter(sentence));
+		*/
+		
+
+		// 문장을 입력하면 거꾸로 출력하는 프로그램
+		// 예) "대한민국" 이라고 입력하면 "국민한대" 로 출력되도록
+		let word = prompt("단어를 입력하세요...");
+		let result = word.split('').reverse().join('');
+		console.log("입력 : ", word, " | 출력 : ", result);
+		// split() : 문자열을 배열로 만들어 반환
+		// reverse() : 배열의 순서를 반전시킴
+		// join() : 원소를 모두 붙여서 문자열로 반환
+		
+		
+	</script>
+	<style>
+		#clock {
+			font-family : Georgia;
+			font-size : 30px;
+			padding : 10px 20px;
+			border : 1px solid gray;
+		}
+	</style>
+</head>
+<body>
+	<div id="clock">
+		
+	</div>
+	<script>
+		<!-- setClock(); -->
+	</script>
+</body>
+</html>
