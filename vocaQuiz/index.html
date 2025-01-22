@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>영어 단어 퀴즈!</title>
+    <title>♡ 영어 단어 퀴즈! ♡</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,18 +15,18 @@
   <body>
     <div id="wrapper">
       <div class="header">
-        <h2>영어 단어 퀴즈</h2>
+        <h2>♡ 영어 단어 퀴즈 ♡</h2>
       </div>
       <div class="regiSection">
         <h3>1 : 단어 등록하기</h3>
         <form name="new">
           <p>
             등록할 영어 단어를 입력하세요 :
-            <input type="text" name="voca" placeholder="영어 단어 입력!" />
+            <input type="text" name="voca" placeholder="신규 영어 단어 입력!" />
           </p>
           <p>
             단어의 뜻을 입력하세요 :
-            <input type="text" name="mean" placeholder="단어의 뜻 입력!" />
+            <input type="text" name="mean" placeholder="해당 단어의 뜻 입력!" />
           </p>
           <input type="button" id="regi" value="등록" onclick="newVoca()" />
           <p id="regiCheck"></p>
@@ -34,14 +34,18 @@
       </div>
 
       <div class="quizSection">
-      <h3 id="newQue">2 : 단어 맞히기</h3>
-      <button>새 퀴즈</button>
+      <h3>2 : 단어 맞히기</h3>
+      <button id="newQue">새 퀴즈</button>
       <form name="frm">
-        <p>단어 : <input type="text" name="question" /></p>
-        <p>뜻 : <input type="text" name="answer" /></p>
+        <p>단어 : <input type="text" name="question" placeholder="영어 단어가 표시되는 칸입니다." /></p>
+        <p>뜻 : <input type="text" name="answer" placeholder="표시된 단어의 뜻을 한글로 써주세요." /></p>
         <input type="button" value="제출" onclick="result()" />
-        <p>결과 : <input type="text" name="msg" value="???" /></p>
+        <p>결과 : <input type="text" id="msg" name="msg" value="과연 결과는?!" /></p>
       </form>
     </div>
+
+    <script src="./script.js"></script>
+    <script>document.getElementById('msg').disabled = true;</script>
+
   </body>
 </html>
