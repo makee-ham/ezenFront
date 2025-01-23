@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>오름차순 정렬</title>
+    <script>
+      // 선생님의 특별 문제 3 : 숫자 10개 배열 오름차순으로 정렬하기 (sort 메소드 쓰지 않고, 그 배열을 manipulate 해야 함)
+
+      // 배열 숫자 10개 뒤죽박죽
+      let arr = [2, 10, 8, 7, 6, 3, 9, 5, 4, 1];
+      // 값 바꿀 때 임시 저장소
+      let temp;
+      // 자리를 바꿔서 제일 작은 게 가장 앞으로 가야 함!
+      for (let cnt = 0; cnt < arr.length; cnt++) {
+        for (let i = cnt + 1; i < arr.length; i++) {
+          if (arr[cnt] > arr[i]) {
+            temp = arr[cnt];
+            arr[cnt] = arr[i];
+            arr[i] = temp;
+          }
+        }
+      }
+	
+	  // 이게 왜 되지
+      console.log(arr);
+    </script>
+  </head>
+  <body>
+    <h1>F12를 눌러 개발자 모드로 전환하세요.</h1>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        div {
+            width: 70px;
+            height: 50px;
+            float: left;
+            margin: 5px;
+            background: red;
+        }
+        .next {            background: blue;        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.10.1.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <script>
+        $(document).ready(function () {
+		/* 내 거
+            var modWidth = 50;
+			let tempWidth;
+            $("div").click(function () {
+                $(this).addClass("next");
+				tempWidth = $(this).width() - 8;
+				$(this).width(tempWidth);
+            });
+			
+		*/
+		// 샘 거
+			$("div").click(function(){
+				wd = $(this).width() - 8; // px이 아니라 값만 반환되므로
+				$(this).width(wd).addClass("next");
+			});
+        });
+    </script>
+</body>
+</html>
