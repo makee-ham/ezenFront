@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>반장선거</title>
+	<script>
+
+		function total(num) {
+			vote[num]++;
+		}
+
+		function result() {
+			let max = 0;
+			let position = 0;
+
+			for (let i = 0; i < vote.length; i++) {
+				if (vote[i] > max) {
+					max = vote[i];
+					position = i;
+				}
+			}
+
+			console.log(vote);
+
+			console.log("최대 득표수는 ", max, "로 ", position + 1, "번째");
+			
+			let double = vote.indexOf(max, position+1);
+			
+			if (double != -1) {
+				console.log("재투표하세요... 최다 득표자가 한 명이 아닙니다.")
+			} else {
+				const name = document.getElementsByClassName("name");
+				console.log(name1[position].value);
+			}
+		}
+
+	</script>
+	<style>
+		h2 { text-align : center; }
+		form {
+			width : 600px;
+			height : 350px;
+			margin : 0 auto;
+			border : 1px solid #ccc;
+			text-align : center;
+		}
+		.name {
+			width : 150px;
+			height : 40px;
+			background-color : #ddd;
+			border : none;
+			margin : 30px 40px;
+			box-shadow : 3px 3px 3px gray;
+			transition : all 0.3s;
+		}
+		.name:active {
+			box-shadow : 3px 3px 3px black;
+			position : relative;
+			top : 2px;
+			left : -2px;
+		}
+		.btn {
+			display : block;
+			width : 200px;
+			height : 40px;
+			background-color : #999;
+			color : #fff;
+			border : none;
+			margin : 40px auto 0;
+		}
+	</style>
+</head>
+<body>
+	<h2>반장 선거</h2>
+	<form name="election">
+		<input type="button" name="name" class="name" value="철수" onclick="total(0)">
+		<input type="button" name="name" class="name" value="영희" onclick="total(1)">
+		<input type="button" name="name" class="name" value="꽃님" onclick="total(2)">
+		<input type="button" name="name" class="name" value="민준" onclick="total(3)">
+		<input type="button" name="name" class="name" value="현아" onclick="total(4)">
+		<input type="button" name="name" class="name" value="석균" onclick="total(5)">
+		<input type="button" name="btn" class="btn" value="결과보기" onclick="result()">
+	</form>
+	<script>
+		var name1 = document.getElementsByClassName("name");
+		console.log(name1.length);
+		var vote = new Array();
+		for(var i = 0; i < name1.length; i++) {
+			vote[i] = 0;
+		}
+	</script>
+</body>
+</html>

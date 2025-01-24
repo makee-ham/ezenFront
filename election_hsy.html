@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>☆반장 선거☆</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "IBM Plex Sans KR", sans-serif;
+        background-color: antiquewhite;
+      }
+      #wrapper {
+        width: 400px;
+        margin: 64px auto 0;
+        border: 1px solid rgb(250, 207, 248);
+        background-color: #fff;
+        position: relative;
+      }
+      .title {
+        text-align: center;
+        margin: 32px 0;
+      }
+      .candidate {
+        width: 300px;
+        background-color: rgb(250, 207, 248);
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        padding: 16px;
+      }
+      .candidate h5 {
+        width: 100%;
+        font-weight: 400;
+        text-align: center;
+      }
+      .name {
+        display: block;
+        width: 100px;
+        height: 50px;
+        margin: 16px;
+        background-color: lemonchiffon;
+        cursor: pointer;
+        border: none;
+        font-weight: 500;
+      }
+      .name:hover {
+        background-color: rgb(230, 223, 164);
+      }
+      .viewResult {
+        width: 100px;
+        height: 40px;
+        display: block;
+        margin: 32px auto;
+        background-color: black;
+        color: #fff;
+        cursor: pointer;
+        border: none;
+      }
+      .viewResult:hover {
+        background-color: rgb(95, 77, 95);
+      }
+      #newChallenger {
+        width: 80px;
+        height: 80px;
+        background-color: rgb(158, 255, 255);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 80px;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        right: -120px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #333;
+      }
+      #newChallenger:hover {
+        background-color: rgb(152, 240, 240);
+      }
+      #reset {
+        width: 80px;
+        height: 80px;
+        background-color: rgb(253, 255, 158);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 80px;
+        cursor: pointer;
+        position: absolute;
+        top: 100px;
+        right: -120px;
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #333;
+      }
+      #reset:hover {
+        background-color: rgb(250, 252, 135);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h2 class="title">반장 선거</h2>
+      <form id="candidate" class="candidate" name="candidate">
+        <h5>이름을 클릭해서 투표하세요!</h5>
+      </form>
+      <button id="viewResult" class="viewResult" name="viewResult">
+        결과 확인
+      </button>
+      <div id="newChallenger">후보 추가</div>
+      <div id="reset">초기화</div>
+    </div>
+
+    <script>
+      // 편하게 요소 가져오도록 설정하기
+      const candidate = document.getElementById("candidate");
+      const result = document.getElementById("viewResult");
+      const add = document.getElementById("newChallenger");
+      const reset = document.getElementById("reset");
+
+      // 득표수 담을 객체(후보 이름은 key, 득표수는 value)
+      let vote = {};
+      // 투표 진행 중인지 여부
+      let isVoting = false;
+
+      // 후보 추가 누르면
+      add.addEventListener("click", function () {
+        // 투표 진행 중이면(이름 클릭된 경우) 추가 못하게 하기
+        if (isVoting) {
+          alert("투표가 진행 중입니다.");
+          return; // 함수 즉시 종료!
+        }
+
+        // .name 클래스 가진 요소는 몇 개인지 담아두기
+        const candidateCount = candidate.querySelectorAll(".name").length;
+        // 후보는 최대 10명까지 입력할 수 있도록 함
+        if (candidateCount < 10) {
+          // prompt창 떠서 이름 입력 또는 취소 가능 (앞뒤 공백 없애기)
+          const name = prompt("추가할 후보의 이름을 입력해 주세요.").trim();
+          // 입력값이 "" 등이 아니라면 true니까 name만 써도 됨
+          if (name) {
+            // 중복 이름 방지!... 질문: 왜 안 되죠...
+            if (!vote[name]) {
+              const newCandidate = document.createElement("input");
+              // 이름 버튼 설정 중...
+              newCandidate.type = "button";
+              newCandidate.name = "name";
+              newCandidate.className = "name";
+              newCandidate.value = name;
+
+              // 부모 요소가 될 form에 넣기
+              candidate.appendChild(newCandidate);
+
+              // 새 후보의 득표수 초기화!
+              vote[name] = 0;
+            } else {
+              alert("이미 등록된 후보입니다.");
+            }
+          } else {
+            alert("이름을 입력하지 않았습니다.");
+          }
+        } else {
+          // 이 블럭은 10명이 넘어간 경우임!
+          alert("후보는 최대 10명까지 등록할 수 있습니다.");
+        }
+      });
+
+      // 등록된 후보는 clickable 버튼이 되며, 누를 때마다 득표수가 오름 (GPT 사용)
+      candidate.addEventListener("click", function (e) {
+        // 'e'는 '클릭 이벤트', 'e.target'은 이벤트가 발생한 요소
+        // (1) 클릭 이벤트가 발생한 요소가 있고 AND
+        // (2) 해당 요소의 클래스 이름 목록 가운데 name이 있다면
+        if (e.target && e.target.classList.contains("name")) {
+          // 그 요소의 value인 후보명을 가지고 온다! 이건 곧 key값.
+          const name = e.target.value;
+          // 그 후보의 득표수를 1 증가
+          vote[name]++;
+
+          // 아무 후보나 한 번이라도 누르면,
+          // 초기화 하기 전까지 '후보 추가' 버튼 비활성화
+          isVoting = true;
+          add.disabled = true;
+        }
+      });
+
+      // 결과 확인 누르면, 동점자가 없을 경우 바로 alert 창으로 결과가 나온다.
+      result.addEventListener("click", function () {
+        // 등록된 후보가 없는 경우
+        const candidateCount = Object.keys(vote).length;
+        if (candidateCount === 0) {
+          alert("등록된 후보가 없습니다.");
+          return;
+        }
+
+        // 투표가 진행되지 않은 경우 (GPT 사용)
+        const totalVotes = Object.values(vote).reduce(
+          (sum, votes) => sum + votes,
+          0
+        );
+        if (totalVotes === 0) {
+          alert("아직 투표가 진행되지 않았습니다.");
+          return;
+        }
+
+        // 가장 높은 득표수 찾기
+        const maxVotes = Math.max(...Object.values(vote));
+
+        // 동점자 확인 (GPT 사용)
+        const winners = Object.keys(vote).filter(
+          (name) => vote[name] === maxVotes
+        );
+
+        if (winners.length === 1) {
+          // 동점자가 없을 경우 결과 출력
+          alert(`결과: ${winners[0]}님이 ${maxVotes}표로 당선되었습니다!`);
+
+          // 당선자만 남기고 화면 갱신 (GPT 사용)
+          const candidates = candidate.querySelectorAll(".name");
+          candidates.forEach((btn) => {
+            if (!winners.includes(btn.value)) {
+              btn.remove(); // 동점자가 아닌 후보 제거
+              delete vote[btn.value]; // `vote` 객체에서도 제거
+            }
+          });
+
+          // 당선을 축하합니다! 빠바밤~~~
+          document.querySelector("h5").innerHTML = "당선을 축하합니다!";
+
+          // 결과 버튼 못 누르게 하기 ㅎㅎ
+          result.disabled = true;
+        } else {
+          // 동점자 처리
+          alert(
+            `동점자 발생! ${winners.join(", ")}님이 ${maxVotes}표를 받았습니다.`
+          );
+
+          // 동점자만 남기고 화면 갱신 (GPT 사용)
+          const candidates = candidate.querySelectorAll(".name");
+          candidates.forEach((btn) => {
+            if (!winners.includes(btn.value)) {
+              btn.remove(); // 동점자가 아닌 후보 제거
+              delete vote[btn.value]; // `vote` 객체에서도 제거
+            }
+          });
+
+          // 살아남은 동점자의 득표수 초기화
+          winners.forEach((name) => {
+            vote[name] = 0;
+          });
+        }
+      });
+
+      // 초기화 버튼
+      reset.addEventListener("click", function () {
+        // 문구 초기화
+        document.querySelector("h5").innerHTML = "이름을 클릭해서 투표하세요!";
+
+        // 후보 추가 버튼 초기화
+        isVoting = false;
+        add.disabled = false;
+
+        // 결과 버튼 초기화
+        result.disabled = false;
+
+        // 후보 버튼 초기화
+        const candidates = candidate.querySelectorAll(".name");
+        candidates.forEach((btn) => btn.remove());
+
+        // 득표수 및 후보 데이터 초기화
+        vote = {};
+      });
+    </script>
+  </body>
+</html>
