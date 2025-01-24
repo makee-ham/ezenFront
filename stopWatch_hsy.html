@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Simple Stop Watch</title>
+	<style>
+		#timebox {
+			width: 500px;
+			height: 220px;
+			border: 1px solid #000;
+			margin: 64px auto;
+			background-color: pink;
+		}
+		.time {
+			width: 90%;
+			height: 120px;
+			margin: 16px auto 0;
+			text-align: center;
+			line-height: 120px;
+			background-color: white;
+		}
+		.utils {
+			width: 80%;
+			height: 50px;
+			margin: 16px auto 0;
+			display: flex;
+			justify-content: space-between;
+		}
+		.utils button {
+			width: 25%;
+		}
+	</style>
+</head>
+<body>
+	<div id="timebox">
+		<div class="time">
+			<h1 id="timeNum"></h1>
+		</div>
+		<div class="utils">
+			<button id="start">start</button>
+			<button id="stop">stop</button>
+			<button id="reset">reset</button>
+		</div>
+	</div>
+	
+	<script>
+	// 구조 - 00:00:00.00
+	//   [start] [stop] [reset]
+	let hour = 0;
+	let minute = 0;
+	let second = 0;
+	let mili = 0;
+	
+	let interval;
+	let isRunning = false;
+	
+	// 10ms마다 업데이트
+	function updateDisplay() {
+	//밀리 세컨드의 경우 1의 자리는 버림해서 10의 자리까지만 (99) 나오게 한다.. 아니면 양식 있으면 그걸 활용
+    let miliTwo = Math.floor(mili / 10); // 1의 자리 제거!! (00~99가 되도록)
+    document.getElementById("timeNum").innerHTML = 
+        `${hour.toString().padStart(2, '0')}:${minute.toString().padStart(2, '0')}:${second.toString().padStart(2, '0')}.${miliTwo.toString().padStart(2, '0')}`;
+	}
+
+	// start 눌렀을 때 10 ms 단위로 더하기....
+	document.getElementById("start").addEventListener('click', function(){
+		if (!isRunning){
+			isRunning = true;
+			interval = setInterval(function(){
+				mili += 10; // 밀리초 + 10
+				if (mili >= 1000) { // 1000 밀리초 = 1초
+					mili = 0; // 초기화(다시 0부터 더해야지)
+					second++;
+				}
+				if (second >= 60) {
+					second = 0;
+					minute++;
+				}
+				if (minute >= 60) {
+					minute = 0;
+					hour++;
+				}
+				updateDisplay(); // 화면 업데이트
+			}, 10);
+		} else {
+			// 실행 중이잖아 임마
+		}
+		
+	});
+	
+	// start 중복 실행 시 setInterval 중복되지 않게 하기
+		// interval이 실행 중이면
+	
+	// stop 눌렀을 때 정지
+	document.getElementById("stop").addEventListener('click', function(){
+		clearInterval(interval);
+		isRunning = false;
+	});
+	
+	// reset 누르면 초기화
+	document.getElementById("reset").addEventListener('click', function(){
+		hour = 0;
+		minute = 0;
+		second = 0;
+		mili = 0;
+		
+		updateDisplay(); // 아 맞다 화면 업데이트
+	});
+	
+	// 가보자고~~
+	updateDisplay();
+	</script>
+
+</body>
+</html>

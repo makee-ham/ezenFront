@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>스톱워치</title>
+</head>
+<body>
+	<div id="stopwatch">
+		<span id="hour">00</span>
+		<span> : </span>
+		<span id="minute">00</span>
+		<span> : </span>
+		<span id="second">00</span>
+		<span> : </span>
+		<span id="milli">00</span>
+	</div>
+	<form name="frm">
+		<input type="button" name="start" value="start" onclick="startWatch()">
+		<input type="button" name="stop" value="stop" onclick="stopWatch()">
+		<input type="button" name="reset" value="reset" onclick="resetWatch()">
+	</form>
+	<script>
+		var hour = 0;
+		var minute = 0;
+		var second = 0;
+		var milli = 0;
+		var thour = document.getElementById("hour");
+		var tminute = document.getElementById("minute");
+		var tsecond = document.getElementById("second");
+		var tmilli = document.getElementById("milli");
+		function startWatch() {
+			start0 = setInterval(startTime, 10);
+			document.frm.start.disabled = true;
+		}
+		function stopWatch() {
+			clearInterval(start0);
+			document.frm.start.disabled = false;
+		}
+		function resetWatch() {
+			hour = 0, minute = 0, second = 0, milli = 0;
+			targetPrint();
+		}
+		function startTime() {
+			milli++;
+			if(milli>99){
+				second++;
+				milli = 0;
+			}
+			if(second>59) {
+				minute++;
+				second = 0;
+			}
+			if(minute>59) {
+				hour++;
+				minute = 0;
+			}
+			targetPrint();
+		}
+		function targetPrint() {
+			
+			if(hour<9){
+				thour.innerHTML = "0" + hour;
+			}else{
+				thour.innerHTML = hour;
+			}
+			if(minute<9){
+				tminute.innerHTML = "0" + minute;
+			}else{
+				tminute.innerHTML = minute;
+			}
+			if(second<9) {
+				tsecond.innerHTML = "0" + second;
+			}else{
+				tsecond.innerHTML = second;
+			}
+			if(milli<9) {
+				tmilli.innerHTML = "0" + milli;
+			}else {
+				tmilli.innerHTML = milli;
+			}
+		}
+	</script>
+</body>
+</html>
