@@ -66,3 +66,20 @@ function appr(frm) {
     alert("결재액" + frm.approval.value + "\n" + "남은 한도" + cust[i][5]);
   }
 }
+
+// tab menu (내가 추가)
+document.addEventListener("DOMContentLoaded", function () {
+  let select = document.querySelectorAll(".form");
+
+  select.forEach(function (item) {
+    item.addEventListener("click", function () {
+      // 1. 모든 .form 요소에서 active 클래스 제거
+      select.forEach(function (el) {
+        el.classList.remove("active");
+      });
+
+      // 2. 클릭한 요소에 active 클래스 추가
+      this.classList.add("active");
+    });
+  });
+});

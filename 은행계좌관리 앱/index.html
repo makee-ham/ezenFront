@@ -1,76 +1,105 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>은행 재고관리 앱</title>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style.css">
-	<script src="script.js"></script>
-</head>
-<body>
-	<form>
-		<h2>고객등록</h2>
-		<p>
-		<label>고객번호</label>
-		<input type="text" name="cNo"/>
-		</p>
-		<p>
-		<label>고객명</label>
-		<input type="text" name="cName"/>
-		<label>마이너스보유</label>
-		<input type="checkbox" name="yesNo" />
-		</p>
-		<p>
-		<label>계좌번호</label>
-		<input type="text" name="cNumber"/>
-		</p>
-		<label>카드한도액</label>
-		<input type="text" name="cLimit"/>
-		</p>
-		<p>
-			<input type="button" value="등록" onclick="regist(this.form)"/>
-		</p>
-	</form>
-	<form>
-		<h2>입금</h2>
-		<p>
-		<label>고객번호</label>
-		<input type="text" name="cNo"/>
-		</p>
-		<p>
-		<label>입금액</label>
-		<input type="text" name="incost"/>
-		</p>
-		<p>
-			<input type="button" value="입금" onclick="inStock(this.form)"/>
-		</p>
-	</form>
-	<form>
-		<h2>출금</h2>
-		<p>
-		<label>고객번호</label>
-		<input type="text" name="cNo"/>
-		</p>
-		<p>
-		<label>출금액</label>
-		<input type="text" name="outcost"/>
-		</p>
-		<p>
-			<input type="button" value="출금" onclick="outStock(this.form)"/>
-		</p>
-	</form>
-	<form>
-		<h2>카드결제</h2>
-		<p>
-		<label>고객번호</label>
-		<input type="text" name="cNo"/>
-		</p>
-		<p>
-		<label>결제액</label>
-		<input type="text" name="approval"/>
-		</p>
-		<p>
-			<input type="button" value="출금" onclick="appr(this.form)"/>
-		</p>
-	</form>
-</body>
+  <head>
+    <title>은행 재고관리 앱</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <form class="regi form active">
+      <h2>고객등록</h2>
+      <div>
+        <p>
+          <label>고객번호</label>
+          <input type="text" name="cNo" />
+        </p>
+        <p>
+          <label>고객명</label>
+          <input type="text" name="cName" />
+          <label id="minus">마이너스보유</label>
+          <input id="minusYN" type="checkbox" name="yesNo" />
+        </p>
+        <p>
+          <label>계좌번호</label>
+          <input type="text" name="cNumber" />
+        </p>
+        <p>
+          <label>카드한도액</label>
+          <input type="text" name="cLimit" />
+        </p>
+        <p>
+          <input
+            class="btn"
+            type="button"
+            value="등록"
+            onclick="regist(this.form)"
+          />
+        </p>
+      </div>
+    </form>
+    <form class="deposit form">
+      <h2>입금</h2>
+      <div>
+        <p>
+          <label>고객번호</label>
+          <input type="text" name="cNo" />
+        </p>
+        <p>
+          <label>입금액</label>
+          <input type="text" name="incost" />
+        </p>
+        <p>
+          <input
+            class="btn"
+            type="button"
+            value="입금"
+            onclick="inStock(this.form)"
+          />
+        </p>
+      </div>
+    </form>
+    <form class="withdraw form">
+      <h2>출금</h2>
+      <div>
+        <p>
+          <label>고객번호</label>
+          <input type="text" name="cNo" />
+        </p>
+        <p>
+          <label>출금액</label>
+          <input type="text" name="outcost" />
+        </p>
+        <p>
+          <input
+            class="btn"
+            type="button"
+            value="출금"
+            onclick="outStock(this.form)"
+          />
+        </p>
+      </div>
+    </form>
+    <form class="check form">
+      <h2>카드결제</h2>
+      <div>
+        <p>
+          <label>고객번호</label>
+          <input type="text" name="cNo" />
+        </p>
+        <p>
+          <label>결제액</label>
+          <input type="text" name="approval" />
+        </p>
+        <p>
+          <input
+            class="btn"
+            type="button"
+            value="출금"
+            onclick="appr(this.form)"
+          />
+        </p>
+      </div>
+    </form>
+  </body>
 </html>

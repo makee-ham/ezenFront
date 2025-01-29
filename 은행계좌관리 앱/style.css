@@ -3,3 +3,79 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  width: 500px;
+  height: 200px;
+  margin: 100px auto 0;
+  border: 1px solid black;
+  position: relative;
+}
+form {
+  position: absolute;
+}
+form div {
+  display: none;
+}
+.active div {
+  display: block;
+  padding: 24px 32px;
+  position: relative;
+}
+h2 {
+  display: block;
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+  background-color: #ccc;
+  border: 1px solid black;
+  border-bottom: none;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+  position: absolute;
+  top: -40px;
+}
+h2:hover {
+  background-color: #eee;
+}
+.deposit h2 {
+  left: 100px;
+  border-left: none;
+}
+.withdraw h2 {
+  left: 200px;
+  border-left: none;
+}
+.check h2 {
+  left: 300px;
+  border-left: none;
+}
+.active h2 {
+  background-color: #fff;
+}
+.active p {
+  margin-bottom: 8px;
+}
+.active input {
+  position: absolute;
+  left: 120px;
+}
+.active #minus {
+  width: 100px;
+  position: absolute;
+  left: 320px;
+}
+.active #minusYN {
+  position: absolute;
+  top: 58px;
+  left: 424px;
+}
+.active .btn {
+  font-size: 16px;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  position: absolute;
+  bottom: -10px;
+  left: 48px;
+}
