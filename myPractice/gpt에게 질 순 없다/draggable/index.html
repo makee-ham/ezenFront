@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>드래그 마스터 함서연</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .dragContainer {
+        margin-top: 100px;
+        width: 100%;
+        height: 260px;
+        border: 5px dashed black;
+        overflow: hidden;
+      }
+      .dragList {
+        width: calc(250px * 10);
+        height: 260px;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+      }
+      .items {
+        width: 200px;
+        height: 250px;
+        text-align: center;
+        line-height: 250px;
+        background-color: pink;
+        transition: all 0.5s ease;
+      }
+      .items:hover {
+        font-size: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>하하!</h1>
+    <div class="dragContainer">
+      <div class="dragList">
+        <div class="items">GPT가</div>
+        <div class="items">하면</div>
+        <div class="items">나도</div>
+        <div class="items">한다</div>
+        <div class="items">GPT</div>
+        <div class="items">이</div>
+        <div class="items">허접</div>
+        <div class="items">자식</div>
+        <div class="items">사랑한다</div>
+        <div class="items">아하하!</div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
