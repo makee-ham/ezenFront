@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>이진 검색</title>
+</head>
+<body>
+	<script>
+		// 문제: 아래 배열 arr에서 33을 찾고 싶어! 앞쪽에서부터 죄다 검색하지 말고, 이진검색으로 효율적으로 찾아줘.
+		const arr = [3, 7, 9, 13, 27, 33, 41, 53, 61, 65];
+		const num = Number(prompt("찾고 싶은 숫자를 입력하세요."));
+		let answer;
+		
+		// 풀어보자!
+		
+		// 변수 정의
+		let low = 0; // 첫 인덱스
+		let high = arr.length - 1; // 끝 인덱스
+		let sel = Math.floor((low + high) / 2); // 중앙값의 인덱스
+		
+		
+		if (arr.includes(num)) {
+		// 반복문으로 검색 시작
+			while (true) {
+				// 정답이 나오면 반복문 종료
+				if (arr[sel] === num) break;
+				// 중앙값보다 num이 작은 수일 때
+				if (arr[sel] > num) {
+					high = sel - 1;
+				// 중앙값보다 num이 큰 수일 때
+				} else if (arr[sel] < num) {
+					low = sel + 1;
+				}
+				sel = Math.floor((low + high) / 2);
+			}
+			
+			answer = sel;
+			
+			// 답안
+			console.log(`${num}의 index는 ${answer}로, 배열의 ${answer+1}번째에 위치합니다.`);
+			
+			// 입력한 값이 배열 내에 없는 경우
+		} else {
+			console.log(`입력하신 숫자 ${num}은 배열 내에 포함되어 있지 아니합니다.`);
+		}
+	</script>
+</body>
+</html>
