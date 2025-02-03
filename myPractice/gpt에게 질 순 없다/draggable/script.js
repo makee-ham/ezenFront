@@ -12,7 +12,6 @@ let movedX = 0;
 
 let previousX = 0;
 let velocity = 0;
-let previousV = 0;
 
 // 관성 함수
 function inertia() {
