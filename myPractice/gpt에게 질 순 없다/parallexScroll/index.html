@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>패럴랙스 스크롤</title>
+    <style>
+      /* 기본 스타일 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      /* 섹션 스타일 */
+      section {
+        height: 100vh; /* 화면 높이 100% */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      /* 배경 스타일 */
+      .parallax {
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* 개별 섹션 */
+      .section1 {
+        background: #1e3c72; /* 단순 배경색 */
+      }
+
+      .section2 {
+        background: url("./bg1.jpg") no-repeat center center;
+        /* background-attachment: fixed; */
+      }
+
+      .section3 {
+        background: #ff7e5f; /* 단순 배경색 */
+      }
+
+      .section4 {
+        background: url("./bg2.jpg") no-repeat center center;
+        /* background-attachment: fixed; */
+      }
+    </style>
+  </head>
+  <body>
+    <section class="section1">첫 번째 섹션</section>
+    <section class="section2 parallax">두 번째 섹션 (패럴랙스 효과)</section>
+    <section class="section3">세 번째 섹션</section>
+    <section class="section4 parallax">네 번째 섹션 (패럴랙스 효과)</section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
