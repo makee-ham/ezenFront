@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>세로 가다가 가로스크롤 ㅎㅎㅎ</title>
+<script>
+	window.addEventListener("scroll", function(){
+		let transformX = -1/18 * window.scrollY + 1000 / 18
+		if(transformX < -100) {
+			document.querySelector(".scroll-box").style.transform = `translateX(-100vw)`
+		} else if(transformX < 0) {
+			document.querySelector(".scroll-box").style.transform = `translateX(${transformX}vw)`
+		}
+	})
+</script>
+<style>
+	.section {
+		padding-top : 1000px;
+		padding-bottom : 1000px;
+		contain : paint;
+		/*
+			contain : 특정 요소와 콘텐츠가 문서 트리의 다른 부위와 독립되어 있음
+			서로 독립된 많은 양의 위젯이 존재하는 페이지에서 유용
+			paint : 요소의 자손이 자신의 범위 바깥에 그려지지 않음(overflow : hidden같은 역할)
+		*/
+		height : 300vh;
+	}
+	.scroll-box {
+		width : 200vw;
+		height : 50vh;
+		background : linear-gradient(90deg, #abc123, #321cba);
+		position : sticky;
+		/*
+			sticky : 최초 relative 속성과 같이 동작하다가, 스크롤 시 지정 지점에서 요소를 고정시킴
+			- sticky속성을 갖는 요소는 자신의 부모 요소안에서만 적용됨
+			- 부모태그에 무조건 height 높이 값이 들어가 있어야 함(부모 높이만큼 고정)
+			- 부모요소 중에 overflow : hidden, auto, scroll 속성이 있으면 안됨
+			- IE는 지원이 안됨
+		*/
+		top : 0;
+		left : 0;
+	}
+	.hText { font-size : 60px; color : white; padding : 50px; }
+</style>
+</head>
+<body>
+	<div class="section">
+		<div class="scroll-box">
+			<p class="hText">가로스크롤</p>
+		</div>
+	</div>
+</body>
+</html>
