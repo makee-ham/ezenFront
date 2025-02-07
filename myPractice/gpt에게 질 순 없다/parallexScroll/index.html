@@ -3,9 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>패럴랙스 스크롤</title>
+    <title>횡스크롤 패럴랙스</title>
     <style>
-      /* 기본 스타일 */
       * {
         margin: 0;
         padding: 0;
@@ -13,53 +12,152 @@
       }
 
       body {
+        overflow-x: hidden; /* 가로 스크롤 방지 */
         font-family: Arial, sans-serif;
       }
 
-      /* 섹션 스타일 */
-      section {
-        height: 100vh; /* 화면 높이 100% */
+      /* 일반적인 세로 스크롤 섹션 */
+      .vertical-section {
+        width: 100vw;
+        height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 2rem;
-        color: white;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-weight: bold;
+        background: #ddd;
+        border-bottom: 2px solid #bbb;
       }
 
-      /* 배경 스타일 */
-      .parallax {
-        background-attachment: fixed;
-        background-size: cover;
-        background-position: center;
+      /* 컨테이너 */
+      .container {
+        display: flex;
+        flex-direction: column;
+        width: 100vw;
+        height: 500vh; /* 충분한 스크롤 영역 확보 */
       }
 
-      /* 개별 섹션 */
-      .section1 {
-        background: #1e3c72; /* 단순 배경색 */
+      /* 패럴랙스가 적용될 가로 스크롤 섹션 */
+      .section {
+        display: flex;
+        width: 100vw;
+        height: 50vh;
+        position: relative;
+        overflow: hidden;
       }
 
-      .section2 {
-        background: url("./bg1.jpg") no-repeat center center;
-        /* background-attachment: fixed; */
+      /* 패널들을 감싸는 가로 스크롤 컨테이너 */
+      .parallax-container {
+        display: flex;
+        width: 300vw; /* 가로로 배치 */
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.1s linear;
       }
 
-      .section3 {
-        background: #ff7e5f; /* 단순 배경색 */
+      /* 개별 패널 */
+      .panel {
+        width: 100vw;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: bold;
+        border: 1px solid #ddd;
       }
 
-      .section4 {
-        background: url("./bg2.jpg") no-repeat center center;
-        /* background-attachment: fixed; */
+      /* 섹션 개별 스타일 */
+      .top {
+        background: #fff;
+      }
+
+      .bottom {
+        background: #f8f8f8;
       }
     </style>
   </head>
   <body>
-    <section class="section1">첫 번째 섹션</section>
-    <section class="section2 parallax">두 번째 섹션 (패럴랙스 효과)</section>
-    <section class="section3">세 번째 섹션</section>
-    <section class="section4 parallax">네 번째 섹션 (패럴랙스 효과)</section>
+    <div class="container">
+      <!-- 스크롤 전 -->
+      <div class="vertical-section">상단 일반 섹션</div>
 
-    <script src="script.js"></script>
+      <!-- 상단 횡스크롤 섹션 -->
+      <div class="section top">
+        <div class="parallax-container" id="topParallax">
+          <div class="panel">패널 1</div>
+          <div class="panel">패널 2</div>
+          <div class="panel">패널 3</div>
+        </div>
+      </div>
+
+      <!-- 하단 횡스크롤 섹션 -->
+      <div class="section bottom">
+        <div class="parallax-container" id="bottomParallax">
+          <div class="panel">패널 4</div>
+          <div class="panel">패널 5</div>
+          <div class="panel">패널 6</div>
+        </div>
+      </div>
+
+      <!-- 스크롤 후 -->
+      <div class="vertical-section">하단 일반 섹션</div>
+    </div>
+
+    <script>
+      // ✅ 1단계: 기본적인 스크롤 감지하기
+      //   👉 목표
+      //   스크롤 이벤트를 감지해서 window.scrollY 값을 콘솔에 출력해 보자.
+      //   👉 할 일
+      //   JavaScript에서 window.addEventListener("scroll", callback)을 사용해서 스크롤을 감지한다.
+      //   현재 스크롤 위치(window.scrollY)를 console.log()로 출력한다.
+
+      // ✅ 2단계: 특정 섹션의 위치 구하기
+      //   👉 목표
+      //   .top 섹션의 시작 위치(offsetTop)와 끝나는 위치(offsetTop + height)를 구해서 콘솔에 출력해 보자.
+      //   👉 할 일
+      //   .top 섹션을 document.querySelector()로 선택한다.
+      //   .top 섹션이 페이지에서 시작하는 위치(.offsetTop)를 가져온다.
+      //   .top 섹션의 끝나는 위치를 offsetTop + offsetHeight로 계산한다.
+      //   스크롤할 때마다 해당 값들을 콘솔에 출력해 본다.
+
+      // ✅ 3단계: 특정 구간에서만 실행되도록 조건 추가하기
+      //   👉 목표
+      //   스크롤이 .top 섹션 구간 안에 있을 때만 콘솔에 "횡스크롤 구간!"이라고 출력해 보자.
+      //   👉 할 일
+      //   스크롤 값이 .top 섹션의 시작 위치보다 크고, 끝 위치보다 작은 경우만 실행되도록 조건문(if)을 추가한다.
+
+      // ✅ 4단계: 세로 스크롤 막고 가로 이동 적용하기
+      //   👉 목표
+      //   .top 구간에서는 window.scrollY가 아닌 translateX()를 이용해서 #topParallax를 이동시키자.
+      //   👉 할 일
+      //   .top 섹션 안에 있는 #topParallax를 가져온다.
+      //   .top 섹션이 시작된 이후의 스크롤 값을 계산한다.
+      //   #topParallax의 transform: translateX() 값을 조정해서 가로로 이동시킨다.
+
+      window.addEventListener("scroll", function () {
+        // 1단계
+        // console.log("현재 스크롤 위치 : ", window.scrollY);
+
+        // 2단계
+        let topSection = document.querySelector(".top");
+        let topStart = topSection.offsetTop;
+        let topEnd = topStart + topSection.offsetHeight;
+
+        // console.log(`.top 시작 위치: ${topStart}px, 끝 위치: ${topEnd}px`);
+
+        // 3단계
+        let scrollY = window.scrollY;
+
+        if (scrollY >= topStart && scrollY < topEnd) {
+          let progress = (scrollY - topStart) / topSection.offsetHeight; // 진행률 (0~1)
+          let translateXValue = progress * 100; // 가로 이동 거리 조정
+
+          topParallax.style.transform = `translateX(-${translateXValue}vw)`;
+        }
+      });
+    </script>
   </body>
 </html>
