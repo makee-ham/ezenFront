@@ -1,0 +1,90 @@
+@font-face {
+    font-family: LiquidCrystal-Normal;
+    src: url('./fonts/LiquidCrystal-Normal.otf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul {
+    list-style: none;
+}
+#wrapper {
+    width: 200px;
+    height: 300px;
+    margin: 100px auto;
+    background-color: #ffc0cb;
+    box-shadow: inset 4px 4px #fff6f8, inset -4px -4px #c0c0c0;
+    box-shadow: inset ;
+    padding-top: 10px;
+}
+/* 대시보드 */
+.dashboard {
+    width: 180px;
+    height: 50px;
+    background-color: #ffffd0;
+    box-shadow: inset 4px 4px #c0c0c0, inset -4px -4px #fff6f8;
+    margin-left: 10px;
+    font-family: LiquidCrystal-Normal, sans-serif;
+    font-size: 30px;
+    color: #f05e85;
+    display : flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.bombCount {
+    padding-left: 5px;
+}
+.newGame {
+    width: 30px;
+    height: 30px;
+    background-color: #a78dac;
+    border: 1px solid #c0c0c0;
+    box-shadow: inset 2px 2px #fff6f8, inset -2px -2px #c0c0c0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.newGame img {
+    width: 24px;
+    height: 24px;
+}
+.timeCount {
+    padding-right: 5px;
+}
+/* 게임 테이블 */
+.gameTableContainer {
+    width: 180px;
+    height: 220px;
+    background-color: #a78dac;
+    box-shadow: inset 5px 5px #c0c0c0, inset -5px -5px #fff6f8;
+    margin: 10px 0 0 10px;
+    padding-top: 5px;
+}
+.gameTable {
+    width: 170px;
+    height: 210px;
+    margin-left: 5px;
+    display: flex;
+    justify-content: space-between;
+}
+.row {
+    width: 11%;
+    height: 100%;
+}
+.row ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+.col {
+    width: 100%;
+    height: 11%;
+    background-color: #a78dac;
+    border: 1px solid #c0c0c0;
+    box-shadow: inset 2px 2px #fff6f8, inset -2px -2px #c0c0c0;
+}
