@@ -91,8 +91,16 @@ ul {
 /* 지뢰! */
 .mine {
   box-shadow: none;
+  border: 1px solid #c0c0c0;
   background-image: url("img/bomb.png");
   background-position: center center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+/* 클릭됨! / 열림! */
+.opened {
+  box-shadow: none;
+  border: 1px solid #c0c0c0;
+  text-align: center;
+  line-height: 1.3em;
 }
