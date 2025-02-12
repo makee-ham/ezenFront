@@ -103,65 +103,74 @@ const gameover = () => {
 
 // 클릭한 지점 기준으로 8방향 호출 및 숫자 세팅 함수
 const mineDetector = (col, index) => {
-  // 게임 오버 (지뢰 좌클릭)
+  // 클릭한 셀이 지뢰라면 게임 오버 처리
   if (randomMines.includes(index)) {
     gameover();
-  }
-
-  // 게임 오버나 클리어 시 작동 안 함
-  if (isGameOver || isWin) {
     return;
   }
 
-  // aroundClick과 mineIsNear을 지역 변수로 선언!
-  let aroundClick = [];
-  let mineIsNear = [];
-  const rowLength = rows.length;
+  // 게임 오버나 클리어 상태면 함수 종료
+  if (isGameOver || isWin) return;
 
-  // 현재 클릭한 셀을 'opened' 상태로 표시
+  // 보드가 컬럼 메이저 배열이라고 가정할 때,
+  // rows.length는 '행의 개수'이고, 총 열의 수는 cols.length / rows.length 입니다.
+  const rowLength = rows.length; // 행의 개수 (예: 9)
+  const totalColumns = cols.length / rowLength; // 열의 개수 (예: 9)
+  // 현재 셀의 좌표 계산: (r, c)
+  const r = index % rowLength; // 행 번호 (0부터 시작; 위쪽이 0)
+  const c = Math.floor(index / rowLength); // 열 번호 (0부터 시작; 왼쪽이 0)
+
+  // 현재 셀을 열림 상태로 표시
   cols[index].classList.add("opened");
 
-  // 게임 클리어(지뢰가 아닌 모든 셀을 열었을 때 = 지뢰 셀만 남았을 때 = WIN)
+  // 게임 클리어 체크: 남은 미개봉 셀 수가 지뢰 수와 같으면 승리
   unopenedCount = cols.length - document.querySelectorAll(".opened").length;
   if (unopenedCount === randomMines.length) {
     win();
     return;
   }
 
-  // 클릭한 셀 주변 8방향의 인덱스를 계산
+  let aroundClick = [];
+
+  // 각 offset(gap)에 대해 주변 셀의 인덱스를 계산 (경계 조건 체크 포함)
   aroundGap.forEach((gap) => {
-    if (
-      index + gap >= 0 &&
-      index + gap < cols.length &&
-      // 첫 행 -> 위쪽 확장 방지
-      !(index % rowLength === 0 && (gap === -10 || gap === -1 || gap === -8)) &&
-      // 막 행 -> 아래쪽 확장 방지
-      !(
-        (index + 1) % rowLength === 0 &&
-        (gap === -8 || gap === 1 || gap === 10)
-      ) &&
-      // 첫 열 -> 왼쪽 확장 방지
-      !(index < rowLength && (gap === -10 || gap === -9 || gap === -8)) &&
-      // 막 열 -> 아래쪽 확장 방지
-      !(
-        index >= rowLength * (rowLength - 1) &&
-        (gap === 8 || gap === 9 || gap === 10)
-      )
-    ) {
-      aroundClick.push(index + gap);
-    }
+    const neighborIndex = index + gap;
+    // 인덱스 범위 체크
+    if (neighborIndex < 0 || neighborIndex >= cols.length) return;
+
+    // 각 gap에 따른 경계 조건
+    // 좌측 상단 (-10): 위쪽(바로 위)와 왼쪽(바로 왼쪽)이 모두 존재해야 함
+    if (gap === -10 && (r === 0 || c === 0)) return;
+    // 좌측 (-9): 왼쪽 열이 있어야 함
+    if (gap === -9 && c === 0) return;
+    // 좌측 하단 (-8): 아래쪽(바로 아래)와 왼쪽(바로 왼쪽)이 모두 존재해야 함
+    if (gap === -8 && (r === rowLength - 1 || c === 0)) return;
+    // 바로 위 (-1): 위쪽 행이 있어야 함
+    if (gap === -1 && r === 0) return;
+    // 바로 아래 (+1): 아래쪽 행이 있어야 함
+    if (gap === 1 && r === rowLength - 1) return;
+    // 우측 상단 (+8): 위쪽과 오른쪽 열이 있어야 함
+    if (gap === 8 && (r === 0 || c === totalColumns - 1)) return;
+    // 우측 (+9): 오른쪽 열이 있어야 함
+    if (gap === 9 && c === totalColumns - 1) return;
+    // 우측 하단 (+10): 아래쪽과 오른쪽 열이 있어야 함
+    if (gap === 10 && (r === rowLength - 1 || c === totalColumns - 1)) return;
+
+    // 위의 조건을 통과하면, 유효한 주변 셀로 추가
+    aroundClick.push(neighborIndex);
   });
 
-  // 주변 셀 중 지뢰가 있는 셀만 가져오기
-  mineIsNear = aroundClick.filter((element) => randomMines.includes(element));
+  // 주변 셀 중 지뢰가 있는 셀들을 필터링
+  const mineIsNear = aroundClick.filter((neighborIndex) =>
+    randomMines.includes(neighborIndex)
+  );
 
-  // 주변에 지뢰가 있는 경우
   if (mineIsNear.length !== 0) {
-    // 셀 안에 지뢰 수를 표시
-    col.innerHTML = `${mineIsNear.length}`;
+    // 주변에 지뢰가 있으면, 해당 개수를 셀에 표시
+    col.innerHTML = mineIsNear.length;
     return;
   } else {
-    // 주변에 지뢰가 없으면 주변 셀들을 재귀적으로 열기
+    // 주변에 지뢰가 없으면, 재귀적으로 주변 셀을 열기
     aroundClick.forEach((safeCellIndex) => {
       if (!cols[safeCellIndex].classList.contains("opened")) {
         mineDetector(cols[safeCellIndex], safeCellIndex);
