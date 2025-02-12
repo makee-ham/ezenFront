@@ -133,19 +133,19 @@ const mineDetector = (col, index) => {
     if (
       index + gap >= 0 &&
       index + gap < cols.length &&
-      // 첫 열 -> 왼쪽 확장 방지
-      !(index % rowLength === 0 && (gap === -10 || gap === -9 || gap === -8)) &&
-      // 막 열 -> 오른쪽 확장 방지
-      !(
-        (index + 1) % rowLength === 0 &&
-        (gap === 8 || gap === 9 || gap === 10)
-      ) &&
       // 첫 행 -> 위쪽 확장 방지
-      !(index < rowLength && (gap === -10 || gap === -1 || gap === 8)) &&
+      !(index % rowLength === 0 && (gap === -10 || gap === -1 || gap === -8)) &&
       // 막 행 -> 아래쪽 확장 방지
       !(
-        index >= cols.length - rowLength &&
+        (index + 1) % rowLength === 0 &&
         (gap === -8 || gap === 1 || gap === 10)
+      ) &&
+      // 첫 열 -> 왼쪽 확장 방지
+      !(index < rowLength && (gap === -10 || gap === -9 || gap === -8)) &&
+      // 막 열 -> 아래쪽 확장 방지
+      !(
+        index >= rowLength * (rowLength - 1) &&
+        (gap === 8 || gap === 9 || gap === 10)
       )
     ) {
       aroundClick.push(index + gap);
