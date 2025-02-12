@@ -38,6 +38,11 @@ const settingNewGame = function () {
   isGameOver = false;
   isWin = false;
   unopenedCount = 0;
+  // 4. 우클릭 관련 초기화
+  cols.forEach((col, index) => {
+    clickData[index] = { clickCount: 0, flag: false, question: false };
+    col.classList.remove("flag", "question");
+  });
 };
 
 // 첫 클릭 index 저장 함수
@@ -120,6 +125,9 @@ cols.forEach((col, index) => {
   col.addEventListener("mousedown", function (e) {
     if (e.button === 2 || e.which === 3) {
       e.preventDefault(); // 우클릭 기본 기능 방지
+
+      // 이미 opened 상태라면 우클릭 이벤트 종료
+      if (col.classList.contains("opened")) return;
 
       // 클릭한 index property 안의 clickCount(key) value 증가
       clickData[index].clickCount++;
@@ -262,6 +270,8 @@ const mineDetector = (col, index) => {
 // 좌클릭 이벤트
 cols.forEach((col, index) => {
   col.addEventListener("click", function () {
+    // 게임 오버나 클리어 상태면 함수 종료
+    if (isGameOver || isWin) return;
     // 우클릭의 clickCount 상태에 따라 분기가 나뉨 (index는 우클릭 때 쓴 거랑 같으니 다행)
     if (clickData[index].flag) return;
     if (clickData[index].question) return;
