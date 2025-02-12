@@ -104,3 +104,17 @@ ul {
   text-align: center;
   line-height: 1.3em;
 }
+/* 깃발 */
+.flag {
+  background-image: url("img/flag.png");
+  background-position: center center;
+  background-size: 70%;
+  background-repeat: no-repeat;
+}
+/* 물음표 */
+.question {
+  background-image: url("img/q.png");
+  background-position: center center;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
