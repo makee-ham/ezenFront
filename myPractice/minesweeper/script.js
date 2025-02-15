@@ -53,7 +53,7 @@ const getRandomIndex = () => {
   let temp = [];
   while (temp.length < MINE_COUNT) {
     const randomIndex = Math.floor(Math.random() * cols.length);
-    // 중복 확인 및 첫 클릭 위치 제외
+    // 중복 확인 및 첫 클릭 위치(주변 8개 포함) 제외
     if (!temp.includes(randomIndex) && randomIndex !== firstClickIndex) {
       temp.push(randomIndex);
     }
@@ -281,9 +281,9 @@ cols.forEach((col, index) => {
       // 1. 첫 클릭 인지시키기
       isFirstClick = true;
       // 2. 첫 클릭 index 저장
-      getFirstIndex(index);
+      getFirstIndex();
       // 3. 지뢰 배치
-      getRandomIndex();
+      getRandomIndex(index);
       // 4. 타이머 시작
       timerStart();
     }
