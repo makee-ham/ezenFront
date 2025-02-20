@@ -1,0 +1,290 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: #333;
+  background-color: #fff;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: #333;
+  text-decoration: none;
+}
+#wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+header {
+  width: 200px;
+}
+.contents {
+  width: 400px;
+}
+.imgslide {
+  width: calc(100% - 600px);
+}
+footer {
+  width: 100%;
+  display: flex;
+}
+header h1 {
+  width: 200px;
+  height: 100px;
+}
+header h1 img {
+  margin: 27px 0 0 5px;
+}
+/* 메인 메뉴 */
+.menu {
+  width: 180px;
+  margin-left: 10px;
+}
+.navi > li > a {
+  display: block;
+  width: 180px;
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  background-color: #0066ad;
+  font-weight: bold;
+  padding-left: 5px;
+}
+.navi li a:hover {
+  background-color: #30a3f3;
+}
+.submenu {
+  display: none;
+}
+.submenu li a {
+  display: block;
+  height: 35px;
+  line-height: 35px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ababab;
+  padding-left: 15px;
+}
+.submenu li a:hover {
+  background-color: #30a3f3;
+}
+/* 콘텐츠 영역 */
+.notice {
+  height: 300px;
+}
+.notice div {
+  margin-top: 20px;
+}
+.notice div h4 {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 5px;
+  text-align: center;
+  background-color: #ccc;
+}
+.notice ul {
+  width: 390px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  padding: 5px 0;
+}
+.notice li {
+  height: 40px;
+  line-height: 40px;
+  margin: 0 10px;
+  border-bottom: 1px solid #ccc;
+}
+.notice li:last-child {
+  border-bottom: none;
+}
+.notice li a {
+  font-size: 14px;
+}
+.notice li a span {
+  float: right;
+}
+/* 갤러리 영역 */
+.gallery {
+  height: 300px;
+}
+.gallery div {
+  margin-top: 20px;
+}
+.gallery div h4 {
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 5px;
+  text-align: center;
+  background-color: #ccc;
+}
+.gallery ul {
+  width: 390px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+  padding: 5px 0;
+  display: flex;
+  justify-content: space-around;
+}
+.gallery ul li {
+  width: 50%;
+}
+.gallery ul li a {
+  display: block;
+  text-align: center;
+}
+.gallery ul li a img {
+  width: 95%;
+  border: 1px solid #ccc;
+}
+.gallery ul li a span {
+  display: block;
+  font-size: 14px;
+  text-align: center;
+}
+/* 바로가기 */
+.shortcut {
+  height: 150px;
+}
+.shortcut ul {
+  width: 390px;
+  margin-left: 5px;
+  display: flex;
+}
+.shortcut ul li {
+  width: 25%;
+}
+.shortcut ul li a {
+  display: block;
+  margin-right: 4px;
+}
+.shortcut ul li:last-child a {
+  margin-right: 0;
+}
+.shortcut ul li a img {
+  width: 100%;
+  border: 1px solid #ccc;
+}
+.shortcut ul li a span {
+  display: block;
+  font-size: 13px;
+  text-align: center;
+}
+/* 이미지 슬라이드 */
+.imgslide {
+  height: 750px;
+  overflow: hidden;
+}
+.slidelist {
+  height: 2250px;
+}
+.slidelist a {
+  display: block;
+  height: 750px;
+  position: relative; /* 글씨 정렬을 위해 */
+}
+.image1 {
+  background: url("../img/slide1.jpg") no-repeat center;
+  background-size: cover;
+}
+.image2 {
+  background: url("../img/slide2.jpg") no-repeat center;
+  background-size: cover;
+}
+.image3 {
+  background: url("../img/slide3.jpg") no-repeat center;
+  background-size: cover;
+}
+.imgtext {
+  width: 400px;
+  height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: rgba(40, 40, 40, 0.5);
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  margin-left: -200px;
+  margin-top: -25px;
+}
+/* 푸터 영역 */
+footer {
+  height: 100px;
+}
+.btlogo {
+  width: 200px;
+  height: 100px;
+}
+.btlogo img {
+  margin: 27px 0 0 5px;
+}
+.copy {
+  width: calc(100% - 500px);
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+.familysite {
+  width: 300px;
+  height: 100px;
+}
+.familysite select {
+  width: 200px;
+  height: 30px;
+  float: right;
+  margin-top: 35px;
+  margin-right: 10px;
+}
+/* 레이어 팝업 */
+#modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10;
+  display: none;
+}
+#modal.active {
+  display: block;
+}
+.modal_up {
+  width: 550px;
+  height: 400px;
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  background-color: #fff;
+}
+.uptitle {
+  margin-top: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+.upbody {
+  padding: 30px;
+  line-height: 40px;
+  text-align: center;
+}
+.btn {
+  width: 80px;
+  height: 20px;
+  text-align: center;
+  line-height: 20px;
+  font-size: 15px;
+  font-weight: bold;
+  background: #ccc;
+  border-radius: 3px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  cursor: pointer;
+}
