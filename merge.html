@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>머지가 머지</title>
+</head>
+<body>
+	<h1>F12를 눌러라</h1>
+	
+	<script>
+		const a = [3, 7, 13, 19, 25, 30];
+		const b = [5, 15, 20, 27];
+		const c = [];
+		
+		let i = 0;
+		let j = 0;
+
+		while (i < a.length || j < b.length) {
+			if (i < a.length && (j >= b.length || a[i] < b[j])) {
+				c.push(a[i]);
+				i++;
+			} else {
+				c.push(b[j]);
+				j++;
+			}
+		}
+		
+		console.log(c);
+	
+	</script>
+</body>
+</html>
+
+
