@@ -11,10 +11,153 @@
       href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap"
       rel="stylesheet"
     />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Gaegu, sans-serif;
+      }
+      #wrapper {
+        width: 400px;
+        height: 500px;
+        background-color: #ffb9de;
+        margin: 64px auto 0;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 16px;
+      }
+      #resultWindow {
+        width: 360px;
+        height: 100px;
+        border-radius: 20px;
+        background-color: #ffe2f1;
+        line-height: calc(100px - 64px);
+        overflow: hidden;
+        text-align: right;
+        padding: 32px;
+        font-size: 28px;
+      }
+      #buttons {
+        width: 360px;
+        height: 320px;
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      button {
+        width: 85px;
+        height: 40px;
+        font-family: Gaegu, sans-serif;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+      }
+      button:active {
+        box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+      }
+      .symbols {
+        background-color: #fff;
+      }
+      .numbers {
+        background-color: #ffffd8;
+      }
+      #zero {
+        width: calc(85px * 2.08);
+      }
+      #allClear {
+        background-color: #37e1ff;
+      }
+      #clear {
+        background-color: #a0efff;
+      }
+    </style>
   </head>
   <body>
     <div id="wrapper">
-      <div id="resultWindow"></div>
+      <div id="resultWindow">0</div>
+      <div id="buttons">
+        <!-- onclick="" ? -->
+        <button id="posinega" class="symbols">+/-</button>
+        <button id="divide" class="symbols">÷</button>
+        <button id="multiply" class="symbols">×</button>
+        <button id="allClear">AC</button>
+        <button id="seven" class="numbers">7</button>
+        <button id="eight" class="numbers">8</button>
+        <button id="nine" class="numbers">9</button>
+        <button id="clear">C</button>
+        <button id="four" class="numbers">4</button>
+        <button id="five" class="numbers">5</button>
+        <button id="six" class="numbers">6</button>
+        <button id="minus" class="symbols">-</button>
+        <button id="one" class="numbers">1</button>
+        <button id="two" class="numbers">2</button>
+        <button id="three" class="numbers">3</button>
+        <button id="plus" class="symbols">+</button>
+        <button id="zero" class="numbers">0</button>
+        <button id="point" class="numbers">.</button>
+        <button id="equal" class="symbols">=</button>
+      </div>
     </div>
+
+    <script>
+      // 현재 총 기록 기억할 변수(연산자 우선순위 때문에 필요함)
+      let totalSentence = ``;
+      // 지금 당장 들어온 숫자를 향후 Number()로 바꿔줄 변수
+      let currentNumber = ``;
+
+      let currentResult = document.querySelector("#resultWindow");
+      const numbers = document.querySelectorAll(".numbers");
+
+      // 일단 누르는 숫자가 출력되게 해보자!
+      // 누른 숫자 받아서
+      // 0일 때 currentResult.innerHTML = (새로운 숫자)
+      // 0 아니면 currentResult.innerHTML += (새로운 숫자)
+      // 제일 처음에 0 못 누르게 해야 함 반영도 안 되고
+
+      numbers.forEach((e) => {
+        e.addEventListener("click", (e) => {
+          let num = e.target.innerHTML; // console.log(num); // string으로 값 가져옴
+
+          // 처음에 0이랑 . 걸러주면서 또 .은 한 번만 나오게 하면서 누르는 숫자 출력되게 하기
+          if (currentResult.innerHTML === "0" && num === "0") {
+            currentResult.innerHTML = num;
+          } else if (currentResult.innerHTML === "0" && num === ".") {
+            currentResult.innerHTML += num;
+            currentNumber += num;
+          } else if (
+            currentResult.innerHTML === "0" &&
+            (num !== "0" || num !== ".")
+          ) {
+            currentResult.innerHTML = num;
+            currentNumber += num;
+          } else {
+            currentResult.innerHTML += num;
+            currentNumber += num;
+          }
+
+          // 얘는 어디로 갈까
+          return currentNumber;
+        });
+      });
+
+      // 연산자 눌렀을 때 currentNumber total로 들어감?
+
+      // All Clear 초기화
+      const allClear = () => {
+        currentResult.innerHTML = 0;
+        totalSentence = ``;
+        currentNumber = ``;
+      };
+
+      document.querySelector("#allClear").addEventListener("click", allClear);
+    </script>
   </body>
 </html>
