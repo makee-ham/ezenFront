@@ -109,12 +109,116 @@
 
     <script>
       // 현재 총 기록 기억할 변수(연산자 우선순위 때문에 필요함)
-      let totalSentence = ``;
-      // 지금 당장 들어온 숫자를 향후 Number()로 바꿔줄 변수
-      let currentNumber = ``;
+      let totalSentence = [];
+      // 지금까지의 계산 결과 (totalSentence에 저장된 것 기반)
+      let currentResult = 0;
 
-      let currentResult = document.querySelector("#resultWindow");
+      let currentWindow = document.querySelector("#resultWindow");
       const numbers = document.querySelectorAll(".numbers");
+      const symbols = document.querySelectorAll(".symbols");
+
+      // All Clear: 전부 초기화
+      function allClear() {
+        currentWindow.innerHTML = 0;
+        totalSentence = [];
+        currentResult = 0;
+      }
+
+      document.querySelector("#allClear").addEventListener("click", allClear);
+
+      // Clear: 현재 숫자만 초기화(이전 연산자까진 기억)
+      function clear() {
+        currentWindow.innerHTML = 0;
+        // totalSentece나 currentResult에 저장 X
+      }
+
+      document.querySelector("#clear").addEventListener("click", clear);
+
+      // 입력받은 숫자를 화면에 출력
+      numbers.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          let num = e.target.innerHTML; // console.log(num); // string으로 값 가져옴
+
+          // 처음에 0이랑 . 걸러주면서 또 .은 한 번만 나오게 하면서 누르는 숫자 출력되게 하기
+          if (currentWindow.innerHTML === "0" && num === "0") {
+            currentWindow.innerHTML = num;
+          } else if (currentWindow.innerHTML === "0" && num === ".") {
+            currentWindow.innerHTML += num;
+          } else if (
+            currentWindow.innerHTML === "0" &&
+            (num !== "0" || num !== ".")
+          ) {
+            currentWindow.innerHTML = num;
+          } else if (
+            currentWindow.innerHTML !== "0" &&
+            !currentWindow.innerHTML.includes(".")
+          ) {
+            currentWindow.innerHTML += num;
+          } else if (currentWindow.innerHTML.includes(".") && num !== ".") {
+            currentWindow.innerHTML += num;
+          }
+        });
+      });
+
+      // 계산 메소드 담은 객체
+      const calculate = {
+        // 1순위
+        posinega: function (x) {
+          return x * -1;
+        },
+        // 2순위
+        divide: function (x, y) {
+          return x / y;
+        },
+        // 2순위
+        multiply: function (x, y) {
+          return x * y;
+        },
+        // 3순위
+        minus: function (x, y) {
+          return x - y;
+        },
+        // 3순위
+        plus: function (x, y) {
+          return x + y;
+        },
+      };
+
+      // 현재 계산값 업데이트 currentResult : totalSentence에 저장된 것 기반으로 연산자 누를 때마다 매번 처음부터 계산 (연산자 우선순위 때문에)
+      function updateResult() {
+        // 연산 순서대로 배치
+
+        // 계산
+        for (let i; i < totalSentence.length; i++) {
+          // for문을 두 개를 하는데 각각 다른 역할로 연산자 순서를 @.@  위가 아래보다 더 우선순위 높징
+          // 우선순위가 높은 걸 위에다가 두고 나중 우선순위는 나중에 두기
+          // 첫 번째 for 문에선 * -1 , * , / 시키기
+          // 두 번째 for 문에선 +, -
+          // 근데 이렇게 되도록 배열 순서 맞춰주는 게 어려움
+        }
+      }
+
+      // 숫자 입력-출력 후 연산자 눌렀을 때 화면에 보였던 숫자와 연산자 저장
+      function getKeys(e) {
+        // 숫자 받아오기
+        let num = currentWindow.innerHTML;
+        totalSentence.push(num);
+
+        // 누른 연산자 뭔지 알고, totalSentence에도 넣고
+        switch (e.target.innerHTML) {
+          case "+/-":
+            totalSentence.push("posinega");
+          // 계산값 업데이트 > 화면 표시
+        }
+
+        // 각 연산자로 계산한 결과 저장 (currentResult? 근데 연산자 우선순위 고려해야 해서 막... 100+35 // 까진 currentResult 135인데 여기에 *2 하면 170으로 바뀔 수 있다 이거 고려해야 됨)
+
+        // 화면 초기화 또는 currentResult 띄우기?? 이건 계산기 좀 써보자
+      }
+
+      symbols.forEach((element) => element.addEventListener("click", getKeys));
+
+      /////////////////////////////////////고민의 흔적///////////////
 
       // 일단 누르는 숫자가 출력되게 해보자!
       // 누른 숫자 받아서
@@ -122,42 +226,7 @@
       // 0 아니면 currentResult.innerHTML += (새로운 숫자)
       // 제일 처음에 0 못 누르게 해야 함 반영도 안 되고
 
-      numbers.forEach((e) => {
-        e.addEventListener("click", (e) => {
-          let num = e.target.innerHTML; // console.log(num); // string으로 값 가져옴
-
-          // 처음에 0이랑 . 걸러주면서 또 .은 한 번만 나오게 하면서 누르는 숫자 출력되게 하기
-          if (currentResult.innerHTML === "0" && num === "0") {
-            currentResult.innerHTML = num;
-          } else if (currentResult.innerHTML === "0" && num === ".") {
-            currentResult.innerHTML += num;
-            currentNumber += num;
-          } else if (
-            currentResult.innerHTML === "0" &&
-            (num !== "0" || num !== ".")
-          ) {
-            currentResult.innerHTML = num;
-            currentNumber += num;
-          } else {
-            currentResult.innerHTML += num;
-            currentNumber += num;
-          }
-
-          // 얘는 어디로 갈까
-          return currentNumber;
-        });
-      });
-
       // 연산자 눌렀을 때 currentNumber total로 들어감?
-
-      // All Clear 초기화
-      const allClear = () => {
-        currentResult.innerHTML = 0;
-        totalSentence = ``;
-        currentNumber = ``;
-      };
-
-      document.querySelector("#allClear").addEventListener("click", allClear);
     </script>
   </body>
 </html>
