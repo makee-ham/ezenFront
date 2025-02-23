@@ -110,11 +110,69 @@
     <script>
       // 현재 총 기록 기억할 변수(연산자 우선순위 때문에 필요함)
       let totalSentence = ``;
-      // 지금 당장 들어온 숫자를 향후 Number()로 바꿔줄 변수
-      let currentNumber = ``;
+      // 지금까지의 계산 결과
+      let currentResult = 0;
 
-      let currentResult = document.querySelector("#resultWindow");
+      let currentWindow = document.querySelector("#resultWindow");
       const numbers = document.querySelectorAll(".numbers");
+      const symbols = document.querySelectorAll(".symbols");
+
+      // All Clear: 전부 초기화
+      function allClear() {
+        currentWindow.innerHTML = 0;
+        totalSentence = ``;
+        currentResult = 0;
+      }
+
+      document.querySelector("#allClear").addEventListener("click", allClear);
+
+      // Clear: 현재 숫자만 초기화(이전 연산자까진 기억)
+      function clear() {
+        currentWindow.innerHTML = 0;
+        // totalSentece나 currentResult에 저장 X
+      }
+
+      document.querySelector("#clear").addEventListener("click", clear);
+
+      // 입력받은 숫자를 화면에 출력
+      numbers.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          let num = e.target.innerHTML; // console.log(num); // string으로 값 가져옴
+
+          // 처음에 0이랑 . 걸러주면서 또 .은 한 번만 나오게 하면서 누르는 숫자 출력되게 하기
+          if (currentWindow.innerHTML === "0" && num === "0") {
+            currentWindow.innerHTML = num;
+          } else if (currentWindow.innerHTML === "0" && num === ".") {
+            currentWindow.innerHTML += num;
+          } else if (
+            currentWindow.innerHTML === "0" &&
+            (num !== "0" || num !== ".")
+          ) {
+            currentWindow.innerHTML = num;
+          } else {
+            currentWindow.innerHTML += num;
+          }
+        });
+      });
+
+      // 숫자 입력-출력 후 연산자 눌렀을 때 화면에 보였던 숫자 저장
+      function getNum() {
+        // 숫자 받아오기
+        let num = currentWindow.innerHTML;
+        totalSentence += num;
+        console.log(num);
+
+        // 누른 연산자 뭔지 알고, totalSentence에도 넣고
+        // 각 연산자로 계산한 결과 저장 (currentResult? 근데 연산자 우선순위 고려해야 해서 막... 100+35 // 까진 currentResult 135인데 여기에 *2 하면 170으로 바뀔 수 있다 이거 고려해야 됨)
+
+        // 화면 초기화 또는 currentResult 띄우기?? 이건 계산기 좀 써보자
+
+        // 현재 계산값 업데이트
+      }
+
+      symbols.forEach((element) => element.addEventListener("click", getNum));
+
+      /////////////////////////////////////고민의 흔적///////////////
 
       // 일단 누르는 숫자가 출력되게 해보자!
       // 누른 숫자 받아서
@@ -122,42 +180,7 @@
       // 0 아니면 currentResult.innerHTML += (새로운 숫자)
       // 제일 처음에 0 못 누르게 해야 함 반영도 안 되고
 
-      numbers.forEach((e) => {
-        e.addEventListener("click", (e) => {
-          let num = e.target.innerHTML; // console.log(num); // string으로 값 가져옴
-
-          // 처음에 0이랑 . 걸러주면서 또 .은 한 번만 나오게 하면서 누르는 숫자 출력되게 하기
-          if (currentResult.innerHTML === "0" && num === "0") {
-            currentResult.innerHTML = num;
-          } else if (currentResult.innerHTML === "0" && num === ".") {
-            currentResult.innerHTML += num;
-            currentNumber += num;
-          } else if (
-            currentResult.innerHTML === "0" &&
-            (num !== "0" || num !== ".")
-          ) {
-            currentResult.innerHTML = num;
-            currentNumber += num;
-          } else {
-            currentResult.innerHTML += num;
-            currentNumber += num;
-          }
-
-          // 얘는 어디로 갈까
-          return currentNumber;
-        });
-      });
-
       // 연산자 눌렀을 때 currentNumber total로 들어감?
-
-      // All Clear 초기화
-      const allClear = () => {
-        currentResult.innerHTML = 0;
-        totalSentence = ``;
-        currentNumber = ``;
-      };
-
-      document.querySelector("#allClear").addEventListener("click", allClear);
     </script>
   </body>
 </html>
