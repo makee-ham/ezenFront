@@ -84,7 +84,6 @@
     <div id="wrapper">
       <div id="resultWindow">0</div>
       <div id="buttons">
-        <!-- onclick="" ? -->
         <button id="posinega" class="symbols">+/-</button>
         <button id="divide" class="symbols">÷</button>
         <button id="multiply" class="symbols">×</button>
@@ -110,12 +109,8 @@
     <script>
       // 현재 총 기록 기억할 변수(연산자 우선순위 때문에 필요함)
       let totalSentence = [];
-      // 연산자 우선순위에 따라 정리한 배열
-      let sorted = [];
-      // 덧셈 뺄셈 계산용 배열
-      let temp = [];
-      // 지금까지의 계산 결과 (totalSentence에 저장된 것 기반)
-      let currentResult = 0;
+
+      let isClicked = false;
 
       let currentWindow = document.querySelector("#resultWindow");
       const numbers = document.querySelectorAll(".numbers");
@@ -126,8 +121,6 @@
       function allClear() {
         currentWindow.innerHTML = 0;
         totalSentence = [];
-        temp = [];
-        currentResult = 0;
       }
 
       document.querySelector("#allClear").addEventListener("click", allClear);
@@ -146,11 +139,9 @@
         element.addEventListener("click", (e) => {
           let num = e.target.innerHTML; // console.log(num); // string으로 값 가져옴
 
-          if (
-            currentWindow.innerHTML === String(currentResult) &&
-            currentWindow.innerHTML !== "0"
-          )
-            currentWindow.innerHTML = "";
+          if (isClicked) currentWindow.innerHTML = "0";
+
+          isClicked = false;
 
           // 처음에 0이랑 . 걸러주면서 또 .은 한 번만 나오게 하면서 누르는 숫자 출력되게 하기
           if (currentWindow.innerHTML === "0" && num === "0") {
@@ -199,22 +190,6 @@
         },
       };
 
-      // 현재 계산값 업데이트 currentResult : totalSentence에 저장된 것 기반으로 연산자 누를 때마다 매번 처음부터 계산 (연산자 우선순위 때문에)
-      function updateFirst() {
-        sorted = [];
-        for (let i = 1; i < totalSentence.length; i++) {
-          switch (totalSentence[i]) {
-            case "posinega":
-            case "multiply":
-            case "divide":
-              sorted.push(Number(totalSentence));
-          }
-        }
-      }
-
-      // 보이는 결과창에 띄우기
-      currentWindow.innerHTML = currentResult;
-
       // 숫자 입력-출력 후 연산자 눌렀을 때 화면에 보였던 숫자와 연산자 저장
       function getKeys(e) {
         // 숫자 받아오기
@@ -237,25 +212,57 @@
           case "+":
             totalSentence.push("plus");
             break;
-          default:
-            break;
         }
-
-        currentResult += Number(currentWindow.innerHTML);
-
-        // 계산값 업데이트 > 화면 표시
-        updateFirst();
-
-        // 각 연산자로 계산한 결과 저장 (currentResult? 근데 연산자 우선순위 고려해야 해서 막... 100+35 // 까진 currentResult 135인데 여기에 *2 하면 170으로 바뀔 수 있다 이거 고려해야 됨)
-
-        // 화면 초기화 또는 currentResult 띄우기?? 이건 계산기 좀 써보자
       }
 
-      symbols.forEach((element) => element.addEventListener("click", getKeys));
+      // 현재 계산값 업데이트: 지금까지의 totalSentence 결과 계산 후 currentResult 업데이트 진행!
+      function updateTotal() {
+        // 덧셈 뺄셈 계산용 배열 (곱셈 나눗셈 등은 이미 완료 후)
+        let temp = [];
+
+        // posinega, divide, multiply 먼저 계산해서 minus, plus와 함께 temp에 넣기
+        for (let i = 0; i < totalSentence.length; i++) {
+          if (totalSentence[i] === "posinega") {
+            let result = -Number(temp.pop()); // .pop은 마지막 삭제 값을 return
+            temp.push(result);
+            i++;
+          } else if (totalSentence[i] === "divide" && totalSentence[i + 1]) {
+            let result = Number(temp.pop()) / Number(totalSentence[++i]);
+            temp.push(result);
+          } else if (totalSentence[i] === "multiply" && totalSentence[i + 1]) {
+            let result = Number(temp.pop()) * Number(totalSentence[++i]);
+            temp.push(result);
+          } else {
+            temp.push(totalSentence[i]);
+          }
+        }
+        // minus, plus 나중
+        let currentResult = Number(temp[0]);
+        for (let j = 1; j < temp.length; j += 2) {
+          let operator = temp[j];
+          let value = Number(temp[j + 1]) || 0; // 단축 평가!
+          if (operator === "plus") currentResult += value;
+          if (operator === "minus") currentResult -= value;
+        }
+        // 결과창에 띄우기
+        currentWindow.innerHTML = String(currentResult);
+
+        // 값 확인용
+        console.log(totalSentence);
+        console.log(temp);
+        console.log(currentResult);
+      }
+
+      symbols.forEach((element) =>
+        element.addEventListener("click", function (e) {
+          getKeys(e);
+          updateTotal();
+          isClicked = true;
+        })
+      );
       equal.addEventListener("click", function () {
-        getKeys;
         totalSentence = [];
-        temp = [];
+        isClicked = true;
       });
 
       // = 누르면 일어날 일: totalSentence 초기화,
@@ -359,6 +366,30 @@
       // //     temp.push(calculate.posinega(Number(totalSentence[0])));
       // // }
       //   }
+
+      /*
+        currentResult = Number(totalSentence[0]);
+
+        for (let i = 1; i < totalSentence.length; i + 2) {
+          if (totalSentence.length < 3) break;
+
+          let before = totalSentence[i - 1];
+          let after = totalSentence[i + 1];
+          switch (totalSentence[i]) {
+            case "posinega":
+              temp.push(calculate.posinega(Number(before)));
+              break;
+
+            case "multiply":
+              temp.push(calculate.multiply(Number(before), Number(after)));
+              break;
+
+            case "divide":
+              temp.push(calculate.divide(Number(before), Number(after)));
+              break;
+          }
+        }
+          */
     </script>
   </body>
 </html>
