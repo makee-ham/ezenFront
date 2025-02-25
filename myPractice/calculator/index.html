@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나의 쁘띠 계산기</title>
+    <!-- Gaegu 폰트 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Gaegu, sans-serif;
+      }
+      #wrapper {
+        width: 400px;
+        height: 500px;
+        background-color: #ffb9de;
+        margin: 64px auto 0;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        padding-top: 16px;
+      }
+      #resultWindow {
+        width: 360px;
+        height: 100px;
+        border-radius: 20px;
+        background-color: #ffe2f1;
+        line-height: calc(100px - 64px);
+        overflow: hidden;
+        text-align: right;
+        padding: 32px;
+        font-size: 28px;
+      }
+      #buttons {
+        width: 360px;
+        height: 320px;
+        margin-top: 16px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      button {
+        width: 85px;
+        height: 40px;
+        font-family: Gaegu, sans-serif;
+        font-size: 20px;
+        outline: none;
+        border: none;
+        border-radius: 12px;
+      }
+      button:active {
+        box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.2);
+      }
+      .symbols {
+        background-color: #fff;
+      }
+      .numbers {
+        background-color: #ffffd8;
+      }
+      #zero {
+        width: calc(85px * 2.08);
+      }
+      #allClear {
+        background-color: #37e1ff;
+      }
+      #clear {
+        background-color: #a0efff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="resultWindow">0</div>
+      <div id="buttons">
+        <button id="posinega" class="symbols">+/-</button>
+        <button id="divide" class="symbols">÷</button>
+        <button id="multiply" class="symbols">×</button>
+        <button id="allClear">AC</button>
+        <button id="seven" class="numbers">7</button>
+        <button id="eight" class="numbers">8</button>
+        <button id="nine" class="numbers">9</button>
+        <button id="clear">C</button>
+        <button id="four" class="numbers">4</button>
+        <button id="five" class="numbers">5</button>
+        <button id="six" class="numbers">6</button>
+        <button id="minus" class="symbols">-</button>
+        <button id="one" class="numbers">1</button>
+        <button id="two" class="numbers">2</button>
+        <button id="three" class="numbers">3</button>
+        <button id="plus" class="symbols">+</button>
+        <button id="zero" class="numbers">0</button>
+        <button id="point" class="numbers">.</button>
+        <button id="equal" class="symbols">=</button>
+      </div>
+    </div>
+
+    <script>
+      // 현재 총 기록 기억할 변수(연산자 우선순위 때문에 필요함)
+      let totalSentence = [];
+
+      let isClicked = false;
+
+      let currentWindow = document.querySelector("#resultWindow");
+      const numbers = document.querySelectorAll(".numbers");
+      const symbols = document.querySelectorAll(".symbols");
+      const equal = document.querySelector("#equal");
+
+      // All Clear: 전부 초기화
+      function allClear() {
+        currentWindow.innerHTML = 0;
+        totalSentence = [];
+      }
+
+      document.querySelector("#allClear").addEventListener("click", allClear);
+
+      // Clear: 현재 숫자만 초기화(이전 연산자까진 기억)
+      function clear() {
+        currentWindow.innerHTML = 0;
+        // totalSentece나 currentResult에 저장 X
+      }
+
+      document.querySelector("#clear").addEventListener("click", clear);
+
+      currentWindow.innerHTML = "0";
+      // 입력받은 숫자를 화면에 출력
+      numbers.forEach((element) => {
+        element.addEventListener("click", (e) => {
+          let num = e.target.innerHTML; // console.log(num); // string으로 값 가져옴
+
+          if (isClicked) currentWindow.innerHTML = "0";
+
+          isClicked = false;
+
+          // 처음에 0이랑 . 걸러주면서 또 .은 한 번만 나오게 하면서 누르는 숫자 출력되게 하기
+          if (currentWindow.innerHTML === "0" && num === "0") {
+            return;
+          } else if (currentWindow.innerHTML === "0" && num === ".") {
+            currentWindow.innerHTML += num;
+          } else if (
+            currentWindow.innerHTML === "0" &&
+            num !== "0" &&
+            num !== "."
+          ) {
+            currentWindow.innerHTML = num;
+          } else if (
+            currentWindow.innerHTML !== "0" &&
+            !currentWindow.innerHTML.includes(".")
+          ) {
+            currentWindow.innerHTML += num;
+          } else if (currentWindow.innerHTML.includes(".") && num !== ".") {
+            currentWindow.innerHTML += num;
+          }
+        });
+      });
+
+      // 계산 메소드 담은 객체
+      const calculate = {
+        // 1순위
+        posinega: function (x) {
+          return x * -1;
+        },
+        // 2순위
+        divide: function (x, y) {
+          return x / y;
+        },
+        // 2순위
+        multiply: function (x, y) {
+          return x * y;
+        },
+
+        // 3순위
+        minus: function (x, y) {
+          return x - y;
+        },
+        // 3순위
+        plus: function (x, y) {
+          return x + y;
+        },
+      };
+
+      // 숫자 입력-출력 후 연산자 눌렀을 때 화면에 보였던 숫자와 연산자 저장
+      function getKeys(e) {
+        // 숫자 받아오기
+        totalSentence.push(currentWindow.innerHTML);
+
+        // 연산자 받아오기
+        switch (e.target.innerHTML) {
+          case "+/-":
+            totalSentence.push("posinega");
+            break;
+          case "÷":
+            totalSentence.push("divide");
+            break;
+          case "×":
+            totalSentence.push("multiply");
+            break;
+          case "-":
+            totalSentence.push("minus");
+            break;
+          case "+":
+            totalSentence.push("plus");
+            break;
+        }
+      }
+
+      // 현재 계산값 업데이트: 지금까지의 totalSentence 결과 계산 후 currentResult 업데이트 진행!
+      function updateTotal() {
+        // 덧셈 뺄셈 계산용 배열 (곱셈 나눗셈 등은 이미 완료 후)
+        let temp = [];
+
+        // posinega, divide, multiply 먼저 계산해서 minus, plus와 함께 temp에 넣기
+        for (let i = 0; i < totalSentence.length; i++) {
+          if (totalSentence[i] === "posinega") {
+            let result = -Number(temp.pop()); // .pop은 마지막 삭제 값을 return
+            temp.push(result);
+            i++;
+          } else if (totalSentence[i] === "divide" && totalSentence[i + 1]) {
+            let result = Number(temp.pop()) / Number(totalSentence[++i]);
+            temp.push(result);
+          } else if (totalSentence[i] === "multiply" && totalSentence[i + 1]) {
+            let result = Number(temp.pop()) * Number(totalSentence[++i]);
+            temp.push(result);
+          } else {
+            temp.push(totalSentence[i]);
+          }
+        }
+        // minus, plus 나중
+        let currentResult = Number(temp[0]);
+        for (let j = 1; j < temp.length; j += 2) {
+          let operator = temp[j];
+          let value = Number(temp[j + 1]) || 0; // 단축 평가!
+          if (operator === "plus") currentResult += value;
+          if (operator === "minus") currentResult -= value;
+        }
+        // 결과창에 띄우기
+        currentWindow.innerHTML = String(currentResult);
+
+        // 값 확인용
+        console.log(totalSentence);
+        console.log(temp);
+        console.log(currentResult);
+      }
+
+      symbols.forEach((element) =>
+        element.addEventListener("click", function (e) {
+          getKeys(e);
+          updateTotal();
+          isClicked = true;
+        })
+      );
+      equal.addEventListener("click", function () {
+        totalSentence = [];
+        isClicked = true;
+      });
+
+      // = 누르면 일어날 일: totalSentence 초기화,
+
+      /////////////////////////////////////고민의 흔적///////////////
+
+      // 연산 순서대로 배치
+
+      // 계산
+      // for문을 두 개를 하는데 각각 다른 역할로 연산자 순서를 @.@  위가 아래보다 더 우선순위 높징
+      // 우선순위가 높은 걸 위에다가 두고 나중 우선순위는 나중에 두기
+      // 첫 번째 for 문에선 * -1 , * , / 시키기
+      // 두 번째 for 문에선 +, -
+      // 근데 이렇게 되도록 배열 순서 맞춰주는 게 어려움
+
+      // 일단 누르는 숫자가 출력되게 해보자!
+      // 누른 숫자 받아서
+      // 0일 때 currentResult.innerHTML = (새로운 숫자)
+      // 0 아니면 currentResult.innerHTML += (새로운 숫자)
+      // 제일 처음에 0 못 누르게 해야 함 반영도 안 되고
+
+      // 연산자 눌렀을 때 currentNumber total로 들어감?
+
+      // default:
+      //   if (
+      //     temp.length < 2 &&
+      //     (totalSentence[i] === "minus" || totalSentence[i] === "plus")
+      //   ) {
+      //     temp.push(Number(totalSentence[i - 1]), totalSentence[i]);
+      //     break;
+      //   } else if (
+      //     temp.length > 2 &&
+      //     (totalSentence[i] === "minus" || totalSentence[i] === "plus")
+      //   ) {
+      //     for (let j = 1; j < temp.length; j++) {
+      //       switch (temp[j]) {
+      //         case "minus":
+      //           currentResult = currentResult - Number(temp[j + 1]);
+      //           temp[0] = currentResult;
+
+      //           break;
+      //         case "plus":
+      //           currentResult = currentResult + Number(temp[j + 1]);
+      //           temp[0] = currentResult;
+
+      //           break;
+      //         default:
+      //           temp.push(Number(temp[j]));
+      //           break;
+      //       }
+      //     }
+
+      // function updateFirst() {
+      //   for (let i = 1; i < totalSentence.length; i++) {
+      //     switch (totalSentence[i]) {
+      //       case "posinega":
+      //         temp.push(calculate.posinega(Number(totalSentence[i - 1])));
+      //         currentResult += calculate.posinega(Number(totalSentence[i - 1]));
+      //         break;
+      //       case "divide":
+      //         temp.push(
+      //           calculate.divide(
+      //             Number(totalSentence[i - 1]),
+      //             Number(totalSentence[i + 1])
+      //           )
+      //         );
+      //         currentResult += calculate.divide(
+      //           Number(totalSentence[i - 1]),
+      //           Number(totalSentence[i + 1])
+      //         );
+      //         break;
+      //       case "multiply":
+      //         temp.push(
+      //           calculate.multiply(
+      //             Number(totalSentence[i - 1]),
+      //             Number(totalSentence[i + 1])
+      //           )
+      //         );
+      //         currentResult += calculate.multiply(
+      //           Number(totalSentence[i - 1]),
+      //           Number(totalSentence[i + 1])
+      //         );
+      //         break;
+      //       case "minus":
+      //       case "plus":
+      //         temp.push(Number(totalSentence[i - 1]));
+      //         temp.push(totalSentence[i]);
+      //         temp.push(Number(totalSentence[i + 1]));
+      //     }
+      //   }
+      //   currentWindow.innerHTML = currentResult;
+
+      //   console.log(totalSentence);
+      //   console.log(temp);
+      //   console.log(currentResult);
+      // }
+      // // } else {
+      // //   currentResult = Number(currentWindow.innerHTML);
+      // //   currentWindow.innerHTML = "0";
+      // //   if (totalSentence[1] === "posinega")
+      // //     temp.push(calculate.posinega(Number(totalSentence[0])));
+      // // }
+      //   }
+
+      /*
+        currentResult = Number(totalSentence[0]);
+
+        for (let i = 1; i < totalSentence.length; i + 2) {
+          if (totalSentence.length < 3) break;
+
+          let before = totalSentence[i - 1];
+          let after = totalSentence[i + 1];
+          switch (totalSentence[i]) {
+            case "posinega":
+              temp.push(calculate.posinega(Number(before)));
+              break;
+
+            case "multiply":
+              temp.push(calculate.multiply(Number(before), Number(after)));
+              break;
+
+            case "divide":
+              temp.push(calculate.divide(Number(before), Number(after)));
+              break;
+          }
+        }
+          */
+    </script>
+  </body>
+</html>
