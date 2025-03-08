@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>지샘표 알고문제</title>
+  </head>
+  <body>
+    <h4>
+      4자리로 되어 있는 임의의 수를 입력하여 k자리의 수를 뽑았을 때 가장 큰 수를
+      찾는 알고리즘 완성하기
+    </h4>
+    <p>
+      예를 들어, 숫자 1723에서 2자리의 수를 뽑으면 [17, 12, 13, 72, 73, 23]의
+      배열을 만들 수 있는데, 이 중 가장 큰 수는 73이다.
+    </p>
+    <h1>이제 F12를 눌러 개발자 모드로!</h1>
+    <script>
+      const inputNum = prompt("4자리 임의의 수를 입력하세요...");
+      const k = prompt("몇 자리의 수를 생성하시겠습니까?");
+
+      const eachNum = [...inputNum];
+      let combinedNum = [];
+
+      function combineNum(k) {
+        let tempNum;
+        const tempArr = [];
+        switch (k) {
+          case "1":
+            [...eachNum].forEach((char) => tempArr.push(Number(char)));
+            break;
+          case "2":
+            for (let a = 0; a < eachNum.length; a++) {
+              for (let b = 0; b < eachNum.length; b++) {
+                if (a === b) continue;
+                tempNum = `${eachNum[a]}${eachNum[b]}`;
+                if (tempArr.includes(Number(tempNum))) continue;
+                tempArr.push(Number(tempNum));
+              }
+            }
+            break;
+          case "3":
+            for (let a = 0; a < eachNum.length; a++) {
+              for (let b = 0; b < eachNum.length; b++) {
+                for (let c = 0; c < eachNum.length; c++) {
+                  if (a === b || a === c || b === c) continue;
+                  tempNum = `${eachNum[a]}${eachNum[b]}${eachNum[c]}`;
+                  if (tempArr.includes(Number(tempNum))) continue;
+                  tempArr.push(Number(tempNum));
+                }
+              }
+            }
+            break;
+          case "4":
+            for (let a = 0; a < eachNum.length; a++) {
+              for (let b = 0; b < eachNum.length; b++) {
+                for (let c = 0; c < eachNum.length; c++) {
+                  for (let d = 0; d < eachNum.length; d++) {
+                    if (
+                      a === b ||
+                      a === c ||
+                      a === d ||
+                      b === c ||
+                      b === d ||
+                      c === d
+                    )
+                      continue;
+                    tempNum = `${eachNum[a]}${eachNum[b]}${eachNum[c]}${eachNum[d]}`;
+                    if (tempArr.includes(Number(tempNum))) continue;
+                    tempArr.push(Number(tempNum));
+                  }
+                }
+              }
+            }
+            break;
+        }
+        return [...tempArr];
+      }
+
+      combinedNum = combineNum(k);
+
+      const largestNum = Math.max(...combinedNum);
+
+      // 결과 띄우기
+      console.log(`생성 배열 : [${combinedNum}]`);
+      console.log(`가장 큰 수 : ${largestNum}`);
+    </script>
+  </body>
+</html>
