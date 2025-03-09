@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 나열 놀이</title>
+  </head>
+  <body>
+    <p>
+      일정한 규칙을 가지고 있는 숫자를 나열하는 놀이.<br />이전 숫자에서 각
+      숫자의 개수를 나타내어 숫자로 만들고, 다시 그 숫자를 같은 규칙으로 만들며
+      나열을 한다.<br />이 놀이는 1부터 시작한다.<br />다음 수는 1이 1개이기
+      때문에 '11'이 되고, '11'에선 1이 2개이기 때문에 그 다음은 '12'가 된다.
+    </p>
+    <h2>F12를 눌러라!</h2>
+    <script>
+      const totalPlayCount = Number(prompt("게임 진행 횟수를 입력하세요..."));
+
+      function sortNumArr(arr) {
+        const sortedArr = [...arr.sort((a, b) => a - b)];
+        return sortedArr;
+      }
+
+      function getLastNum(latestNum) {
+        const numBefore = [...latestNum];
+        let thisNumArr = [];
+
+        if (numBefore.length === 0) {
+          thisNumArr.push(1);
+        } else {
+          [...numBefore].forEach((num) => thisNumArr.push(Number(num)));
+        }
+
+        return thisNumArr;
+      }
+
+      function getCurrentNum(beforeThisNum, playCounter) {
+        let sortedArr = [...sortNumArr(beforeThisNum)];
+        let thisNumArr = [];
+        let thisNumStr = "";
+        let numCounter = 0;
+
+        if (playCounter === 1) return String(sortedArr[0]);
+
+        for (let i = 0; i < sortedArr.length; i++) {
+          if (
+            (sortedArr[i] !== sortedArr[i + 1] ?? sortedArr.at(i - 1)) ||
+            (!sortedArr[i + 1] && sortedArr[i] === sortedArr.at(i - 1))
+          ) {
+            thisNumArr.push(sortedArr[i]);
+            numCounter = sortedArr.filter(
+              (elem) => sortedArr[i] === elem
+            ).length;
+            thisNumArr.push(numCounter);
+            numCounter = 0;
+          }
+        }
+
+        thisNumStr = thisNumArr.join("");
+        return thisNumStr;
+      }
+
+      function setSection(totalPlayCount) {
+        let playCounter = 0;
+        let lastNum = [];
+        let currentNum = "";
+
+        while (playCounter < totalPlayCount) {
+          playCounter++;
+
+          lastNum = [...getLastNum(currentNum)];
+          currentNum = getCurrentNum(lastNum, playCounter);
+
+          console.log(`Step ${playCounter}: ${currentNum}`);
+        }
+
+        return currentNum;
+      }
+
+      const finalNum = setSection(totalPlayCount);
+      console.log(`${totalPlayCount} Step 진행 결과 : ${finalNum}`);
+    </script>
+  </body>
+</html>
