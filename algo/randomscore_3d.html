@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3차원 배열을 써서 해보렴</title>
+  </head>
+  <body>
+    <h4>목표를 F12에 놓고 스위치...</h4>
+    <script>
+      let scoreData = []; // 전체 점수 학급-학생별 데이터
+      let eachStudentAverage = []; // 학급별 각 학생 평균 점수 데이터
+      let classAverage = []; // 학급별 평균 점수
+      let firstPlaces = []; // 학급별 1등 평균 점수
+      let totalScores = 0; // 전교생 점수 합산
+
+      for (let i = 0; i < 5; i++) {
+        scoreData.push([]);
+        eachStudentAverage.push([]);
+        let eachClassStudentsScore = 0;
+        for (let j = 0; j < 10; j++) {
+          scoreData[i].push([]);
+          let tempStudentScore = 0;
+          let tempSentence = `${i + 1}반 ${j + 1}번 `;
+          for (let k = 0; k < 5; k++) {
+            scoreData[i][j].push(Math.floor(Math.random() * 100) + 1);
+            tempStudentScore += scoreData[i][j][k];
+            switch (k) {
+              case 0:
+                tempSentence += `국어 ${scoreData[i][j][k]}점 `;
+                break;
+              case 1:
+                tempSentence += `영어 ${scoreData[i][j][k]}점 `;
+                break;
+              case 2:
+                tempSentence += `수학 ${scoreData[i][j][k]}점 `;
+                break;
+              case 3:
+                tempSentence += `사회 ${scoreData[i][j][k]}점 `;
+                break;
+              case 4:
+                tempSentence += `과학 ${scoreData[i][j][k]}점 `;
+                break;
+            }
+          }
+          totalScores += tempStudentScore;
+          eachStudentAverage[i].push(tempStudentScore / 5);
+          tempSentence += `평균 ${eachStudentAverage[i][j]}점`;
+          console.log(tempSentence);
+        }
+        eachStudentAverage[i].forEach(
+          (elem) => (eachClassStudentsScore += elem)
+        );
+        classAverage.push(Math.floor(eachClassStudentsScore / 10));
+        firstPlaces.push(Math.max(...eachStudentAverage[i]));
+      }
+
+      const totalAverage = totalScores / (5 * 5 * 10);
+
+      // 학급별 평균 점수
+      classAverage.forEach((elem, index) =>
+        console.log(`${index + 1}반 평균 점수: ${elem}점`)
+      );
+      // 학급별 1등의 평균 점수
+      firstPlaces.forEach((elem, index) =>
+        console.log(`${index + 1}반 1등: 평균 ${elem}점`)
+      );
+      // 전교 전체 평균
+      console.log("전체 평균: " + totalAverage + "점");
+    </script>
+  </body>
+</html>
