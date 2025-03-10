@@ -20,6 +20,7 @@
           }
         }
       }
+      console.log(everyScore);
       // 학급별 점수 모두 출력
       for (let i = 0; i < 5; i++) {
         for (let j = 0; j < 10; j++) {
@@ -48,6 +49,35 @@
       classAverage.forEach((elem, index) =>
         console.log(`${index + 1}반 평균 점수: ${elem}점`)
       );
+      // 학급별 1등의 평균 점수
+      let firstPlaceEachClass = [];
+      let findFirstPlace = 0;
+      for (let i = 0; i < 5; i++) {
+        let eachStudentScore = [];
+        for (let j = 0; j < 10; j++) {
+          let tempStudentScore = 0;
+          for (let k = 0; k < 5; k++) {
+            tempStudentScore += everyScore[i][j][k];
+          }
+          eachStudentScore.push(tempStudentScore / 5);
+        }
+        findFirstPlace = Math.max(...eachStudentScore);
+        firstPlaceEachClass.push(findFirstPlace);
+      }
+      firstPlaceEachClass.forEach((elem, index) =>
+        console.log(`${index + 1}반 1등: ${elem}점`)
+      );
+      // 전교 전체 평균
+      let allStudentsScores = 0;
+      for (let i = 0; i < 5; i++) {
+        for (let j = 0; j < 10; j++) {
+          for (let k = 0; k < 5; k++) {
+            allStudentsScores += everyScore[i][j][k];
+          }
+        }
+      }
+      const allStudentsAverage = allStudentsScores / (5 * 5 * 10);
+      console.log("전체 평균: " + allStudentsAverage);
     </script>
   </body>
 </html>
