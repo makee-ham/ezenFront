@@ -35,6 +35,89 @@
     </p>
   </body>
   <script>
-    // 데이터 구축
+    // Step 1. 데이터 구축하기
+    let pharmData = [];
+
+    // A ~ Z가 들어있는 배열 만들기
+    let alphabetArr = [];
+    for (let i = 65; i <= 90; i++) {
+      alphabetArr.push(String.fromCharCode(i));
+    }
+    // 랜덤으로 8자리 문자를 총 1만 개 뽑기
+    // 랜덤 숫자 0 ~ alphabetArr.length
+    function getRandomInt() {
+      return Math.floor(Math.random() * (alphabetArr.length - 1));
+    }
+    // 하나의 제약 데이터 만들기 + 알파벳 중복 사용 비허용 + 오름차순 정렬
+    function getNewPharm() {
+      let elementArr = [];
+      let onePharm = "";
+      while (elementArr.length < 8) {
+        let tempIndex = getRandomInt();
+        if (elementArr.includes(tempIndex)) continue;
+        elementArr.push(tempIndex);
+      }
+      elementArr.sort(function (a, b) {
+        return a - b;
+      });
+      elementArr.forEach((elem) => (onePharm += alphabetArr[elem]));
+      return onePharm;
+    }
+    // 1만 개의 제약 데이터 만들기
+    function setData() {
+      for (let i = 0; i < 10000; i++) {
+        let tempPharm = getNewPharm();
+        if (pharmData.includes(tempPharm)) {
+          i--;
+          continue;
+        }
+        pharmData.push(getNewPharm());
+      }
+    }
+
+    setData();
+    console.log("데이터 일람");
+    console.log(pharmData);
+
+    ///////////////////////////////////
+    // Step 2. 찾는 데이터 입력받기
+    const givenPharm = prompt(
+      "의약품의 성분을 입력해 주세요(알파벳 대문자 8자리)"
+    );
+    const givenNum = Number(
+      prompt("해당 의약품과 같은 성분을 포함한 개수를 입력해 주세요(1~8)")
+    );
+
+    ///////////////////////////////////
+    // Step 3. givenNum만큼 겹치는 데이터 골라내기
+    let matchedData = [];
+    // 문자열을 배열로 변환
+    const givenPharmArr = [...givenPharm];
+    const pharmDataArr = [];
+    for (let i = 0; i < pharmData.length; i++) {
+      let tempArr = [...pharmData[i]];
+      pharmDataArr.push(tempArr);
+    }
+
+    // givenPharmArr와 pharmDataArr의 낱말 요소를 비교
+    function compareElements(i) {
+      let sameCounter = 0;
+      givenPharmArr.forEach((elem) => {
+        if ([...pharmDataArr[i]].includes(elem)) sameCounter++;
+      });
+      if (sameCounter === givenNum) return pharmData[i];
+    }
+
+    // 전체 비교 실행
+    for (let i = 0; i < 10000; i++) {
+      let tempData = compareElements(i);
+      if (!tempData) continue;
+      matchedData.push(tempData);
+    }
+
+    // 결과 출력
+    let resultStatement = `${givenNum}개 성분이 일치하는 제품의 검색 결과, 총 ${matchedData.length}개의 약품이 검색되었습니다.\n 일치하는 제품의 성분 구성: `;
+    matchedData.forEach((elem) => (resultStatement += `${elem} `));
+    console.log(resultStatement);
   </script>
 </html>
