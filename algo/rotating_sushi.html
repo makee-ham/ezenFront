@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회전초밥이 좋아서</title>
+  </head>
+  <body>
+    <script>
+      /*
+       생각
+
+       1. 포인트 입력한 것과 접시 순서를 매칭해야 함
+       2. 먹는 순서는 포인트 오름차순으로 정리해야 함
+       3. 근데 처음 그대로의 접시 순서는 또 기억하고 있어야 함
+       4. 먹어도 접시 순서 자체는 그대로여야 함
+       5. 그래서 입력한 n번째 접시를 몇 번만에 먹을 수 있는지 구해야함.. 순서는 유지하면서 먹어치운 건 빼야 하고 (접시 순서에서)
+
+       그렇다면 배열 객체의... index와 포인트를 따로 빼야하나?
+       예를 들어 { 0: 1, 1: 3, 2: 2, ... }
+       여기서 요소를 먹었다면 어떻게 자리를 남겨두고 인덱스만..?
+
+       아니면 객체 배열을 써볼 수 있나?
+       https://www.freecodecamp.org/korean/news/javascript-array-of-objects-tutorial/
+
+       객체에 들어갈 정보
+       order: 배열.indexof(this) 이거 되나?
+       point: num
+       isEaten - T/F // T면 이거 빼고 세기...
+
+       sushi.order === dish
+
+       */
+
+      // 입력 받기
+      const point = prompt("point? (띄어쓰기로 구분)").split(" ").map(Number);
+      const dish = Number(prompt("dish = "));
+
+      // 초밥 객체 만들기
+      const sushiArr = [];
+
+      function Sushi(index, point) {
+        this.order = index + 1;
+        this.point = point;
+        this.isEaten = false;
+      }
+
+      function setSushi() {
+        for (let i = 0; i < point.length; i++) {
+          let sushi = new Sushi(i, point[i]);
+          sushiArr.push(sushi);
+        }
+      }
+
+      setSushi();
+      console.log(sushiArr);
+
+      // 먹을 순서(point 오름차순)대로 객체 배치; 그러나 .order에는 변화 없음
+      const sorted_point = [...point].sort((p1, p2) => p1 - p2);
+      let sorted_sushi = [...sushiArr].sort((sushi1, sushi2) =>
+        sushi1.point <= sushi2.point ? -1 : sushi1.point > sushi2.point ? 1 : 0
+      );
+      console.log(sorted_sushi);
+
+      // 순서 갖기
+      function getOrder(obj) {
+        return obj.order;
+      }
+
+      // 초밥 먹기
+      function getEatingOrder() {
+        let eating_order = [];
+        // point 1부터 point max까지 순회하면서 // 아니 근데 1 다음에 2 나오면?
+        // point 순서대로 isEaten true로 하고
+        // isEaten이 false에서 true가 될 때 eatCounter++ 하고
+        // 다시 돌 때 이미 true인 건 먹어서 없으니까 넘어간다
+        // order가 dish와 같으면서 이게 false에서 true가 될 때 break
+        for (let p = 0; p < sorted_point.length; p++) {
+          for (let i = 0; i < sushiArr.length; i++) {
+            if (sushiArr[i].isEaten) continue;
+
+            if (sushiArr[i].point === sorted_point[p]) {
+              sushiArr[i].isEaten = true;
+              eating_order.push(sushiArr[i]);
+              continue;
+            }
+          }
+        }
+        return eating_order;
+      }
+
+      console.log(getEatingOrder());
+
+      //
+
+      /* 살려줘
+      while (sortedSushi[sortedSushi.length - 1].isEaten !== true) {
+          for (let i = 0; i < sortedSushi.length; i++) {
+            if (sortedSushi[i].order == dish && sortedSushi[i].isEaten === true)
+              break;
+            if (sortedSushi[i].isEaten === true) continue;
+            if (
+              sortedSushi[i].order <
+                (sortedSushi[i + 1]?.order ?? sortedSushi.length + 1) ||
+              sortedSushi[i].point ===
+                (sortedSushi[i + 1]?.point ??
+                  sortedSushi[sortedSushi.length - 1].point)
+            ) {
+              sortedSushi[i].isEaten === true;
+              eatCounter++;
+            } else eatCounter++;
+          }
+        }
+      */
+    </script>
+  </body>
+</html>
