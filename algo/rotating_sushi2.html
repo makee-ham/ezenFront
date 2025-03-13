@@ -10,11 +10,64 @@
       /*
       큐 라는 자료구조
 
- ABCDE 라고 하면 point 21341 이라고 하면
-A부터 E까지 쌓는데
-A 뿅 빼고 E 뒤에 쏙 넣고
-B 뿅 빼서 없애고 . .  .
-    */
+      ABCDE 라고 하면 point 21341 이라고 하면
+      A부터 E까지 쌓는데
+      A 뿅 빼고 E 뒤에 쏙 넣고
+      B 뿅 빼서 없애고 . .  .
+      */
+
+      // 입력 받기
+      const point = prompt("point? (띄어쓰기로 구분)").split(" ").map(Number);
+      const sorted_points_set = new Set([...point].sort((p1, p2) => p1 - p2));
+      const sorted_points = Array.from(sorted_points_set);
+      const dish = Number(prompt("dish = "));
+
+      function Sushi(index, point) {
+        this.order = index + 1;
+        this.point = point;
+      }
+
+      // 초밥 객체배열 만들기
+      const sushiArr = [];
+
+      function setSushi() {
+        for (let i = 0; i < point.length; i++) {
+          let sushi = new Sushi(i, point[i]);
+          sushiArr.push(sushi);
+        }
+      }
+
+      setSushi();
+
+      // 초밥 맛있게 먹기
+      function eatSushi() {
+        let rotateCounter = 0;
+        // 그냥 shift 할 때마다 카운터 올리는 게 맞는데
+        // 어떻게 해야 point를 다음 수로 넘기지
+        // 매번 해당 point가 있는지 여부 확인하면 될듯!
+        for (let p of sorted_points) {
+          let pointArr = [];
+          for (let i of sushiArr) {
+            pointArr.push(i.point);
+          }
+          while (true) {
+            if (pointArr.includes(p)) {
+              if (sushiArr[0].point === p) {
+                if (sushiArr[0].order === dish) return rotateCounter;
+                sushiArr.shift();
+              } else {
+                sushiArr.push(sushiArr.shift());
+              }
+              pointArr.shift();
+              rotateCounter++;
+            } else break;
+          }
+        }
+      }
+
+      // 결과 출력
+      const counter = eatSushi();
+      console.log("출력 " + counter);
     </script>
   </body>
 </html>
